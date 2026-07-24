@@ -14,13 +14,13 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'DMDroid — Instagram DM automation for agencies & founders',
+  title: 'DMDroid | Instagram Auto DM & Cold Outreach',
   description:
     'DMDroid runs personalized Instagram DM campaigns across all your accounts, follows up automatically, and drops hot leads into your pipeline. Start your 3-day free trial.',
   generator: 'DMDroid',
   metadataBase: new URL('https://dmdroid.app'),
   openGraph: {
-    title: 'DMDroid — Book more calls. DM less manually.',
+    title: 'DMDroid | Book More Calls With Auto DMs',
     description:
       'Automated Instagram outreach that books calls while you sleep. Multi-account, safe sending, real-time pipeline. Start your 3-day free trial.',
     url: 'https://dmdroid.app',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DMDroid — Book more calls. DM less manually.',
+    title: 'DMDroid | Book More Calls With Auto DMs',
     description:
       'Automated Instagram outreach that books calls while you sleep. Start your 3-day free trial.',
   },
