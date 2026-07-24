@@ -25,6 +25,7 @@ export const metadata: Metadata = {
       'Automated Instagram outreach that books calls while you sleep. Multi-account, safe sending, real-time pipeline. Start your 3-day free trial.',
     url: 'https://dmdroid.app',
     siteName: 'DMDroid',
+    images: ['/og.png'],
     type: 'website',
   },
   twitter: {
@@ -32,6 +33,7 @@ export const metadata: Metadata = {
     title: 'DMDroid | Book More Calls With Auto DMs',
     description:
       'Automated Instagram outreach that books calls while you sleep. Start your 3-day free trial.',
+    images: ['/og.png'],
   },
   icons: {
     icon: [
