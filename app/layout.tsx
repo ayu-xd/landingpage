@@ -1,14 +1,14 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Inter, Roboto_Mono } from 'next/font/google'
 import './globals.css'
 
-const geistSans = Geist({
+const geistSans = Inter({
   subsets: ['latin'],
   variable: '--font-geist-sans',
 })
 
-const geistMono = Geist_Mono({
+const geistMono = Roboto_Mono({
   subsets: ['latin'],
   variable: '--font-geist-mono',
 })
