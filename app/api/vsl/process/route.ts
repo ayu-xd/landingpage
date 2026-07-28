@@ -13,7 +13,7 @@ export async function POST(request: Request) {
     // 1. Call Meta Attachment Upload API
     const metaToken = process.env.INSTAGRAM_ACCESS_TOKEN
     
-    const metaResponse = await fetch(`https://graph.facebook.com/v21.0/me/message_attachments?access_token=${metaToken}`, {
+    const metaResponse = await fetch(`https://graph.instagram.com/v25.0/me/message_attachments?access_token=${metaToken}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

@@ -56,7 +56,7 @@ async function processWebhook(rawBody: string) {
 
       // 4. Look up sender's username
       const metaToken = process.env.INSTAGRAM_ACCESS_TOKEN
-      const userRes = await fetch(`https://graph.facebook.com/v21.0/${senderId}?fields=username&access_token=${metaToken}`)
+      const userRes = await fetch(`https://graph.instagram.com/v25.0/${senderId}?fields=username&access_token=${metaToken}`)
       const userData = await userRes.json()
       
       if (!userData.username) return
@@ -76,7 +76,7 @@ async function processWebhook(rawBody: string) {
       if (fetchError || !delivery) return
 
       // 6. Send video
-      const sendRes = await fetch(`https://graph.facebook.com/v21.0/me/messages?access_token=${metaToken}`, {
+      const sendRes = await fetch(`https://graph.instagram.com/v25.0/me/messages?access_token=${metaToken}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
