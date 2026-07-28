@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { supabase } from '@/lib/supabase'
 import { waitUntil } from '@vercel/functions'
+import { del } from '@vercel/blob'
 import crypto from 'crypto'
 
 export async function GET(request: Request) {
@@ -84,7 +85,7 @@ async function processWebhook(rawBody: string) {
           message: {
             attachment: {
               type: 'video',
-              payload: { attachment_id: delivery.attachment_id }
+              payload: { url: delivery.attachment_id, is_reusable: true }
             }
           }
         })
@@ -108,6 +109,12 @@ async function processWebhook(rawBody: string) {
         .update({ status: 'delivered', ig_user_id: senderId })
         .eq('id', delivery.id)
 
+      // Clean up the Vercel Blob since Meta has now fetched and sent it
+      try {
+        await del(delivery.attachment_id)
+      } catch (delErr) {
+        console.error('Failed to delete blob:', delErr)
+      }
     }
   } catch (err) {
     console.error('Webhook processing error:', err)

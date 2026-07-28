@@ -10,43 +10,14 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Missing blobUrl' }, { status: 400 })
     }
 
-    // 1. Call Meta Attachment Upload API
-    const metaToken = process.env.INSTAGRAM_ACCESS_TOKEN
+    // Skip synchronous Meta upload (avoids the 8MB strict non-resumable limit)
+    // We will just pass this URL directly to the /me/messages endpoint in the webhook
+    // exactly like Maya-ai-main does!
     
-    const metaResponse = await fetch(`https://graph.instagram.com/v25.0/me/message_attachments?access_token=${metaToken}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        message: {
-          attachment: {
-            type: 'video',
-            payload: {
-              url: blobUrl,
-              is_reusable: true
-            }
-          }
-        }
-      })
-    })
-
-    const metaData = await metaResponse.json()
-
-    if (!metaResponse.ok || !metaData.attachment_id) {
-      console.error('Meta API Error:', metaData)
-      // Clean up the blob even if Meta fails
-      await del(blobUrl)
-      return NextResponse.json({ error: 'Failed to upload to Meta' }, { status: 500 })
-    }
-
-    const attachmentId = metaData.attachment_id
-
-    // 2. Delete the Vercel Blob immediately
-    await del(blobUrl)
-
-    // 3. Insert row into vsl_deliveries
+    // 1. Insert row into vsl_deliveries with the blobUrl as the attachment_id
     const { data: row, error: dbError } = await supabase
       .from('vsl_deliveries')
-      .insert([{ attachment_id: attachmentId, status: 'pending' }])
+      .insert([{ attachment_id: blobUrl, status: 'pending' }])
       .select('id')
       .single()
 
