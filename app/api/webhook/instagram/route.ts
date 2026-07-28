@@ -67,7 +67,7 @@ async function processWebhook(rawBody: string) {
       // 5. Find matching row
       const vslTable = getVslTable()
       const records = await vslTable.select({
-        filterByFormula: `AND(LOWER({IG Username}) = '${username}', {Status} = 'pending')`,
+        filterByFormula: `AND(LOWER({IG Username}) = '${username}', {Status} = 'Pending')`,
         maxRecords: 1
       }).firstPage()
 
@@ -94,13 +94,13 @@ async function processWebhook(rawBody: string) {
         const errorData = await sendRes.json()
         console.error('Failed to send video:', errorData)
         
-        await vslTable.update(delivery.id, { 'Status': 'failed' }, { typecast: true })
+        await vslTable.update(delivery.id, { 'Status': 'Failed' }, { typecast: true })
         
         return
       }
 
       // Update row
-      await vslTable.update(delivery.id, { 'Status': 'delivered' }, { typecast: true })
+      await vslTable.update(delivery.id, { 'Status': 'Delivered' }, { typecast: true })
 
       // Clean up the Vercel Blob since Meta has now fetched and sent it
       try {
