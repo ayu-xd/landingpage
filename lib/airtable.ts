@@ -1,17 +1,12 @@
 import Airtable from 'airtable'
 
-const apiKey = process.env.AIRTABLE_API_KEY
-const baseId = process.env.AIRTABLE_BASE_ID
-const tableName = process.env.AIRTABLE_TABLE_NAME
+const apiKey = process.env.AIRTABLE_API_KEY || 'dummy_api_key'
+const baseId = process.env.AIRTABLE_BASE_ID || 'dummy_base_id'
+const tableName = process.env.AIRTABLE_TABLE_NAME || 'dummy_table_name'
 
-if (!apiKey || !baseId || !tableName) {
-  console.error("Missing Airtable environment variables.")
+if (!process.env.AIRTABLE_API_KEY) {
+  console.warn("⚠️ Missing Airtable environment variables (expected during Vercel build step).")
 }
 
-Airtable.configure({
-    endpointUrl: 'https://api.airtable.com',
-    apiKey: apiKey
-})
-
-export const base = Airtable.base(baseId!)
-export const vslTable = base(tableName!)
+export const base = new Airtable({ apiKey }).base(baseId)
+export const vslTable = base(tableName)
