@@ -1,4 +1,4 @@
-import { supabase } from '@/lib/supabase'
+import { vslTable } from '@/lib/airtable'
 import { NextResponse } from 'next/server'
 
 export async function POST(request: Request) {
@@ -9,15 +9,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Missing parameters' }, { status: 400 })
     }
 
-    const { error } = await supabase
-      .from('vsl_deliveries')
-      .update({ email })
-      .eq('id', delivery_id)
-
-    if (error) {
-      console.error('Supabase Update Error:', error)
-      return NextResponse.json({ error: 'Database error' }, { status: 500 })
-    }
+    await vslTable.update(delivery_id, { 'Email': email })
 
     return NextResponse.json({ success: true })
   } catch (error) {

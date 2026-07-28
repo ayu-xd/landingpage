@@ -1,4 +1,4 @@
-import { supabase } from '@/lib/supabase'
+import { vslTable } from '@/lib/airtable'
 import { NextResponse } from 'next/server'
 
 export async function POST(request: Request) {
@@ -12,15 +12,9 @@ export async function POST(request: Request) {
     // Normalise: lowercase, strip @
     const normalizedUsername = ig_username.replace(/^@/, '').toLowerCase()
 
-    const { error } = await supabase
-      .from('vsl_deliveries')
-      .update({ ig_username: normalizedUsername })
-      .eq('id', delivery_id)
-
-    if (error) {
-      console.error('Supabase Update Error:', error)
-      return NextResponse.json({ error: 'Database error' }, { status: 500 })
-    }
+    await vslTable.update(delivery_id, {
+      'IG Username': normalizedUsername
+    })
 
     return NextResponse.json({ success: true })
   } catch (error) {

@@ -1,4 +1,4 @@
-import { supabase } from '@/lib/supabase'
+import { vslTable } from '@/lib/airtable'
 import { NextResponse } from 'next/server'
 
 export async function GET(request: Request) {
@@ -10,17 +10,12 @@ export async function GET(request: Request) {
   }
 
   try {
-    const { data, error } = await supabase
-      .from('vsl_deliveries')
-      .select('status')
-      .eq('id', delivery_id)
-      .single()
-
-    if (error || !data) {
+    const record = await vslTable.find(delivery_id)
+    if (!record) {
       return NextResponse.json({ error: 'Delivery not found' }, { status: 404 })
     }
 
-    return NextResponse.json({ status: data.status })
+    return NextResponse.json({ status: record.get('Status') })
   } catch (error) {
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }

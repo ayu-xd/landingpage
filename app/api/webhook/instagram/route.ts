@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { supabase } from '@/lib/supabase'
+import { vslTable } from '@/lib/airtable'
 import { waitUntil } from '@vercel/functions'
 import { del } from '@vercel/blob'
 import crypto from 'crypto'
@@ -65,16 +65,14 @@ async function processWebhook(rawBody: string) {
       const username = userData.username.toLowerCase()
 
       // 5. Find matching row
-      const { data: delivery, error: fetchError } = await supabase
-        .from('vsl_deliveries')
-        .select('*')
-        .eq('ig_username', username)
-        .eq('status', 'pending')
-        .order('created_at', { ascending: false })
-        .limit(1)
-        .single()
+      const records = await vslTable.select({
+        filterByFormula: `AND(LOWER({IG Username}) = '${username}', {Status} = 'pending')`,
+        maxRecords: 1
+      }).firstPage()
 
-      if (fetchError || !delivery) return
+      if (!records || records.length === 0) return
+      const delivery = records[0]
+      const blobUrl = delivery.get('Blob URL') as string
 
       // 6. Send video
       const sendRes = await fetch(`https://graph.instagram.com/v25.0/me/messages?access_token=${metaToken}`, {
@@ -85,7 +83,7 @@ async function processWebhook(rawBody: string) {
           message: {
             attachment: {
               type: 'video',
-              payload: { url: delivery.attachment_id, is_reusable: true }
+              payload: { url: blobUrl, is_reusable: true }
             }
           }
         })
@@ -95,23 +93,17 @@ async function processWebhook(rawBody: string) {
         const errorData = await sendRes.json()
         console.error('Failed to send video:', errorData)
         
-        await supabase
-          .from('vsl_deliveries')
-          .update({ status: 'failed', ig_user_id: senderId })
-          .eq('id', delivery.id)
+        await vslTable.update(delivery.id, { 'Status': 'failed' })
         
         return
       }
 
       // Update row
-      await supabase
-        .from('vsl_deliveries')
-        .update({ status: 'delivered', ig_user_id: senderId })
-        .eq('id', delivery.id)
+      await vslTable.update(delivery.id, { 'Status': 'delivered' })
 
       // Clean up the Vercel Blob since Meta has now fetched and sent it
       try {
-        await del(delivery.attachment_id)
+        await del(blobUrl)
       } catch (delErr) {
         console.error('Failed to delete blob:', delErr)
       }
