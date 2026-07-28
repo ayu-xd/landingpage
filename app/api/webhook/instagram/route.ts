@@ -94,13 +94,13 @@ async function processWebhook(rawBody: string) {
         const errorData = await sendRes.json()
         console.error('Failed to send video:', errorData)
         
-        await vslTable.update(delivery.id, { 'Status': 'failed' })
+        await vslTable.update(delivery.id, { 'Status': 'failed' }, { typecast: true })
         
         return
       }
 
       // Update row
-      await vslTable.update(delivery.id, { 'Status': 'delivered' })
+      await vslTable.update(delivery.id, { 'Status': 'delivered' }, { typecast: true })
 
       // Clean up the Vercel Blob since Meta has now fetched and sent it
       try {
