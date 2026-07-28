@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { vslTable } from '@/lib/airtable'
+import { getVslTable } from '@/lib/airtable'
 import { waitUntil } from '@vercel/functions'
 import { del } from '@vercel/blob'
 import crypto from 'crypto'
@@ -65,6 +65,7 @@ async function processWebhook(rawBody: string) {
       const username = userData.username.toLowerCase()
 
       // 5. Find matching row
+      const vslTable = getVslTable()
       const records = await vslTable.select({
         filterByFormula: `AND(LOWER({IG Username}) = '${username}', {Status} = 'pending')`,
         maxRecords: 1

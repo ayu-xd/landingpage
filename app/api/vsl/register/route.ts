@@ -1,4 +1,4 @@
-import { vslTable } from '@/lib/airtable'
+import { getVslTable } from '@/lib/airtable'
 import { NextResponse } from 'next/server'
 
 export async function POST(request: Request) {
@@ -12,6 +12,7 @@ export async function POST(request: Request) {
     // Normalise: lowercase, strip @
     const normalizedUsername = ig_username.replace(/^@/, '').toLowerCase()
 
+    const vslTable = getVslTable()
     await vslTable.update(delivery_id, {
       'IG Username': normalizedUsername
     })

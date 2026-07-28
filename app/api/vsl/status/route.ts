@@ -1,4 +1,4 @@
-import { vslTable } from '@/lib/airtable'
+import { getVslTable } from '@/lib/airtable'
 import { NextResponse } from 'next/server'
 
 export async function GET(request: Request) {
@@ -10,6 +10,7 @@ export async function GET(request: Request) {
   }
 
   try {
+    const vslTable = getVslTable()
     const record = await vslTable.find(delivery_id)
     if (!record) {
       return NextResponse.json({ error: 'Delivery not found' }, { status: 404 })

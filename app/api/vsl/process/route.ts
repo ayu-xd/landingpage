@@ -1,4 +1,4 @@
-import { vslTable } from '@/lib/airtable'
+import { getVslTable } from '@/lib/airtable'
 import { NextResponse } from 'next/server'
 
 export async function POST(request: Request) {
@@ -9,6 +9,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Missing blobUrl' }, { status: 400 })
     }
 
+    const vslTable = getVslTable()
     const records = await vslTable.create([
       { fields: { 'Blob URL': blobUrl, 'Status': 'pending' } }
     ])
