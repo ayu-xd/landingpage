@@ -10,7 +10,7 @@ export async function GET(request: Request) {
   const token = searchParams.get('hub.verify_token')
   const challenge = searchParams.get('hub.challenge')
 
-  if (mode === 'subscribe' && token === process.env.META_VERIFY_TOKEN) {
+  if (mode === 'subscribe' && token === process.env.INSTAGRAM_VERIFY_TOKEN) {
     return new Response(challenge, { status: 200 })
   }
   return new Response('Forbidden', { status: 403 })
@@ -26,7 +26,7 @@ export async function POST(request: Request) {
 
   // 1. Verify Signature
   const expectedSignature = `sha256=${crypto
-    .createHmac('sha256', process.env.META_APP_SECRET!)
+    .createHmac('sha256', process.env.INSTAGRAM_APP_SECRET!)
     .update(rawBody)
     .digest('hex')}`
 
@@ -56,7 +56,7 @@ async function processWebhook(rawBody: string) {
       const senderId = messaging.sender.id
 
       // 4. Look up sender's username
-      const metaToken = process.env.IG_ACCESS_TOKEN
+      const metaToken = process.env.INSTAGRAM_ACCESS_TOKEN
       const userRes = await fetch(`https://graph.instagram.com/v25.0/${senderId}?fields=username&access_token=${metaToken}`)
       const userData = await userRes.json()
       
