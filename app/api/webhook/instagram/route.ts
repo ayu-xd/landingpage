@@ -43,39 +43,41 @@ export async function POST(request: Request) {
 async function processWebhook(rawBody: string) {
   try {
     const body = JSON.parse(rawBody)
-    
+
     if (body.object === 'instagram' || body.object === 'page') {
       const entry = body.entry?.[0]
       const messaging = entry?.messaging?.[0]
-      
-      if (!messaging || !messaging.message || !messaging.message.text) return
 
-      const text = messaging.message.text.trim().toLowerCase()
+      if (!messaging || !messaging.message) return
+      
+      // Ignore echo messages (bot's own sent messages)
+      if (messaging.message.is_echo) return
+
+      const text = (messaging.message.text || '').trim().toLowerCase()
       if (!text.includes('hi')) return
 
       const senderId = messaging.sender.id
 
-      // 4. Look up sender's username
-      const metaToken = process.env.INSTAGRAM_ACCESS_TOKEN
-      const userRes = await fetch(`https://graph.instagram.com/v25.0/${senderId}?fields=username&access_token=${metaToken}`)
-      const userData = await userRes.json()
-      
-      if (!userData.username) return
-      
-      const username = userData.username.toLowerCase()
+      // Match by timing: find most recent Pending row uploaded within last 10 minutes
+      const tenMinutesAgo = new Date(Date.now() - 10 * 60 * 1000).toISOString()
 
-      // 5. Find matching row
       const vslTable = getVslTable()
       const records = await vslTable.select({
-        filterByFormula: `AND(LOWER({IG Username}) = '${username}', {Status} = 'Pending')`,
+        filterByFormula: `AND({Status} = 'Pending', {Uploaded At} >= '${tenMinutesAgo}')`,
+        sort: [{ field: 'Uploaded At', direction: 'desc' }],
         maxRecords: 1
       }).firstPage()
 
-      if (!records || records.length === 0) return
+      if (!records || records.length === 0) {
+        console.log('No pending delivery found within time window for sender:', senderId)
+        return
+      }
+
       const delivery = records[0]
       const blobUrl = delivery.get('Blob URL') as string
 
-      // 6. Send video
+      // Send video directly using sender ID — no username lookup needed
+      const metaToken = process.env.INSTAGRAM_ACCESS_TOKEN
       const sendRes = await fetch(`https://graph.instagram.com/v25.0/me/messages?access_token=${metaToken}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -93,16 +95,14 @@ async function processWebhook(rawBody: string) {
       if (!sendRes.ok) {
         const errorData = await sendRes.json()
         console.error('Failed to send video:', errorData)
-        
         await vslTable.update(delivery.id, { 'Status': 'Failed' }, { typecast: true })
-        
         return
       }
 
-      // Update row
+      // Update row to delivered
       await vslTable.update(delivery.id, { 'Status': 'Delivered' }, { typecast: true })
 
-      // Clean up the Vercel Blob since Meta has now fetched and sent it
+      // Clean up the Vercel Blob
       try {
         await del(blobUrl)
       } catch (delErr) {

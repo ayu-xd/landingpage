@@ -11,7 +11,7 @@ export async function POST(request: Request) {
 
     const vslTable = getVslTable()
     const records = await vslTable.create([
-      { fields: { 'Blob URL': blobUrl, 'Status': 'Pending' } }
+      { fields: { 'Blob URL': blobUrl, 'Status': 'Pending', 'Uploaded At': new Date().toISOString() } }
     ], { typecast: true })
 
     return NextResponse.json({ delivery_id: records[0].id })
