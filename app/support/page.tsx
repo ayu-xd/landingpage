@@ -9,36 +9,28 @@ export const metadata = {
 
 const faqs = [
   {
-    q: 'Will my Instagram account get banned?',
-    a: 'DMDroid is built around account safety. Every account runs in its own isolated browser session with warmup schedules, human-like sending limits, and heartbeat monitoring. We stay well within Instagram\u2019s activity thresholds so your accounts stay healthy.',
+    q: 'What is DMDroid?',
+    a: 'DMDroid is a follow-up assistant for Instagram DMs. It helps you organize and schedule first touches and follow-up messages, track replies, and stay on top of your conversations — all from your own logged-in Instagram account.',
   },
   {
-    q: 'Do I need to keep my computer on?',
-    a: 'No. DMDroid runs in the cloud 24/7. Campaigns keep sending, following up, and collecting replies whether your laptop is open or closed.',
-  },
-  {
-    q: 'How many messages can I send per day?',
-    a: 'Message volume is unlimited on every paid plan, but DMDroid automatically paces sending within safe, human-like daily caps per account to protect your deliverability.',
+    q: 'How does DMDroid protect my account?',
+    a: 'DMDroid includes built-in safety features like working-hours windows, daily send limits, and minimum spacing between messages. You stay in full control with pause and disconnect options at any time.',
   },
   {
     q: 'Do I need my own Instagram account?',
-    a: 'Yes. You connect your own Instagram account(s) to DMDroid. Depending on your plan you can connect anywhere from 1 to 30 accounts.',
+    a: 'Yes. DMDroid connects to your own logged-in Instagram account. Messages are sent from your account, not from any third-party system.',
   },
   {
-    q: 'Is there really a free trial? Do I need a card?',
-    a: 'Yes \u2014 every plan starts with a 3-day free trial. A credit card is required to start, but you can cancel anytime before day 3 and you won\u2019t be charged.',
-  },
-  {
-    q: 'Can I run multiple accounts?',
-    a: 'Absolutely. The Scale plan supports 2 to 30 accounts with per-account volume discounts, and Enterprise unlocks unlimited accounts.',
+    q: 'Is there a free trial?',
+    a: 'Yes — every plan starts with a 3-day free trial. A credit card is required to start, but you can cancel anytime before day 3 and you won\'t be charged.',
   },
   {
     q: 'How do I cancel my subscription?',
     a: 'You can cancel your subscription at any time through your account settings. Your access will continue until the end of your current billing period.',
   },
   {
-    q: 'I need help setting up my campaign. Where do I start?',
-    a: 'Check out our How It Works section on the homepage, or reach out to our support team \u2014 we\u2019re happy to help you get started.',
+    q: 'How do I get started?',
+    a: 'Check out our How It Works section on the homepage, or reach out to our support team — we\'re happy to help you get set up.',
   },
 ]
 
