@@ -1,11 +1,17 @@
 import { Check, X } from 'lucide-react'
 import { AUTH_URL, CONTRAST } from '@/lib/landing-data'
-import { GradientButton, HandArrow, HandNote, Section, SectionHeading } from './primitives'
+import {
+  Annotation,
+  GradientButton,
+  Section,
+  SectionHeading,
+} from './primitives'
 
 /**
  * Waalaxy's strongest section: "Outreach shouldn't feel like a second job"
- * with The Old Way / The Waalaxy Way side by side — pain bullets on the
- * left, relief bullets on the right, CTA below.
+ * with The Old Way / The DMDroid Way side by side. The handwritten note
+ * sits above the right card with its swoosh arrow diving into the winner
+ * column.
  */
 export function Contrast() {
   return (
@@ -32,8 +38,16 @@ export function Contrast() {
           </ul>
         </div>
 
-        {/* The DMDroid Way — the winner card */}
-        <div className="relative rounded-[24px] border-2 border-brand bg-white p-6 shadow-[0_24px_60px_-30px_rgba(49,90,231,0.35)] sm:p-8">
+        {/* The DMDroid Way, the winner card, with the handwritten note
+            swooping into it from above. */}
+        <div className="relative rounded-[24px] border-2 border-brand bg-white p-6 pt-10 shadow-[0_24px_60px_-30px_rgba(49,90,231,0.35)] sm:p-8 sm:pt-12">
+          <Annotation
+            note={CONTRAST.handNote}
+            className="-top-6 left-6 hidden md:flex"
+            rotate="-rotate-[6deg]"
+            arrowClass="h-28 w-10 rotate-[60deg]"
+          />
+
           <h3 className="text-lg font-bold text-brand">{CONTRAST.newLabel}</h3>
           <ul className="mt-6 space-y-4">
             {CONTRAST.rows.map((row) => (
@@ -46,20 +60,20 @@ export function Contrast() {
               </li>
             ))}
           </ul>
-
-          <div className="pointer-events-none absolute -right-3 -top-14 hidden flex-col items-center gap-1 md:flex">
-            <HandNote className="-rotate-[6deg]">{CONTRAST.handNote}</HandNote>
-            <HandArrow className="rotate-[75deg]" />
-          </div>
         </div>
       </div>
 
-      <div className="mt-10 flex justify-center">
+      <div className="mt-12 flex flex-col items-center gap-4">
         <GradientButton href={AUTH_URL} size="lg">
           {CONTRAST.cta}
         </GradientButton>
+        {/* Waalaxy's "Seriously, try it yourself" sits right beside the CTA
+            at the bottom of this section. */}
+        <p className="lp-hand rotate-[-2deg] text-xl sm:text-2xl">
+          Seriously, try it yourself
+        </p>
+        <p className="text-[13px] text-whisper">3-day free trial</p>
       </div>
-      <p className="mt-4 text-center text-[13px] text-whisper">3-day free trial</p>
     </Section>
   )
 }

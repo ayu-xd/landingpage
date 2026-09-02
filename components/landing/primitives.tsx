@@ -86,7 +86,74 @@ export function HandNote({
   )
 }
 
-/** A hand-drawn curvy arrow in ink — SVG path, points down-left by default. */
+/**
+ * Waalaxy's big curvy swoosh arrow — a tall hand-drawn SVG curve with an
+ * arrowhead, mirroring their `arrow`/`arrowwhite` annotation images. The
+ * default path sweeps from top-right to bottom-left; rotate to aim it.
+ * `white` renders the light variant used on colored/dark backgrounds.
+ */
+export function SwooshArrow({
+  className = '',
+  white = false,
+}: {
+  className?: string
+  white?: boolean
+}) {
+  return (
+    <svg
+      aria-hidden
+      viewBox="0 0 120 320"
+      fill="none"
+      preserveAspectRatio="xMidYMid meet"
+      className={`h-40 w-14 ${white ? 'text-white' : 'text-ink'} ${className}`}
+    >
+      <path
+        d="M96 16C30 90 14 190 26 302"
+        stroke="currentColor"
+        strokeWidth="5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M26 302l14-24M26 302l27-8"
+        stroke="currentColor"
+        strokeWidth="5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
+/**
+ * Waalaxy's annotation unit: handwritten text + swoosh arrow together in
+ * one absolutely-positioned container, rotated the way theirs sit. The
+ * arrow aims at whatever the container is placed beside.
+ */
+export function Annotation({
+  note,
+  className = '',
+  rotate = '-rotate-[10deg]',
+  arrowClass = '',
+  white = false,
+}: {
+  note: React.ReactNode
+  className?: string
+  rotate?: string
+  arrowClass?: string
+  white?: boolean
+}) {
+  return (
+    <div
+      aria-hidden
+      className={`pointer-events-none absolute z-10 flex items-start gap-1 ${rotate} ${className}`}
+    >
+      <HandNote rotate={false}>{note}</HandNote>
+      <SwooshArrow white={white} className={arrowClass} />
+    </div>
+  )
+}
+
+/** Small inline hand-drawn arrow for tight spots. */
 export function HandArrow({ className = '' }: { className?: string }) {
   return (
     <svg

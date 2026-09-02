@@ -3,11 +3,12 @@
 import { ArrowDown } from 'lucide-react'
 import { useState } from 'react'
 import { CONTACT_EMAIL, FAQS } from '@/lib/landing-data'
-import { Section, SectionHeading, Whisper } from './primitives'
+import { HandNote, Section, SectionHeading, SwooshArrow } from './primitives'
 
 /**
  * Waalaxy's FAQ: centered heading, chatty subline, accordion with plain
- * questions and a chevron that rotates on open. "Chat with us" beside it.
+ * questions and a chevron that rotates on open. "Chat with us" gets the
+ * handwritten "with real humans :)" with its arrow beside it.
  */
 export function Faq() {
   const [open, setOpen] = useState<number | null>(0)
@@ -20,12 +21,25 @@ export function Faq() {
           <>
             You have questions, we have answers. If you don’t find what
             you’re looking for here, our support team will be glad to help!{' '}
-            <a
-              href={`mailto:${CONTACT_EMAIL}`}
-              className="font-semibold text-brand underline decoration-brand/40 underline-offset-4 transition-colors hover:decoration-brand"
-            >
-              Chat with us
-            </a>
+            <span className="relative inline-block">
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="font-semibold text-brand underline decoration-brand/40 underline-offset-4 transition-colors hover:decoration-brand"
+              >
+                Chat with us
+              </a>
+              {/* Waalaxy's annotation: "With real humans :)" + arrow hanging
+                  right off the Chat button. */}
+              <span
+                aria-hidden
+                className="pointer-events-none absolute -right-6 top-0 hidden translate-x-full items-center gap-1 lg:flex"
+              >
+                <HandNote rotate={false} className="rotate-[-13deg] whitespace-nowrap">
+                  With real humans :)
+                </HandNote>
+                <SwooshArrow className="h-16 w-6 rotate-[35deg]" />
+              </span>
+            </span>
           </>
         }
       />
@@ -65,10 +79,6 @@ export function Faq() {
             </div>
           )
         })}
-      </div>
-
-      <div className="mt-8 flex justify-center">
-        <Whisper className="-rotate-2">with real humans :)</Whisper>
       </div>
     </Section>
   )

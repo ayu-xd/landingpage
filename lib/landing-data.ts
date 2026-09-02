@@ -18,7 +18,7 @@ export const TRIAL_CTA = 'Start my free trial'
  * variant testing that actually ships in the product.
  */
 export const ANNOUNCEMENT =
-  'Now with A/B variant testing — rotate up to 5 messages per step and let the best one win'
+  'Now with A/B variant testing: rotate up to 5 messages per step and let the best one win'
 
 export const NAV_LINKS = [
   { href: '#features', label: 'Features' },
@@ -36,7 +36,7 @@ export const HERO = {
   ctaSecondary: 'See how it works',
   trial: '3-day free trial',
   handNote: "The magic's happening here",
-  whisper: 'the droid runs on our cloud — close your laptop',
+  whisper: 'the droid runs on our cloud, close your laptop',
 }
 
 export const SOCIAL_PROOF = {
@@ -64,7 +64,7 @@ export type Step = {
 export const STEPS: Step[] = [
   {
     title: 'Import your targets',
-    body: 'Build qualified prospect lists from any source — no platform lock-in, no stale database.',
+    body: 'Build qualified prospect lists from any source. No platform lock-in, no stale database.',
     bullets: [
       'Paste a raw list of usernames or upload CSV / Excel',
       'Custom fields auto-detected ({{FirstName}}, {{Niche}}, anything you add)',
@@ -76,7 +76,7 @@ export const STEPS: Step[] = [
     body: 'Send openers and follow-ups with A/B variants that spark real conversations.',
     bullets: [
       'Up to 5 message variants per step, rotated automatically',
-      'Smart delays between steps — looks human, isn’t',
+      'Smart delays between steps: looks human, is not',
       'Preview exactly what each recipient sees before you launch',
     ],
   },
@@ -85,7 +85,7 @@ export const STEPS: Step[] = [
     body: 'Know exactly what works so you can double down.',
     bullets: [
       'Reply rate per campaign, per variant, per account',
-      'Runs 24/7 on our cloud — close your laptop',
+      'Runs 24/7 on our cloud, so close your laptop',
       'Sending windows, weekend pauses, your timezone',
     ],
   },
@@ -130,7 +130,7 @@ export const CONTRAST = {
     },
     {
       old: 'Zero visibility on what’s working across campaigns',
-      now: 'Reply rates, variant stats, and pipeline — all in one view',
+      now: 'Reply rates, variant stats, and pipeline, all in one view',
     },
     {
       old: 'Accounts getting flagged because you went too fast',
@@ -206,7 +206,7 @@ export const FEATURES: {
   {
     icon: Repeat,
     title: 'Multi-step sequences',
-    body: 'Opener → follow-up 1 → follow-up 2. Timed delays between every step. Stops the moment someone replies.',
+    body: 'Opener, follow-up 1, follow-up 2. Timed delays between every step. Stops the moment someone replies.',
   },
   {
     icon: MessageSquare,
@@ -232,7 +232,7 @@ export const FEATURES: {
 
 export const FEATURE_HEADINGS = {
   title: 'Made for Instagram DM outreach',
-  tagline: 'Everything the droid handles for you — so you can focus on closing.',
+  tagline: 'Everything the droid handles for you, so you can focus on closing.',
 }
 
 export const PIPELINE_FEATURE = {
@@ -263,13 +263,13 @@ export const SHOWCASE = [
 ]
 
 /**
- * ⚠️ PLACEHOLDER TESTIMONIALS — NOT REAL CUSTOMERS.
+ * PLACEHOLDER TESTIMONIALS. NOT REAL CUSTOMERS.
  *
  * Publishing invented endorsements is an FTC problem, so before this page
  * goes live: replace entries with real, attributable quotes, or empty the
  * array (the section hides itself when it's empty).
  *
- * Star ratings and review badges are deliberately absent — never fabricate
+ * Star ratings and review badges are deliberately absent. Never fabricate
  * them, and there's nothing verified to show yet.
  */
 export const TESTIMONIALS: { quote: string; name: string; role: string }[] = [
@@ -355,35 +355,35 @@ export const PRICING = {
 export const FAQS = [
   {
     q: 'What is DMDroid?',
-    a: 'DMDroid is an Instagram DM outreach tool. You import target lists, build multi-step message sequences with A/B variants, and the droid sends personalized DMs from your connected Instagram accounts automatically — on our cloud, with rate caps and health monitoring built in.',
+    a: 'DMDroid is an Instagram DM outreach tool. You import target lists, build multi-step message sequences with A/B variants, and the droid sends personalized DMs from your connected Instagram accounts automatically. It all runs on our cloud, with rate caps and health monitoring built in.',
   },
   {
     q: 'How does DMDroid work?',
-    a: 'Import your targets (paste a list, CSV, or Excel), build your opener and follow-ups with up to 5 variants per step, hit launch. The droid handles sending windows, delays, and rate caps. When someone replies, their sequence stops and they land in your visual pipeline: DM’d → Initiated → Engaged → Calendly → Booked.',
+    a: 'Import your targets (paste a list, CSV, or Excel), build your opener and follow-ups with up to 5 variants per step, then hit launch. The droid handles sending windows, delays, and rate caps. When someone replies, their sequence stops and they land in your visual pipeline: DM’d → Initiated → Engaged → Calendly → Booked.',
   },
   {
     q: 'Will my Instagram account get banned?',
-    a: 'The droid is built paranoid. Every account runs in its own isolated browser session. Daily rate caps keep you under Instagram’s radar. Heartbeat monitoring flags anomalies before they become problems. We take account health seriously — your accounts are your business.',
+    a: 'The droid is built paranoid. Every account runs in its own isolated browser session. Daily rate caps keep you under Instagram’s radar. Heartbeat monitoring flags anomalies before they become problems. We take account health seriously, because your accounts are your business.',
   },
   {
     q: 'Do I need to keep my computer on?',
-    a: 'Nope. DMDroid runs on our cloud — managed RDP and proxy infrastructure. Set your campaign, close your laptop, and the droid keeps working. Check back in the morning.',
+    a: 'Nope. DMDroid runs on our cloud, on managed RDP and proxy infrastructure. Set your campaign, close your laptop, and the droid keeps working. Check back in the morning.',
   },
   {
     q: 'Do I need my own Instagram accounts?',
-    a: 'Yes. DMDroid works with your existing Instagram accounts — we don’t provide them. You bring the accounts, the droid does the rest.',
+    a: 'Yes. DMDroid works with your existing Instagram accounts, we don’t provide them. You bring the accounts, the droid does the rest.',
   },
   {
     q: 'Can I run multiple accounts?',
-    a: 'Up to 30 on the Agency plan. Each account runs in complete isolation — separate browser sessions, separate fingerprints, no cross-contamination. Add or remove accounts anytime from the dashboard.',
+    a: 'Up to 30 on the Agency plan. Each account runs in complete isolation: separate browser sessions, separate fingerprints, no cross-contamination. Add or remove accounts anytime from the dashboard.',
   },
   {
     q: 'Is there really a free trial? Do I need a card?',
-    a: 'Yes, 3 days free. Yes, a card is required — but it won’t be charged if you cancel before day 3. We ask for it upfront to keep trial abuse low and support quality high. Fair trade.',
+    a: 'Yes, 3 days free. Yes, a card is required, but it won’t be charged if you cancel before day 3. We ask for it upfront to keep trial abuse low and support quality high. Fair trade.',
   },
   {
     q: 'How much does DMDroid cost?',
-    a: 'Solo Operator is $69/mo for one account. Agency starts at $106/mo for 2–30 accounts with volume discounts. Done-For-You is custom — we run everything for you, including RDP and proxy infrastructure.',
+    a: 'Solo Operator is $69/mo for one account. Agency starts at $106/mo for 2–30 accounts with volume discounts. Done-For-You is custom. We run everything for you, including RDP and proxy infrastructure.',
   },
 ]
 

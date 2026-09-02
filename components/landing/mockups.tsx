@@ -190,7 +190,7 @@ export function VariantEditor() {
   return (
     <div className="rounded-2xl border border-hairline bg-surface p-4 shadow-[0_24px_60px_-40px_rgba(20,20,43,0.3)] sm:p-5">
       <div className="mb-4 flex items-center justify-between">
-        <span className="text-sm font-bold text-ink">Step 1 — variants</span>
+        <span className="text-sm font-bold text-ink">Step 1 variants</span>
         <span className="text-xs text-whisper">A/B testing</span>
       </div>
       <div className="space-y-2">
@@ -219,7 +219,7 @@ export function VariantEditor() {
               )}
             </div>
             <p className="text-xs leading-relaxed text-ink-soft">
-              hey {TOKENS[i]}! saw your {TOKENS[2]} content — mind if i share
+              hey {TOKENS[i]}! saw your {TOKENS[2]} content, mind if i share
               something quick?
             </p>
           </div>

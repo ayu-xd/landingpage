@@ -1,11 +1,11 @@
 import { TESTIMONIALS, TESTIMONIALS_META } from '@/lib/landing-data'
-import { HandNote, Section, SectionHeading } from './primitives'
+import { HandNote, Section, SectionHeading, SwooshArrow } from './primitives'
 
 /**
- * Waalaxy's "This is why users love us" — meta-claim headline, handwritten
- * "Yup, those are real", and a two-row opposite-direction marquee of quotes.
- * Ours uses a single static row until real testimonials exist — the section
- * hides itself entirely if the array is emptied.
+ * Waalaxy's "This is why users love us": meta-claim headline, then the
+ * handwritten "Yup, those are real" with its tall swoosh arrow hanging
+ * beside the review row. Quote cards marquee below.
+ * Ours hides itself entirely until real testimonials exist.
  */
 export function Testimonials() {
   // Never ship invented proof. Empty array = no section.
@@ -13,14 +13,27 @@ export function Testimonials() {
 
   return (
     <Section tone="alt">
-      <div className="flex flex-col items-center gap-3">
+      <div className="flex flex-col items-center">
         <SectionHeading
           title={TESTIMONIALS_META.heading}
           tagline={TESTIMONIALS_META.tagline}
         />
-        <HandNote className="-rotate-[3deg]">
-          {TESTIMONIALS_META.handNote}
-        </HandNote>
+      </div>
+
+      {/* The annotation + tall arrow sit to the right of the heading,
+          pointing down at the row of quotes, exactly like Waalaxy's. */}
+      <div
+        aria-hidden
+        className="pointer-events-none relative mx-auto mt-2 hidden max-w-6xl md:block"
+      >
+        <div className="absolute -top-2 right-8 flex -rotate-[13deg] items-start gap-1">
+          <HandNote rotate={false} className="text-2xl">
+            Yup, those
+            <br />
+            are real
+          </HandNote>
+          <SwooshArrow className="h-40 w-12" />
+        </div>
       </div>
 
       <div className="lp-marquee-mask relative mt-14 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
@@ -35,7 +48,7 @@ export function Testimonials() {
               </blockquote>
               <figcaption className="mt-4 text-sm text-whisper">
                 <span className="font-semibold text-ink">{t.name}</span>
-                {' — '}
+                {', '}
                 {t.role}
               </figcaption>
             </figure>
@@ -44,7 +57,7 @@ export function Testimonials() {
       </div>
 
       <p className="mt-10 text-center text-[13px] italic text-whisper">
-        Placeholder quotes — being replaced with real client results as they
+        Placeholder quotes, being replaced with real client results as they
         come in.
       </p>
     </Section>

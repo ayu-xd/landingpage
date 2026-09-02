@@ -49,7 +49,7 @@ export const AVATAR_POSES = {
   /** Who it's for, small. */
   audience: {
     file: '/avatar/audience.png',
-    brief: 'pointing at the reader — "is this you?"',
+    brief: 'pointing at the reader, "is this you?"',
   },
   /** Testimonials header, small. */
   testimonials: {

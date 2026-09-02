@@ -1,6 +1,12 @@
 import { Check } from 'lucide-react'
 import { AUTH_URL, CONTACT_EMAIL, PLANS, PRICING } from '@/lib/landing-data'
-import { GradientButton, HandNote, Section, SectionHeading } from './primitives'
+import {
+  GradientButton,
+  HandNote,
+  Section,
+  SectionHeading,
+  SwooshArrow,
+} from './primitives'
 
 /** Waalaxy's pricing: centered heading, three cards, the popular one elevated. */
 export function Pricing() {
@@ -72,11 +78,22 @@ export function Pricing() {
         })}
       </div>
 
-      <div className="mt-14 flex flex-col items-center gap-3 text-center">
-        <p className="max-w-xl text-pretty text-sm leading-relaxed text-ink-soft">
+      <div className="relative mx-auto mt-14 flex max-w-xl flex-col items-center gap-5 text-center">
+        <p className="text-pretty text-sm leading-relaxed text-ink-soft">
           {PRICING.riskReversal}
         </p>
-        <HandNote className="rotate-[2deg]">{PRICING.handNote}</HandNote>
+
+        {/* Waalaxy's annotation pattern: the handwritten note hovers right
+            of the line, swoosh arrow curving down into it. */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -top-8 right-0 hidden items-start gap-1 sm:flex"
+        >
+          <HandNote rotate={false} className="rotate-[19deg]">
+            {PRICING.handNote}
+          </HandNote>
+          <SwooshArrow className="h-24 w-8 rotate-[10deg]" />
+        </div>
       </div>
     </Section>
   )
