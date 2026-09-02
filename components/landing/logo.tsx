@@ -1,9 +1,9 @@
 import { Avatar } from './avatar'
 
-/** Avatar mark plus wordmark. 32px in the nav and footer, per the brief. */
+/** Avatar mark plus wordmark. 32px in the nav and footer. */
 export function Logo({
   size = 32,
-  tone = 'dark',
+  tone = 'light',
 }: {
   size?: number
   tone?: 'light' | 'dark'

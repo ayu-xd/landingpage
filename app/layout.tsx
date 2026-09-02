@@ -1,9 +1,15 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Inter, JetBrains_Mono } from 'next/font/google'
+import { Figtree, Gochi_Hand, Inter, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 
-const geistSans = Inter({
+const figtree = Figtree({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+  variable: '--font-figtree',
+})
+
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-geist-sans',
 })
@@ -13,16 +19,23 @@ const geistMono = JetBrains_Mono({
   variable: '--font-geist-mono',
 })
 
+/** Powers the handwritten annotations — Waalaxy uses Gochi Hand. */
+const gochiHand = Gochi_Hand({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-gochi-hand',
+})
+
 export const metadata: Metadata = {
-  title: 'DMDroid | Instagram Auto DM & Cold Outreach',
+  title: 'DMDroid – The Perfect Tool for Instagram DM Outreach',
   description:
-    'Make Instagram your #1 client acquisition channel. Reach 500+ prospects a month, auto-follow up until they reply, and turn replies into booked calls. Start your 3-day free trial.',
+    'Automate your Instagram DM outreach with DMDroid. Launch campaigns in minutes and get more replies. No technical skills required. Start your 3-day free trial.',
   generator: 'DMDroid',
   metadataBase: new URL('https://dmdroid.app'),
   openGraph: {
-    title: 'DMDroid | Make Instagram Your #1 Client Channel',
+    title: 'DMDroid – The Perfect Tool for Instagram DM Outreach',
     description:
-      'Reach 500+ prospects every month on Instagram. Auto-follow up until they reply. No VA needed. No manual sending. No accounts getting flagged.',
+      'Make Instagram your #1 client acquisition channel. Reach 500+ prospects a month, auto-follow up until they reply, and turn replies into booked calls.',
     url: 'https://dmdroid.app',
     siteName: 'DMDroid',
     images: ['/og.png'],
@@ -30,9 +43,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DMDroid | Make Instagram Your #1 Client Channel',
+    title: 'DMDroid – The Perfect Tool for Instagram DM Outreach',
     description:
-      'Reach 500+ prospects every month on Instagram. Auto-follow up until they reply. Start your 3-day free trial.',
+      'Make Instagram your #1 client acquisition channel. Reach 500+ prospects a month, auto-follow up until they reply. Start your 3-day free trial.',
     images: ['/og.png'],
   },
   icons: {
@@ -49,8 +62,8 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  colorScheme: 'dark',
-  themeColor: '#3b82f6',
+  colorScheme: 'light',
+  themeColor: '#315ae7',
 }
 
 export default function RootLayout({
@@ -61,9 +74,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`dark bg-background ${geistSans.variable} ${geistMono.variable}`}
+      className={`${figtree.variable} ${inter.variable} ${geistMono.variable} ${gochiHand.variable}`}
     >
-      <body className="font-sans antialiased">
+      <body className="bg-white font-sans text-ink-body antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

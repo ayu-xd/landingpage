@@ -1,82 +1,65 @@
-import { ArrowRight, Check, X } from 'lucide-react'
+import { Check, X } from 'lucide-react'
 import { AUTH_URL, CONTRAST } from '@/lib/landing-data'
-import { AvatarWhisper } from './avatar'
-import { Section, SectionHeading } from './primitives'
+import { GradientButton, HandArrow, HandNote, Section, SectionHeading } from './primitives'
 
-function ColumnHeader({
-  label,
-  variant,
-}: {
-  label: string
-  variant: 'old' | 'new'
-}) {
-  const old = variant === 'old'
-  return (
-    <p
-      className={`hidden items-center gap-2 text-sm font-bold tracking-[-0.01em] md:flex ${
-        old ? 'text-white/45' : 'text-brand-bright'
-      }`}
-    >
-      {old ? (
-        <X className="h-4 w-4" aria-hidden />
-      ) : (
-        <Check className="h-4 w-4" aria-hidden />
-      )}
-      {label}
-    </p>
-  )
-}
-
+/**
+ * Waalaxy's strongest section: "Outreach shouldn't feel like a second job"
+ * with The Old Way / The Waalaxy Way side by side — pain bullets on the
+ * left, relief bullets on the right, CTA below.
+ */
 export function Contrast() {
   return (
-    <Section tone="ink">
+    <Section tone="light">
       <SectionHeading
-        tone="dark"
         title={CONTRAST.heading}
         tagline={CONTRAST.tagline}
       />
 
-      <div className="mt-12 grid gap-x-6 gap-y-3 md:grid-cols-2">
-        <ColumnHeader label="The Old Way" variant="old" />
-        <ColumnHeader label="The DMDroid Way" variant="new" />
+      <div className="relative mx-auto mt-14 grid max-w-5xl gap-6 md:grid-cols-2">
+        {/* The Old Way */}
+        <div className="rounded-[24px] border border-hairline bg-surface p-6 sm:p-8">
+          <h3 className="text-lg font-bold text-ink-soft">{CONTRAST.oldLabel}</h3>
+          <ul className="mt-6 space-y-4">
+            {CONTRAST.rows.map((row) => (
+              <li
+                key={row.old}
+                className="flex items-start gap-3 text-sm leading-relaxed text-whisper"
+              >
+                <X className="mt-0.5 h-4 w-4 shrink-0 text-whisper/70" aria-hidden />
+                {row.old}
+              </li>
+            ))}
+          </ul>
+        </div>
 
-        {CONTRAST.rows.map((row) => (
-          <div key={row.old} className="contents">
-            <p className="flex items-start gap-3 rounded-xl border border-white/8 bg-white/[0.03] p-4 text-sm leading-relaxed text-white/50">
-              <X className="mt-0.5 h-4 w-4 shrink-0 text-white/30" aria-hidden />
-              {row.old}
-            </p>
-            <p className="lp-card flex items-start gap-3 rounded-xl border border-brand/30 bg-brand/10 p-4 text-sm font-medium leading-relaxed text-white">
-              <Check
-                className="mt-0.5 h-4 w-4 shrink-0 text-brand-bright"
-                aria-hidden
-              />
-              {row.now}
-            </p>
+        {/* The DMDroid Way — the winner card */}
+        <div className="relative rounded-[24px] border-2 border-brand bg-white p-6 shadow-[0_24px_60px_-30px_rgba(49,90,231,0.35)] sm:p-8">
+          <h3 className="text-lg font-bold text-brand">{CONTRAST.newLabel}</h3>
+          <ul className="mt-6 space-y-4">
+            {CONTRAST.rows.map((row) => (
+              <li
+                key={row.now}
+                className="flex items-start gap-3 text-sm font-medium leading-relaxed text-ink"
+              >
+                <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden />
+                {row.now}
+              </li>
+            ))}
+          </ul>
+
+          <div className="pointer-events-none absolute -right-3 -top-14 hidden flex-col items-center gap-1 md:flex">
+            <HandNote className="-rotate-[6deg]">{CONTRAST.handNote}</HandNote>
+            <HandArrow className="rotate-[75deg]" />
           </div>
-        ))}
+        </div>
       </div>
 
-      <div className="mt-10 flex flex-col items-start gap-8 sm:flex-row sm:items-center sm:justify-between">
-        <a
-          href={AUTH_URL}
-          className="group flex h-12 items-center justify-center gap-2 rounded-[6px] bg-brand px-6 text-sm font-semibold text-white transition-colors hover:bg-brand-bright"
-        >
+      <div className="mt-10 flex justify-center">
+        <GradientButton href={AUTH_URL} size="lg">
           {CONTRAST.cta}
-          <ArrowRight
-            className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
-            aria-hidden
-          />
-        </a>
-
-        <AvatarWhisper
-          pose="contrast"
-          size={64}
-          caption={CONTRAST.whisper}
-          tone="dark"
-          className="sm:max-w-[260px]"
-        />
+        </GradientButton>
       </div>
+      <p className="mt-4 text-center text-[13px] text-whisper">3-day free trial</p>
     </Section>
   )
 }

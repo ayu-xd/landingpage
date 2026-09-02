@@ -1,18 +1,16 @@
 'use client'
 
-import { Bot, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { AUTH_URL, NAV_LINKS, TRIAL_CTA } from '@/lib/landing-data'
+import { ANNOUNCEMENT, AUTH_URL, NAV_LINKS, TRIAL_CTA } from '@/lib/landing-data'
 import { Logo } from './logo'
+import { GradientButton } from './primitives'
 
 /**
- * Sticky nav. Transparent over the dark hero, then a blurred near-black bar
- * once you scroll — it stays dark on the light sections on purpose, so the
- * header reads the same on every route.
- *
- * Pass `announcement` to show the dismissible bar above the nav row.
+ * Waalaxy's nav: white bar, hairline border once scrolled, centered links,
+ * text "Log in" + gradient trial button. Dismissible announcement above.
  */
-export function SiteNav({ announcement }: { announcement?: string }) {
+export function SiteNav() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [barOpen, setBarOpen] = useState(true)
@@ -25,19 +23,12 @@ export function SiteNav({ announcement }: { announcement?: string }) {
   }, [])
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${
-        scrolled
-          ? 'border-white/10 bg-ink/85 backdrop-blur-[12px]'
-          : 'border-transparent bg-transparent'
-      }`}
-    >
-      {announcement && barOpen && (
-        <div className="relative bg-brand-deep text-white">
+    <header className="fixed inset-x-0 top-0 z-50">
+      {ANNOUNCEMENT && barOpen && (
+        <div className="relative bg-ink text-white">
           <div className="mx-auto flex max-w-content items-center justify-center gap-2 px-10 py-2 sm:px-6">
-            <Bot className="h-4 w-4 shrink-0 text-brand-bright" aria-hidden />
             <p className="text-center text-[13px] leading-snug">
-              {announcement}
+              {ANNOUNCEMENT}
             </p>
           </div>
           <button
@@ -50,57 +41,62 @@ export function SiteNav({ announcement }: { announcement?: string }) {
         </div>
       )}
 
-      <div className="mx-auto flex h-16 max-w-content items-center justify-between px-5 sm:px-6">
-        <a href="#top" aria-label="DMDroid home">
-          <Logo />
-        </a>
+      <div
+        className={`border-b transition-colors duration-300 ${
+          scrolled
+            ? 'border-hairline-soft bg-white/85 backdrop-blur-[12px]'
+            : 'border-transparent bg-white'
+        }`}
+      >
+        <div className="mx-auto flex h-16 max-w-content items-center justify-between px-5 sm:px-6">
+          <a href="#top" aria-label="DMDroid home">
+            <Logo />
+          </a>
 
-        <nav className="hidden items-center gap-8 md:flex">
-          {NAV_LINKS.map((l) => (
+          <nav className="hidden items-center gap-8 md:flex">
+            {NAV_LINKS.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className="text-[15px] font-medium text-ink-soft transition-colors hover:text-ink"
+              >
+                {l.label}
+              </a>
+            ))}
+          </nav>
+
+          <div className="hidden items-center gap-3 md:flex">
             <a
-              key={l.href}
-              href={l.href}
-              className="text-sm text-white/70 transition-colors hover:text-white"
+              href={AUTH_URL}
+              className="flex h-9 items-center rounded-[10px] px-3 text-[15px] font-medium text-ink-soft transition-colors hover:text-ink"
             >
-              {l.label}
+              Log in
             </a>
-          ))}
-        </nav>
+            <GradientButton href={AUTH_URL} className="h-11 px-5 text-[15px]">
+              {TRIAL_CTA}
+            </GradientButton>
+          </div>
 
-        <div className="hidden items-center gap-2 md:flex">
-          <a
-            href={AUTH_URL}
-            className="flex h-9 items-center rounded-[6px] px-3.5 text-sm font-medium text-white/70 transition-colors hover:text-white"
+          <button
+            onClick={() => setMenuOpen((v) => !v)}
+            className="rounded-md p-2 text-ink-soft hover:text-ink md:hidden"
+            aria-label="Toggle menu"
+            aria-expanded={menuOpen}
           >
-            Log in
-          </a>
-          <a
-            href={AUTH_URL}
-            className="flex h-9 items-center rounded-[6px] bg-brand px-4 text-sm font-semibold text-white transition-colors hover:bg-brand-bright"
-          >
-            {TRIAL_CTA}
-          </a>
+            {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
-
-        <button
-          onClick={() => setMenuOpen((v) => !v)}
-          className="rounded-md p-2 text-white/70 hover:text-white md:hidden"
-          aria-label="Toggle menu"
-          aria-expanded={menuOpen}
-        >
-          {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
       </div>
 
       {menuOpen && (
-        <div className="border-t border-white/10 bg-ink/95 px-5 py-4 backdrop-blur-xl sm:px-6 md:hidden">
+        <div className="border-b border-hairline-soft bg-white px-5 py-4 sm:px-6 md:hidden">
           <div className="flex flex-col gap-1">
             {NAV_LINKS.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setMenuOpen(false)}
-                className="rounded-[6px] px-3 py-2 text-sm text-white/70 hover:bg-white/5 hover:text-white"
+                className="rounded-[10px] px-3 py-2.5 text-[15px] font-medium text-ink-soft hover:bg-surface-alt hover:text-ink"
               >
                 {l.label}
               </a>
@@ -108,16 +104,13 @@ export function SiteNav({ announcement }: { announcement?: string }) {
             <div className="mt-2 flex flex-col gap-2">
               <a
                 href={AUTH_URL}
-                className="flex h-10 items-center justify-center rounded-[6px] border border-white/15 text-sm font-medium text-white"
+                className="flex h-11 items-center justify-center rounded-[12px] border border-hairline text-[15px] font-semibold text-ink"
               >
                 Log in
               </a>
-              <a
-                href={AUTH_URL}
-                className="flex h-10 items-center justify-center rounded-[6px] bg-brand text-sm font-semibold text-white"
-              >
+              <GradientButton href={AUTH_URL} className="w-full">
                 {TRIAL_CTA}
-              </a>
+              </GradientButton>
             </div>
           </div>
         </div>

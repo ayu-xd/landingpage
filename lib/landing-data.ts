@@ -1,50 +1,46 @@
 import {
   BarChart3,
   GitBranch,
+  MessageSquare,
   Monitor,
   Repeat,
   ShieldCheck,
-  Zap,
+  Sparkles,
   type LucideIcon,
 } from 'lucide-react'
 
 export const AUTH_URL = 'https://app.dmdroid.app/auth'
-export const CONTACT_EMAIL = 'hello@dmdroid.app'
-export const TRIAL_CTA = 'Start free trial'
+export const CONTACT_EMAIL = 'support@dmdroid.app'
+export const TRIAL_CTA = 'Start my free trial'
 
+/**
+ * Waalaxy runs a dismissible announcement above the nav. Ours points at the
+ * variant testing that actually ships in the product.
+ */
 export const ANNOUNCEMENT =
-  'Now with AI reply detection — flag hot leads the moment they respond'
+  'Now with A/B variant testing — rotate up to 5 messages per step and let the best one win'
 
 export const NAV_LINKS = [
   { href: '#features', label: 'Features' },
   { href: '#how', label: 'How it works' },
   { href: '#pricing', label: 'Pricing' },
+  { href: '#faq', label: 'FAQ' },
 ]
 
 export const HERO = {
-  headline: 'Make Instagram your #1 client acquisition channel.',
+  badge: 'Runs your Instagram outreach while you sleep',
+  headline: 'Make Instagram your #1 client acquisition channel',
   subhead:
-    'Reach 500+ prospects every month on Instagram. Auto-follow up until they reply. No VA needed. No manual sending. No accounts getting flagged.',
-  // Honest risk reversal: the card requirement is real, framed as a safety net.
-  trial: ['3-day free trial', 'Cancel before day 3 → $0 charged'],
-  pills: [
-    'Works with existing Instagram accounts',
-    // Brief said "Chrome extension, nothing to install" — but the FAQ (and the
-    // product) run in the cloud, so that line contradicts itself. Fixed here.
-    'Runs in the cloud, nothing to install',
-  ],
-  whisper: 'the droid’s already warming up your accounts',
+    'Reach 500+ potential buyers every month on Instagram. Auto-follow up until they reply. No VA needed. No manual sending. No accounts getting flagged.',
+  cta: TRIAL_CTA,
+  ctaSecondary: 'See how it works',
+  trial: '3-day free trial',
+  handNote: "The magic's happening here",
+  whisper: 'the droid runs on our cloud — close your laptop',
 }
 
-export const STATS = [
-  { value: '30', label: 'Instagram accounts, one dashboard' },
-  { value: 'Unlimited', label: 'No daily cap on personalized sends' },
-  { value: '24/7', label: 'Runs overnight, weekends, while you close' },
-  { value: '5 min', label: 'First campaign live in under 5 minutes' },
-]
-
 export const SOCIAL_PROOF = {
-  line: 'Trusted by SMMA owners, coaches, and agencies running Instagram outreach across 15+ niches.',
+  line: 'Trusted by SMMA owners, coaches, and agencies running Instagram outreach',
   niches: [
     'Fitness Coaching',
     'SMMA',
@@ -53,65 +49,68 @@ export const SOCIAL_PROOF = {
     'Info Products',
     'SaaS',
     'Recruiting',
+    'Local Services',
   ],
-  whisper: 'your niche is probably in here',
+  handNote: 'your niche is probably in here',
 }
 
 export type Step = {
   title: string
   body: string
   bullets: string[]
-  /** Poses only appear on the two "the droid does the work" steps. */
-  avatar?: { pose: 'stepRelax' | 'stepCelebrate'; caption: string }
 }
 
+/** Waalaxy's 4-step walkthrough, rebuilt on DMDroid's real capabilities. */
 export const STEPS: Step[] = [
   {
-    title: 'Find your people',
-    body: 'Pull your target list from anywhere — a scraped niche, a follower export, a custom CSV. Paste it in, the droid parses it.',
+    title: 'Import your targets',
+    body: 'Build qualified prospect lists from any source — no platform lock-in, no stale database.',
     bullets: [
-      'Import via CSV, paste a list, or connect a scraping tool',
+      'Paste a raw list of usernames or upload CSV / Excel',
       'Custom fields auto-detected ({{FirstName}}, {{Niche}}, anything you add)',
       'De-duplication runs automatically',
     ],
   },
   {
-    title: 'Write once, send forever',
-    body: 'Build your opener and follow-ups with A/B variants. Use {{FirstName}}, {{Niche}}, or any field from your list. You write it once, the droid personalizes every send.',
+    title: 'Launch outreach that feels personal',
+    body: 'Send openers and follow-ups with A/B variants that spark real conversations.',
     bullets: [
-      'Up to 5 message variants per step (rotated automatically)',
+      'Up to 5 message variants per step, rotated automatically',
       'Smart delays between steps — looks human, isn’t',
-      'Preview exactly what each recipient will see before you launch',
+      'Preview exactly what each recipient sees before you launch',
     ],
   },
   {
-    title: 'Launch and walk away',
-    body: 'Hit launch. The droid handles rate limits, warmup, and timing. Your job is done until the replies come in.',
+    title: 'See what gets replies, then scale it',
+    body: 'Know exactly what works so you can double down.',
     bullets: [
-      'Safe sending algorithms built in — no guesswork on limits',
-      'Runs 24/7, pauses on weekends if you want',
-      'Multi-account support: up to 30 accounts, one dashboard',
+      'Reply rate per campaign, per variant, per account',
+      'Runs 24/7 on our cloud — close your laptop',
+      'Sending windows, weekend pauses, your timezone',
     ],
-    avatar: {
-      pose: 'stepRelax',
-      caption: 'this is the part where you go touch grass',
-    },
   },
   {
-    title: 'Replies become booked calls',
-    body: 'When someone replies, the sequence stops, they’re flagged as a hot lead, and they land in your visual pipeline. You close. The droid finds the next one.',
+    title: 'Watch replies become booked calls',
+    body: 'Every lead moves through a visual pipeline until they book.',
     bullets: [
-      'AI reply detection classifies intent (interested / not interested / objection)',
-      'Visual Kanban: followed → DM’d → replied → booked',
-      'Connect to Calendly or any booking link for one-tap close',
+      'The sequence stops the instant someone replies',
+      'Visual pipeline: DM’d → Initiated → Engaged → Calendly → Booked',
+      'Drop your booking link at the perfect moment',
     ],
-    avatar: { pose: 'stepCelebrate', caption: 'hot leads, right here' },
   },
 ]
 
+export const HOW_WHISPERS = {
+  header: 'Follow the arrows!',
+  step3: 'this is the part where you go touch grass',
+  step4: 'hot leads, right here',
+}
+
 export const CONTRAST = {
-  heading: 'Outreach shouldn’t feel like a second job.',
-  tagline: 'From "ugh, I have to DM again" to "my droid already did it."',
+  heading: 'Outreach shouldn’t feel like a second job',
+  tagline: 'From “ugh” to “done” in 10 minutes.',
+  oldLabel: 'The Old Way',
+  newLabel: 'The DMDroid Way',
   rows: [
     {
       old: 'Manually DMing 20–30 people a day until your thumbs give out',
@@ -119,14 +118,14 @@ export const CONTRAST = {
     },
     {
       old: 'Forgetting to follow up, losing warm leads forever',
-      now: 'Follow-up sequences run on their own — until they reply',
+      now: 'Auto-follow ups that turn silence into replies',
     },
     {
       old: 'Managing multiple accounts across different phones and logins',
-      now: 'Up to 30 accounts in one dashboard, isolated and safe',
+      now: 'Up to 30 accounts in one dashboard, each fully isolated',
     },
     {
-      old: 'Hiring a VA to do repetitive outreach for $15/hour',
+      old: 'Hiring a VA to send DMs for $15/hour',
       now: 'The droid costs less and doesn’t need sick days',
     },
     {
@@ -135,12 +134,64 @@ export const CONTRAST = {
     },
     {
       old: 'Accounts getting flagged because you went too fast',
-      now: 'Built-in warmup, rate caps, and health monitoring keep you safe',
+      now: 'Daily rate caps and health monitoring keep you safe',
     },
   ],
-  cta: 'Switch to the DMDroid way',
-  whisper: 'yeah, that’s actually us on the right',
+  cta: 'Try the simple way',
+  handNote: 'yeah, that’s actually us on the right',
 }
+
+export const SUPPORT_STRIP = {
+  heading: 'Stay guided at every step',
+  body: 'From first import to first booked call, never wonder what to do next.',
+  items: [
+    'Real human support, in-house',
+    'Guided onboarding from your first login',
+    'Step-by-step help built into every page',
+  ],
+  handNote: 'we actually answer',
+}
+
+export const STACK = {
+  heading: 'Works with the tools you already use',
+  body: 'Import target lists from any scraper that exports CSV or Excel. Export every contact, message, and stat to CSV whenever you want. Your data stays yours.',
+  handNote: 'if it exports a spreadsheet, it works with the droid',
+}
+
+export const AUDIENCES = [
+  {
+    emoji: '🚀',
+    title: 'For SMMA Owners',
+    body: 'Outreach that doesn’t steal your day and still gets replies.',
+    bullets: [
+      'Run every client account from one dashboard',
+      'Per-account analytics for client reporting',
+      'Isolated sessions keep client accounts safe',
+    ],
+  },
+  {
+    emoji: '🎯',
+    title: 'For Coaches & Consultants',
+    body: 'Keep your pipeline full while you deliver.',
+    bullets: [
+      'Follow-ups run until they reply or opt out',
+      'Visual pipeline shows who’s close to booking',
+      'Drop your Calendly link at the perfect moment',
+    ],
+  },
+  {
+    emoji: '🛰️',
+    title: 'For DFY Agencies',
+    body: 'Managing accounts for 5+ clients at once? DMDroid is your infrastructure.',
+    bullets: [
+      'Up to 30 connected accounts',
+      'Health monitoring per account',
+      'Done-For-You plan with managed RDP + proxies',
+    ],
+  },
+]
+
+export const AUDIENCE_HAND = 'Is this you?'
 
 export const FEATURES: {
   icon: LucideIcon
@@ -148,80 +199,78 @@ export const FEATURES: {
   body: string
 }[] = [
   {
-    icon: Zap,
-    title: 'The droid slides for you',
-    body: 'Queue thousands of personalized openers. They go out on schedule, at human-like pace, while you do literally anything else.',
+    icon: Sparkles,
+    title: 'Instagram auto-prospecting',
+    body: 'Build and launch automated DM campaigns from your imported target lists. No manual sending, ever.',
   },
   {
     icon: Repeat,
-    title: 'Knows who’s interested before you do',
-    body: 'DMDroid reads incoming replies, stops the sequence the instant someone bites, and flags them as a hot lead. No lead slips through.',
+    title: 'Multi-step sequences',
+    body: 'Opener → follow-up 1 → follow-up 2. Timed delays between every step. Stops the moment someone replies.',
   },
   {
-    icon: GitBranch,
-    title: 'Watch your pipeline fill up live',
-    body: 'Every contact moves from followed → DM’d → replied → booked on a live Kanban board. Your revenue, visualized in real time.',
+    icon: MessageSquare,
+    title: 'A/B variant testing',
+    body: 'Up to 5 message variants per step, rotated automatically. Reply rate tracked per variant so the winner emerges.',
   },
   {
     icon: Monitor,
-    title: 'Run your whole agency from one tab',
-    body: 'Connect up to 30 accounts through isolated browser sessions. One dashboard. Every account healthy and monitored.',
+    title: 'Up to 30 accounts, isolated',
+    body: 'Every account runs in its own isolated browser session. One dashboard. Every account monitored.',
   },
   {
     icon: BarChart3,
-    title: 'Know exactly what’s booking calls',
+    title: 'Variant analytics',
     body: 'Reply rate per variant, per campaign, per account. Double down on what works. Kill what doesn’t.',
   },
   {
     icon: ShieldCheck,
-    title: 'The droid plays it safe so you don’t have to',
-    body: 'Warmup schedules, daily caps, heartbeat monitoring. Built to stay under Instagram’s radar for the long haul.',
+    title: 'Safety guardrails',
+    body: 'Daily rate caps, sending windows, and heartbeat monitoring. Built to stay under Instagram’s radar for the long haul.',
   },
 ]
 
-export const AUDIENCES = [
+export const FEATURE_HEADINGS = {
+  title: 'Made for Instagram DM outreach',
+  tagline: 'Everything the droid handles for you — so you can focus on closing.',
+}
+
+export const PIPELINE_FEATURE = {
+  emoji: '📊',
+  title: 'Visual pipeline',
+  body: 'Every contact moves from DM’d to Booked on a live board. Your revenue, visualized in real time.',
+}
+
+export const SHOWCASE = [
   {
-    title: 'SMMA Owners',
-    body: 'Running outreach for clients and sick of the manual grind? The droid scales your delivery without scaling your headcount. Run multiple client accounts from a single dashboard.',
+    title: 'Follow-ups that run on their own',
+    body: 'Most replies come after the first message. Build a full sequence with timed delays between every step, and DMDroid keeps nudging each lead until they answer. The moment someone replies, their sequence stops automatically.',
     bullets: [
-      'Multi-account management built in',
-      'Per-account analytics for client reporting',
-      'White-label ready (Enterprise plan)',
+      'Up to 10 follow-up steps per campaign',
+      'Custom delays between each message',
+      'Auto-stops the instant a lead replies',
     ],
   },
   {
-    title: 'Coaches & Consultants',
-    body: 'Your pipeline is your business. The droid keeps it full while you deliver. Stop spending 2 hours a day in DMs — that time is worth more than the tool costs.',
+    title: 'Test every message, keep the winner',
+    body: 'Write up to five variants for each step so your messages stay fresh and human. DMDroid rotates them across sends, tracks which lines earn the most replies, and shows you the numbers.',
     bullets: [
-      'AI reply detection flags interested leads instantly',
-      'Follow-up sequences run until they reply or opt out',
-      'Connects directly to your Calendly / booking link',
-    ],
-  },
-  {
-    title: 'Agencies Running DFY Outreach',
-    body: 'Managing accounts for 5+ clients at once? DMDroid is your infrastructure. Isolated browser sessions per account, health monitoring, daily reports, and a pipeline view for every client.',
-    bullets: [
-      'Up to 30 accounts connected',
-      'Warmup + safety built in per account',
-      'Enterprise plan for unlimited accounts',
+      'Up to 5 variants per step, rotated automatically',
+      'Personalize with {{FirstName}} and more',
+      'Reply rate tracked per variant',
     ],
   },
 ]
-
-export const AUDIENCE_WHISPER =
-  'if this is you, we built this for you specifically'
 
 /**
  * ⚠️ PLACEHOLDER TESTIMONIALS — NOT REAL CUSTOMERS.
  *
- * These come from the redesign brief as a structure to fill in. Publishing
- * invented endorsements is an FTC problem, so before this page goes live:
- * replace both entries with real, attributable quotes, or empty this array
- * (the section hides itself when it's empty).
+ * Publishing invented endorsements is an FTC problem, so before this page
+ * goes live: replace entries with real, attributable quotes, or empty the
+ * array (the section hides itself when it's empty).
  *
- * Star ratings and review badges are deliberately absent — the brief says
- * never fabricate them, and there's nothing verified to show yet.
+ * Star ratings and review badges are deliberately absent — never fabricate
+ * them, and there's nothing verified to show yet.
  */
 export const TESTIMONIALS: { quote: string; name: string; role: string }[] = [
   {
@@ -238,6 +287,13 @@ export const TESTIMONIALS: { quote: string; name: string; role: string }[] = [
   },
 ]
 
+export const TESTIMONIALS_META = {
+  heading: 'This is why users love us',
+  tagline:
+    'Most of our users had never run Instagram DM campaigns at scale before. Now they wake up to replies.',
+  handNote: 'Yup, those are real',
+}
+
 export const PLANS = [
   {
     name: 'Solo Operator',
@@ -249,9 +305,8 @@ export const PLANS = [
       'Unlimited personalized DMs',
       'Full sequence builder (up to 10 steps)',
       'A/B variant testing',
-      'AI reply detection',
       'Visual pipeline + analytics',
-      '24/7 support',
+      'Email support',
     ],
     cta: TRIAL_CTA,
     featured: false,
@@ -289,50 +344,87 @@ export const PLANS = [
 ]
 
 export const PRICING = {
-  heading: 'Plans that match where you are.',
-  tagline:
-    'Every plan starts with a 3-day free trial. Try the droid before you commit.',
+  heading: 'Plans that match where you are',
+  tagline: 'Every plan starts with a 3-day free trial. Try the droid before you commit.',
   riskReversal:
     'Not happy after 3 days? Cancel before the trial ends and you won’t be charged a cent. No hoops, no questions.',
-  whisper: 'the droid is confident you’ll stay',
+  handNote: 'the droid is confident you’ll stay',
+  badge: 'Most popular',
 }
 
 export const FAQS = [
   {
+    q: 'What is DMDroid?',
+    a: 'DMDroid is an Instagram DM outreach tool. You import target lists, build multi-step message sequences with A/B variants, and the droid sends personalized DMs from your connected Instagram accounts automatically — on our cloud, with rate caps and health monitoring built in.',
+  },
+  {
+    q: 'How does DMDroid work?',
+    a: 'Import your targets (paste a list, CSV, or Excel), build your opener and follow-ups with up to 5 variants per step, hit launch. The droid handles sending windows, delays, and rate caps. When someone replies, their sequence stops and they land in your visual pipeline: DM’d → Initiated → Engaged → Calendly → Booked.',
+  },
+  {
     q: 'Will my Instagram account get banned?',
-    a: 'The droid is built paranoid. Every account runs in its own isolated browser session. Warmup schedules ease it in. Rate caps keep it under Instagram’s radar. Heartbeat monitoring catches anomalies before they become problems. We take account health seriously because your accounts are your business.',
+    a: 'The droid is built paranoid. Every account runs in its own isolated browser session. Daily rate caps keep you under Instagram’s radar. Heartbeat monitoring flags anomalies before they become problems. We take account health seriously — your accounts are your business.',
   },
   {
     q: 'Do I need to keep my computer on?',
-    a: 'Nope. DMDroid runs on our cloud. Set your campaign, close your laptop, and the droid keeps working. Check back in the morning.',
+    a: 'Nope. DMDroid runs on our cloud — managed RDP and proxy infrastructure. Set your campaign, close your laptop, and the droid keeps working. Check back in the morning.',
   },
   {
-    q: 'How many messages can I send per day?',
-    a: 'It depends on your account’s warmup stage. New accounts start slow and ramp up over time. Established accounts can send significantly more. The droid manages this automatically — you don’t configure limits manually unless you want to.',
+    q: 'Do I need my own Instagram accounts?',
+    a: 'Yes. DMDroid works with your existing Instagram accounts — we don’t provide them. You bring the accounts, the droid does the rest.',
   },
   {
-    q: 'Do I need my own Instagram account?',
-    a: 'Yes. DMDroid works with your existing Instagram accounts. We don’t provide accounts. You bring the accounts, the droid does the rest.',
+    q: 'Can I run multiple accounts?',
+    a: 'Up to 30 on the Agency plan. Each account runs in complete isolation — separate browser sessions, separate fingerprints, no cross-contamination. Add or remove accounts anytime from the dashboard.',
   },
   {
     q: 'Is there really a free trial? Do I need a card?',
     a: 'Yes, 3 days free. Yes, a card is required — but it won’t be charged if you cancel before day 3. We ask for it upfront to keep trial abuse low and support quality high. Fair trade.',
   },
   {
-    q: 'Can I run multiple accounts?',
-    a: 'Up to 30 on the Agency plan. Each account runs in complete isolation — separate browser sessions, separate proxies, no cross-contamination. Add or remove accounts anytime from the dashboard.',
+    q: 'How much does DMDroid cost?',
+    a: 'Solo Operator is $69/mo for one account. Agency starts at $106/mo for 2–30 accounts with volume discounts. Done-For-You is custom — we run everything for you, including RDP and proxy infrastructure.',
   },
 ]
 
 export const FINAL_CTA = {
-  heading: 'Start booking calls today.',
-  tagline: 'And wake up to replies tomorrow.',
-  cta: 'Start your free trial',
-  whisper: 'the droid is ready when you are.',
+  heading: 'Start booking calls today',
+  tagline: 'And get your first replies tomorrow.',
+  cta: TRIAL_CTA,
+  trial: '3 days free trial',
+  handNote: 'Seriously, try it yourself',
+  contact: 'Have questions?',
 }
 
 export const FOOTER = {
+  heading: 'Get started',
   tagline:
     'Instagram DM automation for agencies and coaches who are done doing it by hand.',
   footnote: 'Built by a founder who was tired of DMing manually.',
+  columns: [
+    {
+      heading: 'Product',
+      links: [
+        { label: 'Features', href: '#features' },
+        { label: 'How it works', href: '#how' },
+        { label: 'Pricing', href: '#pricing' },
+        { label: 'FAQ', href: '#faq' },
+      ],
+    },
+    {
+      heading: 'Get started',
+      links: [
+        { label: 'Start a free trial', href: AUTH_URL },
+        { label: 'Log in', href: AUTH_URL },
+        { label: 'Support', href: '/support' },
+      ],
+    },
+    {
+      heading: 'Legal',
+      links: [
+        { label: 'Privacy Policy', href: '/privacy-policy' },
+        { label: 'Terms of Service', href: '/terms' },
+      ],
+    },
+  ],
 }

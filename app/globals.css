@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -47,27 +47,30 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-/* ☀️ Landing palette — taken straight off the avatar.
-   Blue body, red headband, slate ink. The marketing page runs on these
-   literal tokens (not the semantic dark ones) so the app-styled routes
-   below keep their Moonlight theme untouched. */
+/* ── Waalaxy design tokens, pulled from their production CSS ────────────────
+   The whole page is light: white canvas, #f7f9fc band, ink #14142b headings,
+   #4e4b66 body, hairlines #d6d8e7, cards #fcfcfc. Buttons use the brand
+   gradient #315ae7 → #20a1ff with the soft blue shadow. Handwritten notes
+   run in Gochi Hand, rotated like Waalaxy's annotations. */
 @theme {
-  --color-brand: #2563eb; /* avatar body blue */
-  --color-brand-bright: #3b82f6; /* hover / accent */
-  --color-brand-deep: #1e3a8a; /* dark section background */
-  --color-headband: #dc2626; /* ONE pop per page. It's a headband. */
-  --color-surface: #ffffff;
-  --color-surface-alt: #f8fafc; /* alternating section background */
-  --color-ink: #0f172a; /* headlines + dark section background */
-  --color-ink-body: #1e293b; /* body text on white */
-  --color-ink-soft: #475569; /* secondary text on white (AA contrast) */
-  --color-whisper: #64748b; /* italic captions on light (AA contrast) */
-  --color-whisper-dark: #94a3b8; /* italic captions on dark */
-  --color-hairline: #e2e8f0; /* borders on light */
-  --container-content: 68.75rem; /* 1100px max content width */
+  --color-brand: #315ae7; /* gradient start — links, active states */
+  --color-brand-bright: #20a1ff; /* gradient end — highlights */
+  --color-brand-deep: #315ae7;
+  --color-headband: #dc2626; /* unused on the light page — kept for parity */
+  --color-surface: #fcfcfc; /* Waalaxy's card background */
+  --color-surface-alt: #f7f9fc; /* alternating section background */
+  --color-ink: #14142b; /* Waalaxy's headline ink */
+  --color-ink-body: #14132a;
+  --color-ink-soft: #4e4b66; /* Waalaxy's body grey */
+  --color-whisper: #6e7191; /* secondary text, captions */
+  --color-whisper-dark: #94a3b8;
+  --color-hairline: #d6d8e7; /* card borders */
+  --color-hairline-soft: #eff0f6; /* dividers, subtle borders */
+  --container-content: 72rem; /* Waalaxy runs a wide content well */
+  --font-hand: var(--font-gochi-hand), 'Bradley Hand', cursive; /* annotations */
 }
 
-/* 🌑 Moonlight theme — deep dark blue-gray base with electric blue accent */
+/* 🌑 Moonlight theme — kept for app-styled routes (support etc.) */
 :root,
 .dark,
 :root:not(.light) {
@@ -116,46 +119,77 @@
 }
 
 @layer utilities {
-  .bg-grid {
-    background-image:
-      linear-gradient(to right, oklch(1 0 0 / 4%) 1px, transparent 1px),
-      linear-gradient(to bottom, oklch(1 0 0 / 4%) 1px, transparent 1px);
-    background-size: 56px 56px;
-  }
-  .text-gradient {
-    background-image: linear-gradient(
-      100deg,
-      hsl(217 91% 66%),
-      hsl(199 89% 62%)
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  .glow-primary {
-    box-shadow: 0 0 0 1px hsl(217 91% 60% / 25%),
-      0 24px 70px -24px hsl(217 91% 60% / 45%);
-  }
-
-  /* The landing page is light in the middle but dark at both ends — the hero
-     at the top, the footer at the bottom — so the overscroll canvas is ink. */
+  /* The page is light end to end now, so the overscroll canvas is white. */
   html:has(.lp-root) {
-    background-color: var(--color-ink);
+    background-color: #ffffff;
   }
 
-  /* The one entrance animation on the page: hero elements rise on load.
-     Stagger with inline animation-delay, 80ms apart. */
-  .lp-rise {
-    animation: lp-rise 620ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  /* Waalaxy's primary CTA: brand gradient, 16px corners, soft blue shadow. */
+  .lp-btn-primary {
+    background: linear-gradient(74deg, #315ae7 -9%, #20a1ff 100%);
+    color: #fff;
+    box-shadow: 0 8px 20px 0 rgba(37, 79, 229, 0.15);
+    transition:
+      transform 160ms ease,
+      box-shadow 160ms ease,
+      filter 160ms ease;
   }
-  @keyframes lp-rise {
+  .lp-btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 26px 0 rgba(37, 79, 229, 0.22);
+    filter: brightness(1.04);
+  }
+  .lp-btn-primary:active {
+    transform: translateY(0);
+  }
+
+  /* Handwritten annotation — Gochi Hand, ink color, slight rotation. */
+  .lp-hand {
+    font-family: var(--font-hand);
+    color: #14142b;
+    line-height: 1.25;
+    letter-spacing: 0;
+    text-wrap: balance;
+  }
+
+  /* Card hover — Waalaxy's subtle lift. */
+  .lp-card {
+    transition:
+      transform 180ms ease,
+      box-shadow 180ms ease,
+      border-color 180ms ease;
+  }
+  .lp-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 34px -22px rgba(20, 20, 43, 0.25);
+  }
+
+  /* Review marquee: two tracks sliding opposite ways, paused on hover. */
+  .lp-marquee {
+    display: flex;
+    width: max-content;
+    animation: lp-marquee-left var(--lp-marquee-duration, 60s) linear infinite;
+  }
+  .lp-marquee-reverse {
+    animation-name: lp-marquee-right;
+  }
+  .lp-marquee-mask:hover .lp-marquee {
+    animation-play-state: paused;
+  }
+  @keyframes lp-marquee-left {
     from {
-      opacity: 0;
-      transform: translateY(14px);
+      transform: translateX(0);
     }
     to {
-      opacity: 1;
-      transform: none;
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes lp-marquee-right {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0);
     }
   }
 
@@ -173,25 +207,17 @@
     }
   }
 
-  /* Card hover — a 2px lift, nothing more. No scroll-triggered anything. */
-  .lp-card {
-    transition:
-      transform 180ms ease,
-      box-shadow 180ms ease,
-      border-color 180ms ease;
-  }
-  .lp-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 34px -22px oklch(0.28 0.05 258 / 45%);
-  }
-
   @media (prefers-reduced-motion: reduce) {
     .lp-rise,
-    .lp-pulse-twice {
+    .lp-pulse-twice,
+    .lp-marquee {
       animation: none;
     }
     .lp-card:hover {
       transform: none;
+    }
+    .lp-marquee-mask {
+      overflow-x: auto;
     }
   }
 }

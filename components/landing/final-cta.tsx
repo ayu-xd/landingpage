@@ -1,52 +1,57 @@
 import { ArrowRight } from 'lucide-react'
 import { AUTH_URL, CONTACT_EMAIL, FINAL_CTA } from '@/lib/landing-data'
-import { Avatar } from './avatar'
-import { Whisper } from './primitives'
+import { GradientButton, HandArrow, HandNote } from './primitives'
 
+/**
+ * Waalaxy's end CTA: gradient band, centered "Start reaching prospects
+ * today / And get your first replies tomorrow", one big CTA, trial line,
+ * and the handwritten "Seriously, try it yourself" above.
+ */
 export function FinalCta() {
   return (
-    <section className="bg-brand-deep text-white">
-      <div className="mx-auto max-w-content px-5 py-15 sm:px-6 md:py-25">
-        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_auto]">
-          <div className="text-center lg:text-left">
-            <h2 className="text-balance text-[1.875rem] font-extrabold leading-[1.08] tracking-[-0.03em] sm:text-[2.75rem]">
-              {FINAL_CTA.heading}
-              <span className="block text-white/70">{FINAL_CTA.tagline}</span>
-            </h2>
+    <section className="relative overflow-hidden bg-brand text-white">
+      {/* Subtle radial glow, Waalaxy's hero-button vibe scaled up. */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            'radial-gradient(60% 120% at 50% 100%, rgba(32,161,255,0.45) 0%, transparent 70%)',
+        }}
+      />
 
-            <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row lg:justify-start">
+      <div className="relative mx-auto max-w-content px-5 py-20 sm:px-6 md:py-28">
+        <div className="flex flex-col items-center gap-2">
+          <HandNote className="rotate-[-4deg] !text-white">
+            {FINAL_CTA.handNote}
+          </HandNote>
+          <HandArrow className="rotate-180 text-white" />
+        </div>
+
+        <div className="mt-6 text-center">
+          <h2 className="text-balance text-[2rem] font-bold leading-[1.12] tracking-[-0.02em] sm:text-[2.75rem]">
+            {FINAL_CTA.heading}
+            <span className="block text-white/80">{FINAL_CTA.tagline}</span>
+          </h2>
+
+          <div className="mt-9 flex flex-col items-center gap-3">
+            <a
+              href={AUTH_URL}
+              className="inline-flex h-14 items-center justify-center gap-2 rounded-[16px] bg-white px-8 text-lg font-bold text-brand shadow-[0_18px_40px_-12px_rgba(9,20,60,0.45)] transition-all hover:-translate-y-0.5 hover:shadow-[0_22px_48px_-12px_rgba(9,20,60,0.55)]"
+            >
+              {FINAL_CTA.cta}
+              <ArrowRight className="h-4 w-4" aria-hidden />
+            </a>
+            <p className="text-[13px] text-white/80">{FINAL_CTA.trial}</p>
+            <p className="mt-1 text-sm text-white/85">
+              {FINAL_CTA.contact}{' '}
               <a
-                href={AUTH_URL}
-                className="group flex h-12 w-full items-center justify-center gap-2 rounded-[6px] bg-white px-6 text-sm font-bold text-brand-deep transition-colors hover:bg-white/90 sm:w-auto"
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="font-semibold text-white underline decoration-white/50 underline-offset-4 transition-colors hover:decoration-white"
               >
-                {FINAL_CTA.cta}
-                <ArrowRight
-                  className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
-                  aria-hidden
-                />
+                {CONTACT_EMAIL}
               </a>
-              <p className="text-sm text-white/70">
-                Have questions?{' '}
-                <a
-                  href={`mailto:${CONTACT_EMAIL}`}
-                  className="font-semibold text-white underline decoration-white/40 underline-offset-4 transition-colors hover:decoration-white"
-                >
-                  {CONTACT_EMAIL}
-                </a>
-              </p>
-            </div>
-          </div>
-
-          {/* Largest avatar on the page. */}
-          <div className="flex flex-col items-center gap-4 lg:shrink-0">
-            <Avatar
-              pose="finalCta"
-              size={420}
-              className="h-[240px] w-[240px] sm:h-[320px] sm:w-[320px] lg:h-[400px] lg:w-[400px]"
-            />
-            <Whisper tone="deep" className="text-center text-base">
-              {FINAL_CTA.whisper}
-            </Whisper>
+            </p>
           </div>
         </div>
       </div>

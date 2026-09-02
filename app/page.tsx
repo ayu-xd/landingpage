@@ -10,17 +10,25 @@ import { ProductShowcase } from '@/components/landing/product-showcase'
 import { SiteFooter } from '@/components/landing/site-footer'
 import { SiteNav } from '@/components/landing/site-nav'
 import { SocialProof } from '@/components/landing/social-proof'
+import { SupportStrip } from '@/components/landing/support-strip'
 import { Testimonials } from '@/components/landing/testimonials'
 import { WhoItsFor } from '@/components/landing/who-its-for'
 
+/**
+ * Waalaxy's exact section order, 1:1:
+ * hero → social proof → how it works (+ support strip) → contrast →
+ * features → product panels → who it's for → testimonials → pricing →
+ * FAQ → final CTA → footer.
+ */
 export default function Page() {
   return (
-    <div className="lp-root min-h-screen bg-surface text-ink-body antialiased">
-      <SiteNav announcement={ANNOUNCEMENT} />
+    <div className="lp-root min-h-screen bg-white text-ink-body antialiased">
+      <SiteNav />
       <main>
         <Hero />
         <SocialProof />
         <HowItWorks />
+        <SupportStrip />
         <Contrast />
         <Features />
         <ProductShowcase />
