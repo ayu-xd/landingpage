@@ -1,12 +1,11 @@
 import { ArrowRight } from 'lucide-react'
 import { AUTH_URL, CONTACT_EMAIL, FINAL_CTA } from '@/lib/landing-data'
-import { GradientButton, HandNote, SwooshArrow } from './primitives'
+import { HandNote, SwooshArrow } from './primitives'
 
 /**
- * Waalaxy's end CTA: gradient band, centered "Start booking calls today /
- * And get your first replies tomorrow", one big white CTA, trial line.
- * The handwritten "Seriously, try it yourself" hovers left of the button
- * with its swoosh arrow diving into it.
+ * Waalaxy's end CTA: gradient band, centered heading, one big white CTA,
+ * trial line. The handwritten "Seriously, try it yourself" hovers left of
+ * the button, its swoosh arrow diving right into the button.
  */
 export function FinalCta() {
   return (
@@ -38,21 +37,22 @@ export function FinalCta() {
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </a>
 
-              {/* "Seriously, try it yourself" hangs off to the left of the
-                  button, swoosh arrow diving right into it. */}
+              {/* "Seriously, try it yourself" hangs off to the LEFT of the
+                  button, tilted ~19deg like Waalaxy's, the pre-drawn
+                  down-right arrow diving into the button. */}
               <div
                 aria-hidden
-                className="pointer-events-none absolute -left-44 top-1/2 hidden -translate-y-1/2 items-center gap-1 md:flex"
+                className="pointer-events-none absolute -left-40 top-1/2 hidden -translate-y-1/2 items-center gap-2 md:flex"
               >
-                <HandNote rotate={false} className="rotate-[19deg] !text-2xl !text-white">
+                <HandNote
+                  rotate={false}
+                  className="rotate-[19deg] text-2xl !text-white"
+                >
                   Seriously, try
                   <br />
                   it yourself
                 </HandNote>
-                <SwooshArrow
-                  white
-                  className="h-32 w-11 rotate-[14deg] scale-x-[-1]"
-                />
+                <SwooshArrow dir="down-right" white className="h-24 w-24" />
               </div>
             </div>
 
@@ -72,3 +72,10 @@ export function FinalCta() {
     </section>
   )
 }
+
+/**
+ * Waalaxy's end CTA: gradient band, centered "Start booking calls today /
+ * And get your first replies tomorrow", one big white CTA, trial line.
+ * The handwritten "Seriously, try it yourself" hovers left of the button
+ * with its swoosh arrow diving into it.
+ */

@@ -25,16 +25,16 @@ export function SocialProof() {
           </ul>
         </div>
 
-        {/* Handwritten note floating right of the pill row, arrow curving
-            back into the niches. */}
+        {/* Handwritten note floating right of the pill row, tilted ~13deg,
+            the pre-drawn up-left arrow reaching into the niches. */}
         <div
           aria-hidden
-          className="pointer-events-none absolute -bottom-6 right-6 hidden items-start gap-1 md:flex lg:right-24"
+          className="pointer-events-none absolute -bottom-10 right-6 hidden items-start gap-2 md:flex lg:right-24"
         >
           <HandNote rotate={false} className="rotate-[-13deg]">
             {SOCIAL_PROOF.handNote}
           </HandNote>
-          <SwooshArrow className="h-24 w-8 rotate-[55deg] scale-x-[-1]" />
+          <SwooshArrow dir="up-left" className="h-20 w-20" />
         </div>
       </div>
     </section>

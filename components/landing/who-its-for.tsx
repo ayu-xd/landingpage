@@ -20,13 +20,15 @@ export function WhoItsFor() {
           tagline="If this sounds like you, you’re in the right place."
         />
 
-        {/* The annotation hangs off the heading and its big swoosh curve
-            reaches across the top of the full card row: all 3 personas. */}
+        {/* The annotation hangs off the heading, tilted the way Waalaxy's
+            does, its swoosh sweeping down across the whole card row: all 3
+            personas, not one card. */}
         <Annotation
           note={AUDIENCE_HAND}
-          className="-top-10 right-2 hidden md:flex lg:right-8"
-          rotate="rotate-[16deg]"
-          arrowClass="h-44 w-16 rotate-[24deg]"
+          className="-top-10 right-4 z-20 hidden md:flex lg:right-16"
+          rotate="rotate-[13deg]"
+          dir="down-left"
+          arrowClass="h-28 w-28"
         />
 
         <div className="mt-16 grid gap-5 lg:grid-cols-3">

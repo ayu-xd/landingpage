@@ -39,13 +39,14 @@ export function Contrast() {
         </div>
 
         {/* The DMDroid Way, the winner card, with the handwritten note
-            swooping into it from above. */}
+            floating above it, its swoosh diving into the card. */}
         <div className="relative rounded-[24px] border-2 border-brand bg-white p-6 pt-10 shadow-[0_24px_60px_-30px_rgba(49,90,231,0.35)] sm:p-8 sm:pt-12">
           <Annotation
             note={CONTRAST.handNote}
-            className="-top-6 left-6 hidden md:flex"
+            className="-top-7 left-4 z-20 hidden md:flex"
             rotate="-rotate-[6deg]"
-            arrowClass="h-28 w-10 rotate-[60deg]"
+            dir="down"
+            arrowClass="h-16 w-16"
           />
 
           <h3 className="text-lg font-bold text-brand">{CONTRAST.newLabel}</h3>

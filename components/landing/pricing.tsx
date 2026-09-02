@@ -84,15 +84,15 @@ export function Pricing() {
         </p>
 
         {/* Waalaxy's annotation pattern: the handwritten note hovers right
-            of the line, swoosh arrow curving down into it. */}
+            of the line, tilted ~19deg, arrow curving down into it. */}
         <div
           aria-hidden
-          className="pointer-events-none absolute -top-8 right-0 hidden items-start gap-1 sm:flex"
+          className="pointer-events-none absolute -top-10 right-0 hidden items-start gap-2 sm:flex"
         >
           <HandNote rotate={false} className="rotate-[19deg]">
             {PRICING.handNote}
           </HandNote>
-          <SwooshArrow className="h-24 w-8 rotate-[10deg]" />
+          <SwooshArrow dir="down-left" className="h-20 w-20" />
         </div>
       </div>
     </Section>

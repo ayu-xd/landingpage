@@ -3,8 +3,8 @@ import { HandNote, Section, SectionHeading, SwooshArrow } from './primitives'
 
 /**
  * Waalaxy's "This is why users love us": meta-claim headline, then the
- * handwritten "Yup, those are real" with its tall swoosh arrow hanging
- * beside the review row. Quote cards marquee below.
+ * handwritten "Yup, those are real" with its tall arrow hanging beside the
+ * review row. Quote cards marquee below.
  * Ours hides itself entirely until real testimonials exist.
  */
 export function Testimonials() {
@@ -13,26 +13,24 @@ export function Testimonials() {
 
   return (
     <Section tone="alt">
-      <div className="flex flex-col items-center">
+      <div className="relative">
         <SectionHeading
           title={TESTIMONIALS_META.heading}
           tagline={TESTIMONIALS_META.tagline}
         />
-      </div>
 
-      {/* The annotation + tall arrow sit to the right of the heading,
-          pointing down at the row of quotes, exactly like Waalaxy's. */}
-      <div
-        aria-hidden
-        className="pointer-events-none relative mx-auto mt-2 hidden max-w-6xl md:block"
-      >
-        <div className="absolute -top-2 right-8 flex -rotate-[13deg] items-start gap-1">
+        {/* The annotation + tall arrow sit right of the heading, the arrow
+            dropping straight down toward the row of quotes, Waalaxy style. */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -top-4 right-4 hidden -rotate-[13deg] items-start gap-2 md:flex lg:right-16"
+        >
           <HandNote rotate={false} className="text-2xl">
             Yup, those
             <br />
             are real
           </HandNote>
-          <SwooshArrow className="h-40 w-12" />
+          <SwooshArrow dir="down" className="h-36 w-14" />
         </div>
       </div>
 

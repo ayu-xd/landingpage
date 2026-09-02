@@ -48,7 +48,7 @@ export function Hero() {
         </div>
 
         {/* Product mockup. The handwritten annotation sits above-right and
-            its big swoosh arrow curves down INTO the mockup, exactly like
+            its swoosh arrow curves down INTO the mockup, exactly like
             Waalaxy's "The magic's happening here". */}
         <div className="relative mx-auto mt-14 max-w-4xl md:mt-20">
           <DashboardMockup />
@@ -61,9 +61,10 @@ export function Hero() {
                 happening here
               </>
             }
-            className="-top-16 right-0 hidden md:flex lg:-right-14"
-            rotate="rotate-[23deg]"
-            arrowClass="h-36 w-12 rotate-[10deg]"
+            className="-top-14 right-2 z-20 hidden md:flex lg:-right-6"
+            rotate="rotate-[10deg]"
+            dir="down-left"
+            arrowClass="h-20 w-20"
           />
         </div>
       </div>

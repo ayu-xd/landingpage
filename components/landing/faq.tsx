@@ -4,7 +4,6 @@ import { ArrowDown } from 'lucide-react'
 import { useState } from 'react'
 import { CONTACT_EMAIL, FAQS } from '@/lib/landing-data'
 import { HandNote, Section, SectionHeading, SwooshArrow } from './primitives'
-
 /**
  * Waalaxy's FAQ: centered heading, chatty subline, accordion with plain
  * questions and a chevron that rotates on open. "Chat with us" gets the
@@ -21,28 +20,29 @@ export function Faq() {
           <>
             You have questions, we have answers. If you don’t find what
             you’re looking for here, our support team will be glad to help!{' '}
-            <span className="relative inline-block">
-              <a
-                href={`mailto:${CONTACT_EMAIL}`}
-                className="font-semibold text-brand underline decoration-brand/40 underline-offset-4 transition-colors hover:decoration-brand"
-              >
-                Chat with us
-              </a>
-              {/* Waalaxy's annotation: "With real humans :)" + arrow hanging
-                  right off the Chat button. */}
-              <span
-                aria-hidden
-                className="pointer-events-none absolute -right-6 top-0 hidden translate-x-full items-center gap-1 lg:flex"
-              >
-                <HandNote rotate={false} className="rotate-[-13deg] whitespace-nowrap">
-                  With real humans :)
-                </HandNote>
-                <SwooshArrow className="h-16 w-6 rotate-[35deg]" />
-              </span>
-            </span>
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="font-semibold text-brand underline decoration-brand/40 underline-offset-4 transition-colors hover:decoration-brand"
+            >
+              Chat with us
+            </a>
           </>
         }
       />
+
+      {/* Waalaxy's annotation: "With real humans :)" + arrow hanging right
+          of the heading, tilted ~13deg, arrow curving down to the accordion. */}
+      <div
+        aria-hidden
+        className="pointer-events-none relative mx-auto mt-2 hidden max-w-3xl md:block"
+      >
+        <div className="absolute -top-4 right-0 flex -rotate-[13deg] items-start gap-2">
+          <HandNote rotate={false} className="whitespace-nowrap text-2xl">
+            With real humans :)
+          </HandNote>
+          <SwooshArrow dir="down-left" className="h-20 w-20" />
+        </div>
+      </div>
 
       <div className="mx-auto mt-12 max-w-3xl space-y-3">
         {FAQS.map((item, i) => {

@@ -64,8 +64,8 @@ export function SectionHeading({
 }
 
 /**
- * The handwritten annotation — Gochi Hand in ink, rotated a few degrees the
- * way Waalaxy's annotations sit. Optional arrow variant points at things.
+ * The handwritten annotation — Gochi Hand in ink, tilted a few degrees the
+ * way Waalaxy's annotations sit (theirs never exceed ~13deg).
  */
 export function HandNote({
   children,
@@ -79,7 +79,7 @@ export function HandNote({
   return (
     <p
       aria-hidden
-      className={`lp-hand text-xl sm:text-2xl ${rotate ? '-rotate-[3deg]' : ''} ${className}`}
+      className={`lp-hand text-xl text-ink sm:text-2xl ${rotate ? '-rotate-[3deg]' : ''} ${className}`}
     >
       {children}
     </p>
@@ -87,34 +87,107 @@ export function HandNote({
 }
 
 /**
- * Waalaxy's big curvy swoosh arrow — a tall hand-drawn SVG curve with an
- * arrowhead, mirroring their `arrow`/`arrowwhite` annotation images. The
- * default path sweeps from top-right to bottom-left; rotate to aim it.
- * `white` renders the light variant used on colored/dark backgrounds.
+ * Waalaxy ships each arrow as an image ALREADY pointing where it needs to
+ * point, then tilts the whole annotation a few degrees. We mirror that:
+ * pre-drawn swoosh paths per direction. Never rotate the arrow itself.
  */
+export type SwooshDir =
+  | 'down-left'
+  | 'down-right'
+  | 'down'
+  | 'up-left'
+  | 'left-down'
+
+const SWOOSH_PATHS: Record<
+  SwooshDir,
+  { box: string; shaft: string; head: string }
+> = {
+  // Curves from top-right down to a bottom-left tip.
+  'down-left': {
+    box: '0 0 100 100',
+    shaft: 'M92 8C50 18 20 48 12 90',
+    head: 'M12 90l2-16M12 90l16-2',
+  },
+  // Mirrored: top-left down to a bottom-right tip.
+  'down-right': {
+    box: '0 0 100 100',
+    shaft: 'M8 8C50 18 80 48 88 90',
+    head: 'M88 90l-2-16M88 90l-16-2',
+  },
+  // Near-vertical lazy S, tip at the bottom. Tall box matches the tall
+  // usages (Waalaxy's tall review-row arrow).
+  down: {
+    box: '0 0 100 260',
+    shaft: 'M58 8C34 80 70 160 48 250',
+    head: 'M48 250l-4-20M48 250l20-10',
+  },
+  // Mirrored vertically: tip at the top-left (for notes below their target).
+  'up-left': {
+    box: '0 0 100 100',
+    shaft: 'M92 92C50 82 20 52 12 10',
+    head: 'M12 10l-2 16M12 10l16 2',
+  },
+  // Wide horizontal sweep that dips down to a left tip ("Follow the arrows").
+  'left-down': {
+    box: '0 0 160 100',
+    shaft: 'M150 20C100 2 40 14 12 58',
+    head: 'M12 58l3-17M12 58l18 3',
+  },
+}
+
 export function SwooshArrow({
+  dir = 'down-left',
   className = '',
   white = false,
 }: {
+  dir?: SwooshDir
   className?: string
   white?: boolean
 }) {
+  const p = SWOOSH_PATHS[dir]
   return (
     <svg
       aria-hidden
-      viewBox="0 0 120 320"
+      viewBox={p.box}
       fill="none"
       preserveAspectRatio="xMidYMid meet"
-      className={`h-40 w-14 ${white ? 'text-white' : 'text-ink'} ${className}`}
+      className={`shrink-0 ${white ? 'text-white' : 'text-ink'} ${className}`}
     >
       <path
-        d="M96 16C30 90 14 190 26 302"
+        d={p.shaft}
         stroke="currentColor"
         strokeWidth="5"
         strokeLinecap="round"
       />
       <path
-        d="M26 302l14-24M26 302l27-8"
+        d={p.head}
+        stroke="currentColor"
+        strokeWidth="5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
+/** Small hand-drawn right-pointing arrow, for step-to-step flow. */
+export function FlowArrow({ className = '' }: { className?: string }) {
+  return (
+    <svg
+      aria-hidden
+      viewBox="0 0 120 60"
+      fill="none"
+      preserveAspectRatio="xMidYMid meet"
+      className={`shrink-0 text-ink ${className}`}
+    >
+      <path
+        d="M8 34C40 18 80 22 112 30"
+        stroke="currentColor"
+        strokeWidth="5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M112 30l-16-8M112 30l-15 11"
         stroke="currentColor"
         strokeWidth="5"
         strokeLinecap="round"
@@ -125,57 +198,33 @@ export function SwooshArrow({
 }
 
 /**
- * Waalaxy's annotation unit: handwritten text + swoosh arrow together in
- * one absolutely-positioned container, rotated the way theirs sit. The
- * arrow aims at whatever the container is placed beside.
+ * Waalaxy's annotation unit: handwritten text + pre-aimed swoosh arrow in
+ * one absolutely-positioned container, tilted a FEW degrees (never enough
+ * to twist the text). `dir` aims the arrow at the target.
  */
 export function Annotation({
   note,
   className = '',
-  rotate = '-rotate-[10deg]',
+  rotate = '-rotate-[8deg]',
   arrowClass = '',
   white = false,
+  dir = 'down-left',
 }: {
   note: React.ReactNode
   className?: string
   rotate?: string
   arrowClass?: string
   white?: boolean
+  dir?: SwooshDir
 }) {
   return (
     <div
       aria-hidden
-      className={`pointer-events-none absolute z-10 flex items-start gap-1 ${rotate} ${className}`}
+      className={`pointer-events-none absolute z-10 flex items-start gap-2 ${rotate} ${className}`}
     >
       <HandNote rotate={false}>{note}</HandNote>
-      <SwooshArrow white={white} className={arrowClass} />
+      <SwooshArrow dir={dir} white={white} className={arrowClass} />
     </div>
-  )
-}
-
-/** Small inline hand-drawn arrow for tight spots. */
-export function HandArrow({ className = '' }: { className?: string }) {
-  return (
-    <svg
-      aria-hidden
-      viewBox="0 0 48 64"
-      fill="none"
-      className={`h-10 w-8 text-ink ${className}`}
-    >
-      <path
-        d="M40 8c-14 6-24 18-28 38"
-        stroke="currentColor"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-      />
-      <path
-        d="M8 50l4.5-9M8 50l9.5-3"
-        stroke="currentColor"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
   )
 }
 
