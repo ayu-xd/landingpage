@@ -52,7 +52,7 @@ function DelayChip({ label }: { label: string }) {
 /** Left column: the multi-step sequence with follow-ups and delays. */
 export function SequenceStepper() {
   return (
-    <div className="rounded-2xl border border-border bg-card p-4 sm:p-5">
+    <div className="rounded-2xl border border-border bg-card p-4 shadow-[0_24px_60px_-40px_oklch(0.2_0.03_258/70%)] sm:p-5">
       <div className="mb-4 flex items-center justify-between">
         <span className="text-sm font-semibold">Message sequence</span>
         <span className="text-xs text-muted-foreground">4 steps</span>
@@ -77,7 +77,7 @@ export function SequenceStepper() {
 /** Right panel: A/B variant editor with live preview. */
 export function VariantEditor() {
   return (
-    <div className="rounded-2xl border border-border bg-card p-4 sm:p-5">
+    <div className="rounded-2xl border border-border bg-card p-4 shadow-[0_24px_60px_-40px_oklch(0.2_0.03_258/70%)] sm:p-5">
       <div>
         <h4 className="text-sm font-semibold">Follow-up 3</h4>
         <p className="mt-0.5 text-xs text-muted-foreground">
@@ -136,9 +136,7 @@ export function VariantEditor() {
       </div>
 
       <div className="mt-4 rounded-xl border border-border bg-secondary/30 p-3">
-        <p className="text-[11px] uppercase tracking-wide text-muted-foreground">
-          Preview
-        </p>
+        <p className="text-[11px] text-muted-foreground">Preview</p>
         <div className="mt-2 flex justify-end">
           <span className="max-w-[80%] rounded-2xl rounded-br-sm bg-primary px-3 py-2 text-sm text-primary-foreground">
             hey {'{{FirstName}}'} just checking in

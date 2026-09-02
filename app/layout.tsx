@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Inter, Roboto_Mono } from 'next/font/google'
+import { Inter, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 
 const geistSans = Inter({
@@ -8,7 +8,7 @@ const geistSans = Inter({
   variable: '--font-geist-sans',
 })
 
-const geistMono = Roboto_Mono({
+const geistMono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-geist-mono',
 })
@@ -16,13 +16,13 @@ const geistMono = Roboto_Mono({
 export const metadata: Metadata = {
   title: 'DMDroid | Instagram Auto DM & Cold Outreach',
   description:
-    'DMDroid runs personalized Instagram DM campaigns across all your accounts, follows up automatically, and drops hot leads into your pipeline. Start your 3-day free trial.',
+    'Make Instagram your #1 client acquisition channel. Reach 500+ prospects a month, auto-follow up until they reply, and turn replies into booked calls. Start your 3-day free trial.',
   generator: 'DMDroid',
   metadataBase: new URL('https://dmdroid.app'),
   openGraph: {
-    title: 'DMDroid | Book More Calls With Auto DMs',
+    title: 'DMDroid | Make Instagram Your #1 Client Channel',
     description:
-      'Automated Instagram outreach that books calls while you sleep. Multi-account, safe sending, real-time pipeline. Start your 3-day free trial.',
+      'Reach 500+ prospects every month on Instagram. Auto-follow up until they reply. No VA needed. No manual sending. No accounts getting flagged.',
     url: 'https://dmdroid.app',
     siteName: 'DMDroid',
     images: ['/og.png'],
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DMDroid | Book More Calls With Auto DMs',
+    title: 'DMDroid | Make Instagram Your #1 Client Channel',
     description:
-      'Automated Instagram outreach that books calls while you sleep. Start your 3-day free trial.',
+      'Reach 500+ prospects every month on Instagram. Auto-follow up until they reply. Start your 3-day free trial.',
     images: ['/og.png'],
   },
   icons: {

@@ -47,6 +47,26 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+/* ☀️ Landing palette — taken straight off the avatar.
+   Blue body, red headband, slate ink. The marketing page runs on these
+   literal tokens (not the semantic dark ones) so the app-styled routes
+   below keep their Moonlight theme untouched. */
+@theme {
+  --color-brand: #2563eb; /* avatar body blue */
+  --color-brand-bright: #3b82f6; /* hover / accent */
+  --color-brand-deep: #1e3a8a; /* dark section background */
+  --color-headband: #dc2626; /* ONE pop per page. It's a headband. */
+  --color-surface: #ffffff;
+  --color-surface-alt: #f8fafc; /* alternating section background */
+  --color-ink: #0f172a; /* headlines + dark section background */
+  --color-ink-body: #1e293b; /* body text on white */
+  --color-ink-soft: #475569; /* secondary text on white (AA contrast) */
+  --color-whisper: #64748b; /* italic captions on light (AA contrast) */
+  --color-whisper-dark: #94a3b8; /* italic captions on dark */
+  --color-hairline: #e2e8f0; /* borders on light */
+  --container-content: 68.75rem; /* 1100px max content width */
+}
+
 /* 🌑 Moonlight theme — deep dark blue-gray base with electric blue accent */
 :root,
 .dark,
@@ -115,5 +135,63 @@
   .glow-primary {
     box-shadow: 0 0 0 1px hsl(217 91% 60% / 25%),
       0 24px 70px -24px hsl(217 91% 60% / 45%);
+  }
+
+  /* The landing page is light in the middle but dark at both ends — the hero
+     at the top, the footer at the bottom — so the overscroll canvas is ink. */
+  html:has(.lp-root) {
+    background-color: var(--color-ink);
+  }
+
+  /* The one entrance animation on the page: hero elements rise on load.
+     Stagger with inline animation-delay, 80ms apart. */
+  .lp-rise {
+    animation: lp-rise 620ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  @keyframes lp-rise {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* "Most popular" badge: two pulses on load, then it sits still. */
+  .lp-pulse-twice {
+    animation: lp-pulse 1400ms ease-in-out 2 both;
+  }
+  @keyframes lp-pulse {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.06);
+    }
+  }
+
+  /* Card hover — a 2px lift, nothing more. No scroll-triggered anything. */
+  .lp-card {
+    transition:
+      transform 180ms ease,
+      box-shadow 180ms ease,
+      border-color 180ms ease;
+  }
+  .lp-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 34px -22px oklch(0.28 0.05 258 / 45%);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .lp-rise,
+    .lp-pulse-twice {
+      animation: none;
+    }
+    .lp-card:hover {
+      transform: none;
+    }
   }
 }
