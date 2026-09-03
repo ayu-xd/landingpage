@@ -125,7 +125,7 @@ export function HowItWorks() {
                     flip ? 'scale-x-[-1]' : ''
                   }`}
                 >
-                  <FlowArrow className="h-auto w-full text-ink opacity-60" />
+                  <FlowArrow className="h-auto w-full text-ink" />
                 </span>
               )}
             </li>

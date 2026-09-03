@@ -200,11 +200,11 @@ export function FlowArrow({ className = '' }: { className?: string }) {
         strokeLinejoin="round"
         strokeDasharray="6 8"
       />
-      {/* Delicate arrowhead pointing down */}
+      {/* Solid arrowhead with a built-in stem to bridge any dashed gaps perfectly */}
       <path
-        d="M 750 230 L 740 215 M 750 230 L 760 215"
+        d="M 750 215 L 750 235 L 735 220 M 750 235 L 765 220"
         stroke="currentColor"
-        strokeWidth="2"
+        strokeWidth="2.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
