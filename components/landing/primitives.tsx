@@ -98,40 +98,48 @@ export type SwooshDir =
   | 'up-left'
   | 'left-down'
 
+/**
+ * Waalaxy-style swoosh paths: deep S-curve Béziers, thick stroke, fully
+ * round caps and joins. Each path was hand-tuned to look drawn, not computed.
+ *
+ * Viewbox is kept at the original sizes so existing usages (arrowClass sizes)
+ * stay identical — only the path geometry and stroke weight change.
+ */
 const SWOOSH_PATHS: Record<
   SwooshDir,
   { box: string; shaft: string; head: string }
 > = {
-  // Curves from top-right down to a bottom-left tip.
+  // Sweeps from top-right, bows out to the right, then curves hard
+  // left to land at bottom-left — a proper S with a dramatic hook.
   'down-left': {
-    box: '0 0 100 100',
-    shaft: 'M92 8C50 18 20 48 12 90',
-    head: 'M12 90l2-16M12 90l16-2',
+    box: '0 0 110 110',
+    shaft: 'M98 10 C 90 10, 75 20, 70 40 C 60 68, 30 72, 14 96',
+    head: 'M14 96 L 18 80 M 14 96 L 30 92',
   },
-  // Mirrored: top-left down to a bottom-right tip.
+  // Mirror: sweeps from top-left, bows left, hooks right to bottom-right.
   'down-right': {
-    box: '0 0 100 100',
-    shaft: 'M8 8C50 18 80 48 88 90',
-    head: 'M88 90l-2-16M88 90l-16-2',
+    box: '0 0 110 110',
+    shaft: 'M12 10 C 20 10, 35 20, 40 40 C 50 68, 80 72, 96 96',
+    head: 'M96 96 L 92 80 M 96 96 L 80 92',
   },
-  // Near-vertical lazy S, tip at the bottom. Tall box matches the tall
-  // usages (Waalaxy's tall review-row arrow).
+  // Tall near-vertical S: bows gently left then swings back right, landing
+  // at the bottom with a clean angled arrowhead (Waalaxy's review-row arrow).
   down: {
-    box: '0 0 100 260',
-    shaft: 'M58 8C34 80 70 160 48 250',
-    head: 'M48 250l-4-20M48 250l20-10',
+    box: '0 0 100 270',
+    shaft: 'M54 8 C 28 60, 76 110, 54 170 C 36 220, 52 240, 50 258',
+    head: 'M50 258 L 38 244 M 50 258 L 64 246',
   },
-  // Mirrored vertically: tip at the top-left (for notes below their target).
+  // Tip at the top-left — note sits below its target, arrow curves up-left.
   'up-left': {
-    box: '0 0 100 100',
-    shaft: 'M92 92C50 82 20 52 12 10',
-    head: 'M12 10l-2 16M12 10l16 2',
+    box: '0 0 110 110',
+    shaft: 'M98 100 C 88 100, 72 88, 68 70 C 60 42, 28 28, 14 12',
+    head: 'M14 12 L 16 28 M 14 12 L 30 18',
   },
-  // Wide horizontal sweep that dips down to a left tip ("Follow the arrows").
+  // Wide arc that sweeps left and dips down — "Follow the arrows" annotation.
   'left-down': {
-    box: '0 0 160 100',
-    shaft: 'M150 20C100 2 40 14 12 58',
-    head: 'M12 58l3-17M12 58l18 3',
+    box: '0 0 170 110',
+    shaft: 'M158 18 C 120 6, 70 8, 44 28 C 24 44, 14 60, 14 80',
+    head: 'M14 80 L 4 66 M 14 80 L 28 70',
   },
 }
 
@@ -156,13 +164,14 @@ export function SwooshArrow({
       <path
         d={p.shaft}
         stroke="currentColor"
-        strokeWidth="5"
+        strokeWidth="6.5"
         strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d={p.head}
         stroke="currentColor"
-        strokeWidth="5"
+        strokeWidth="6.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -170,26 +179,32 @@ export function SwooshArrow({
   )
 }
 
-/** Small hand-drawn right-pointing arrow, for step-to-step flow. */
+/**
+ * Between-step flow arrow: a smooth organic downward curve — used vertically
+ * between the 4 How-It-Works rows. Much cleaner than the old horizontal arrow
+ * rotated 90deg (which looked like a broken sword).
+ */
 export function FlowArrow({ className = '' }: { className?: string }) {
   return (
     <svg
       aria-hidden
-      viewBox="0 0 120 60"
+      viewBox="0 0 80 100"
       fill="none"
       preserveAspectRatio="xMidYMid meet"
-      className={`shrink-0 text-ink ${className}`}
+      className={`shrink-0 text-brand/60 ${className}`}
     >
+      {/* Gentle rightward bow then back, tip at the bottom */}
       <path
-        d="M8 34C40 18 80 22 112 30"
+        d="M38 6 C 60 20, 60 50, 38 66 C 22 80, 36 86, 40 94"
         stroke="currentColor"
-        strokeWidth="5"
+        strokeWidth="6"
         strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
-        d="M112 30l-16-8M112 30l-15 11"
+        d="M40 94 L 28 82 M 40 94 L 52 82"
         stroke="currentColor"
-        strokeWidth="5"
+        strokeWidth="6"
         strokeLinecap="round"
         strokeLinejoin="round"
       />

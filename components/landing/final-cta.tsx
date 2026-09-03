@@ -28,7 +28,24 @@ export function FinalCta() {
           </h2>
 
           <div className="relative mt-10 flex flex-col items-center gap-3">
-            <div className="relative">
+            {/* Row: annotation (desktop only) + CTA button side by side */}
+            <div className="flex items-center gap-4">
+              {/* "Seriously, try it yourself" with swoosh arrow into the button */}
+              <div
+                aria-hidden
+                className="pointer-events-none hidden items-end gap-1.5 rotate-[16deg] md:flex"
+              >
+                <HandNote
+                  rotate={false}
+                  className="text-xl !text-white leading-tight"
+                >
+                  Seriously, try
+                  <br />
+                  it yourself
+                </HandNote>
+                <SwooshArrow dir="down-right" white className="h-20 w-20 -rotate-[16deg]" />
+              </div>
+
               <a
                 href={AUTH_URL}
                 className="inline-flex h-14 items-center justify-center gap-2 rounded-[16px] bg-white px-8 text-lg font-bold text-brand shadow-[0_18px_40px_-12px_rgba(9,20,60,0.45)] transition-all hover:-translate-y-0.5 hover:shadow-[0_22px_48px_-12px_rgba(9,20,60,0.55)]"
@@ -36,24 +53,6 @@ export function FinalCta() {
                 {FINAL_CTA.cta}
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </a>
-
-              {/* "Seriously, try it yourself" hangs off to the LEFT of the
-                  button, tilted ~19deg like Waalaxy's, the pre-drawn
-                  down-right arrow diving into the button. */}
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -left-40 top-1/2 hidden -translate-y-1/2 items-center gap-2 md:flex"
-              >
-                <HandNote
-                  rotate={false}
-                  className="rotate-[19deg] text-2xl !text-white"
-                >
-                  Seriously, try
-                  <br />
-                  it yourself
-                </HandNote>
-                <SwooshArrow dir="down-right" white className="h-24 w-24" />
-              </div>
             </div>
 
             <p className="text-[13px] text-white/80">{FINAL_CTA.trial}</p>

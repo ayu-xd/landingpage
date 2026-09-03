@@ -3,8 +3,10 @@ import { AUTH_URL, CONTRAST } from '@/lib/landing-data'
 import {
   Annotation,
   GradientButton,
+  HandNote,
   Section,
   SectionHeading,
+  SwooshArrow,
 } from './primitives'
 
 /**
@@ -45,7 +47,7 @@ export function Contrast() {
             note={CONTRAST.handNote}
             className="-top-7 left-4 z-20 hidden md:flex"
             rotate="-rotate-[6deg]"
-            dir="down"
+            dir="down-right"
             arrowClass="h-16 w-16"
           />
 
@@ -68,11 +70,17 @@ export function Contrast() {
         <GradientButton href={AUTH_URL} size="lg">
           {CONTRAST.cta}
         </GradientButton>
-        {/* Waalaxy's "Seriously, try it yourself" sits right beside the CTA
-            at the bottom of this section. */}
-        <p className="lp-hand rotate-[-2deg] text-xl sm:text-2xl">
-          Seriously, try it yourself
-        </p>
+        {/* Handwritten "Seriously, try it yourself" + swoosh arrow —
+            sits right beside the CTA exactly like Waalaxy's does. */}
+        <div
+          aria-hidden
+          className="pointer-events-none flex items-start gap-2 -rotate-[2deg]"
+        >
+          <HandNote rotate={false} className="text-xl sm:text-2xl">
+            Seriously, try it yourself
+          </HandNote>
+          <SwooshArrow dir="down-left" className="h-14 w-14" />
+        </div>
         <p className="text-[13px] text-whisper">3-day free trial</p>
       </div>
     </Section>

@@ -1,5 +1,5 @@
 import { SUPPORT_STRIP } from '@/lib/landing-data'
-import { Bullet, HandNote, Section, SectionHeading } from './primitives'
+import { Bullet, Section, SectionHeading, SwooshArrow, HandNote } from './primitives'
 
 /** Waalaxy's "Stay guided at every step" strip, appended to the how-it-works flow. */
 export function SupportStrip() {
@@ -15,7 +15,14 @@ export function SupportStrip() {
             <Bullet key={item}>{item}</Bullet>
           ))}
         </ul>
-        <HandNote className="rotate-[2deg]">{SUPPORT_STRIP.handNote}</HandNote>
+        {/* Handwritten note + swoosh arrow pointing up toward the bullet row */}
+        <div
+          aria-hidden
+          className="pointer-events-none flex items-start gap-2 rotate-[2deg]"
+        >
+          <HandNote rotate={false}>{SUPPORT_STRIP.handNote}</HandNote>
+          <SwooshArrow dir="up-left" className="h-14 w-14" />
+        </div>
       </div>
     </Section>
   )

@@ -124,7 +124,7 @@ export function HowItWorks() {
                   aria-hidden
                   className="pointer-events-none absolute -bottom-20 left-1/2 hidden -translate-x-1/2 lg:block"
                 >
-                  <FlowArrow className="h-14 w-20 rotate-90 text-brand/70" />
+                  <FlowArrow className="h-16 w-10" />
                 </span>
               )}
             </li>
