@@ -63,9 +63,9 @@ export function HowItWorks() {
           const flip = i % 2 === 1
           return (
             <li key={step.title} className="relative">
-              <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-                {/* Text side */}
-                <div className={flip ? 'lg:order-2' : ''}>
+              <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
+                {/* Text side (takes up 5/12 of the space so the image can be larger) */}
+                <div className={`lg:col-span-5 ${flip ? 'lg:order-2' : ''}`}>
                   <div className="flex items-center gap-4">
                     <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand text-xl font-bold text-white">
                       {i + 1}
@@ -100,8 +100,8 @@ export function HowItWorks() {
                 </div>
 
                 {/* Screenshot side: let the transparent image breathe naturally
-                    without a restrictive white box around it. */}
-                <div className={flip ? 'lg:order-1' : ''}>
+                    without a restrictive white box around it. Takes 7/12 space to be HUGE. */}
+                <div className={`lg:col-span-7 ${flip ? 'lg:order-1' : ''}`}>
                   <Image
                     src={img.src}
                     alt={img.alt}
@@ -109,8 +109,8 @@ export function HowItWorks() {
                     height={img.h}
                     priority={i === 0}
                     quality={100}
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="h-auto w-full"
+                    sizes="(max-width: 1024px) 100vw, 60vw"
+                    className="h-auto w-full scale-105 transform origin-center sm:scale-110 md:scale-125 lg:scale-[1.15]"
                   />
                 </div>
               </div>
