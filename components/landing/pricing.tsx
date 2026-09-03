@@ -78,22 +78,21 @@ export function Pricing() {
         })}
       </div>
 
-      <div className="relative mx-auto mt-14 flex max-w-xl flex-col items-center gap-5 text-center">
+      <div className="mx-auto mt-14 flex max-w-xl flex-col items-center gap-4 text-center">
+        {/* Annotation: natural flow, ABOVE guarantee text, no absolute overlap */}
+        <div
+          aria-hidden
+          className="pointer-events-none hidden items-end gap-2 -rotate-[8deg] sm:flex"
+        >
+          <HandNote rotate={false} className="rotate-[8deg] text-base sm:text-lg">
+            {PRICING.handNote}
+          </HandNote>
+          <SwooshArrow dir="up-left" className="h-14 w-14" />
+        </div>
+
         <p className="text-pretty text-sm leading-relaxed text-ink-soft">
           {PRICING.riskReversal}
         </p>
-
-        {/* Waalaxy's annotation pattern: the handwritten note hovers right
-            of the line, tilted ~19deg, arrow curving down into it. */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -top-10 right-0 hidden items-start gap-2 sm:flex"
-        >
-          <HandNote rotate={false} className="rotate-[19deg]">
-            {PRICING.handNote}
-          </HandNote>
-          <SwooshArrow dir="down-left" className="h-20 w-20" />
-        </div>
       </div>
     </Section>
   )

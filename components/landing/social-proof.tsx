@@ -29,7 +29,7 @@ export function SocialProof() {
             the pre-drawn up-left arrow reaching into the niches. */}
         <div
           aria-hidden
-          className="pointer-events-none absolute -bottom-10 right-6 hidden items-start gap-2 md:flex lg:right-24"
+          className="pointer-events-none absolute bottom-4 right-6 hidden items-start gap-2 md:flex lg:right-24"
         >
           <HandNote rotate={false} className="rotate-[-13deg]">
             {SOCIAL_PROOF.handNote}
