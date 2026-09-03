@@ -187,23 +187,23 @@ export function FlowArrow({ className = '' }: { className?: string }) {
   return (
     <svg
       aria-hidden
-      viewBox="0 0 350 150"
+      viewBox="0 0 1000 200"
       fill="none"
-      preserveAspectRatio="xMidYMid meet"
+      preserveAspectRatio="none"
       className={`shrink-0 ${className}`}
     >
-      {/* Deep, wide sweeping dashed curve: starts top-left, dips low, rises to bottom-right */}
+      {/* S-curve sweeping from left side (x=200, 20%) to right side (x=800, 80%) */}
       <path
-        d="M20 20 C 60 160, 220 160, 320 100"
+        d="M 200 20 C 200 120, 800 80, 800 180"
         stroke="currentColor"
         strokeWidth="4"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeDasharray="12 16"
       />
-      {/* Small subtle arrowhead pointing down/right */}
+      {/* Arrowhead pointing straight down at the end of the S-curve */}
       <path
-        d="M320 100 L 302 92 M 320 100 L 315 118"
+        d="M 800 180 L 785 160 M 800 180 L 815 160"
         stroke="currentColor"
         strokeWidth="4"
         strokeLinecap="round"
