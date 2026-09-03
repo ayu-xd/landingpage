@@ -116,16 +116,16 @@ export function HowItWorks() {
               </div>
 
               {/* Hand-drawn flow arrow curving from this row into the next.
-                  Spans the entire width (w-full) so the 20% -> 80% path connects the text blocks.
+                  Spans the entire width (w-full) so the 25% -> 75% path connects the text blocks.
                   Flips horizontally on alternating rows. */}
               {i < STEPS.length - 1 && (
                 <span
                   aria-hidden
-                  className={`pointer-events-none absolute -bottom-[12rem] left-0 hidden w-full lg:block ${
+                  className={`pointer-events-none absolute left-0 top-[calc(100%+1rem)] hidden w-full lg:block ${
                     flip ? 'scale-x-[-1]' : ''
                   }`}
                 >
-                  <FlowArrow className="h-40 w-full text-ink" />
+                  <FlowArrow className="h-auto w-full text-ink opacity-60" />
                 </span>
               )}
             </li>

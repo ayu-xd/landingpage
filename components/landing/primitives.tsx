@@ -180,32 +180,31 @@ export function SwooshArrow({
 }
 
 /**
- * Between-step flow arrow: wide dashed sweeping curve — exactly like
- * Waalaxy's dashed connector that arcs from left to right between steps.
+ * Between-step flow arrow: organic, thin dashed curve that spans exactly between
+ * the left and right text columns (25% to 75% width).
  */
 export function FlowArrow({ className = '' }: { className?: string }) {
   return (
     <svg
       aria-hidden
-      viewBox="0 0 1000 200"
+      viewBox="0 0 1000 250"
       fill="none"
-      preserveAspectRatio="none"
       className={`shrink-0 ${className}`}
     >
-      {/* S-curve sweeping from left side (x=200, 20%) to right side (x=800, 80%) */}
+      {/* Elegant, lazy S-curve going from x=250 (25%) to x=750 (75%) */}
       <path
-        d="M 200 20 C 200 120, 800 80, 800 180"
+        d="M 250 20 C 250 125, 750 125, 750 230"
         stroke="currentColor"
-        strokeWidth="4"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeDasharray="12 16"
+        strokeDasharray="6 8"
       />
-      {/* Arrowhead pointing straight down at the end of the S-curve */}
+      {/* Delicate arrowhead pointing down */}
       <path
-        d="M 800 180 L 785 160 M 800 180 L 815 160"
+        d="M 750 230 L 740 215 M 750 230 L 760 215"
         stroke="currentColor"
-        strokeWidth="4"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
