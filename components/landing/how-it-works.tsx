@@ -108,6 +108,8 @@ export function HowItWorks() {
                     width={img.w}
                     height={img.h}
                     priority={i === 0}
+                    quality={100}
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="h-auto w-full"
                   />
                 </div>
