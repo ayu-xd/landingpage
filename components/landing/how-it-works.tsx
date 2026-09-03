@@ -57,7 +57,7 @@ export function HowItWorks() {
 
       {/* Four open rows. Text and image alternate sides so the page
           breathes like Waalaxy's walkthrough. */}
-      <ol className="mx-auto mt-20 flex max-w-6xl flex-col gap-24 lg:gap-28">
+      <ol className="mx-auto mt-20 flex max-w-6xl flex-col gap-32 lg:gap-[16rem]">
         {STEPS.map((step, i) => {
           const img = STEP_IMAGES[i]
           const flip = i % 2 === 1
@@ -120,9 +120,11 @@ export function HowItWorks() {
               {i < STEPS.length - 1 && (
                 <span
                   aria-hidden
-                  className="pointer-events-none absolute -bottom-20 left-1/2 hidden -translate-x-1/2 lg:block"
+                  className={`pointer-events-none absolute -bottom-[10rem] left-1/2 hidden -translate-x-1/2 lg:block ${
+                    flip ? 'scale-x-[-1]' : ''
+                  }`}
                 >
-                <FlowArrow className="h-20 w-32" />
+                  <FlowArrow className="h-32 w-80 text-ink" />
                 </span>
               )}
             </li>
