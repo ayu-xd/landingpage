@@ -181,30 +181,30 @@ export function SwooshArrow({
 
 /**
  * Between-step flow arrow: organic, thin dashed curve that spans exactly between
- * the left and right text columns (25% to 75% width).
+ * the left and right text columns.
  */
 export function FlowArrow({ className = '' }: { className?: string }) {
   return (
     <svg
       aria-hidden
-      viewBox="0 0 1000 250"
+      viewBox="0 0 1000 200"
       fill="none"
       className={`shrink-0 ${className}`}
     >
-      {/* Elegant, lazy S-curve going from x=250 (25%) to x=750 (75%) */}
+      {/* Elegant, lazy S-curve going from x=300 to x=700 */}
       <path
-        d="M 250 20 C 250 125, 750 125, 750 230"
-        stroke="currentColor"
-        strokeWidth="2"
+        d="M 300 20 C 300 120, 700 80, 700 180"
+        stroke="#1A1A2E"
+        strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeDasharray="6 8"
+        strokeDasharray="4 6"
       />
-      {/* Solid arrowhead with a built-in stem to bridge any dashed gaps perfectly */}
+      {/* Delicate, tightly angled arrowhead perfectly resting at the path tip (700 180) */}
       <path
-        d="M 750 215 L 750 235 L 735 220 M 750 235 L 765 220"
-        stroke="currentColor"
-        strokeWidth="2.5"
+        d="M 692 170 L 700 180 L 708 170"
+        stroke="#1A1A2E"
+        strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
