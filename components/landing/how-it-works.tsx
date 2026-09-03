@@ -38,8 +38,8 @@ export function HowItWorks() {
           }
         />
 
-        {/* "Follow the arrows!" sits right of the heading, tilted ~13deg the
-            way Waalaxy's does, its swoosh curving down toward the steps. */}
+        {/* "Follow the arrows!" sits TOP-LEFT of the heading — Waalaxy places
+            it at the left, arrow pointing straight DOWN into the steps. */}
         <Annotation
           note={
             <>
@@ -48,10 +48,10 @@ export function HowItWorks() {
               arrows!
             </>
           }
-          className="-top-8 right-0 hidden lg:flex"
-          rotate="rotate-[13deg]"
-          dir="down-left"
-          arrowClass="h-24 w-24"
+          className="-top-8 left-0 hidden lg:flex"
+          rotate="-rotate-[8deg]"
+          dir="down"
+          arrowClass="h-28 w-14"
         />
       </div>
 
@@ -124,7 +124,7 @@ export function HowItWorks() {
                   aria-hidden
                   className="pointer-events-none absolute -bottom-20 left-1/2 hidden -translate-x-1/2 lg:block"
                 >
-                  <FlowArrow className="h-16 w-10" />
+                <FlowArrow className="h-20 w-32" />
                 </span>
               )}
             </li>

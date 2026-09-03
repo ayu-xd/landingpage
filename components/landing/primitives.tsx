@@ -180,31 +180,31 @@ export function SwooshArrow({
 }
 
 /**
- * Between-step flow arrow: a smooth organic downward curve — used vertically
- * between the 4 How-It-Works rows. Much cleaner than the old horizontal arrow
- * rotated 90deg (which looked like a broken sword).
+ * Between-step flow arrow: wide dashed sweeping curve — exactly like
+ * Waalaxy's dashed connector that arcs from left to right between steps.
  */
 export function FlowArrow({ className = '' }: { className?: string }) {
   return (
     <svg
       aria-hidden
-      viewBox="0 0 80 100"
+      viewBox="0 0 300 120"
       fill="none"
       preserveAspectRatio="xMidYMid meet"
-      className={`shrink-0 text-brand/60 ${className}`}
+      className={`shrink-0 text-brand/50 ${className}`}
     >
-      {/* Gentle rightward bow then back, tip at the bottom */}
+      {/* Wide S-sweep: starts upper-left, arcs out right, drops to bottom-right */}
       <path
-        d="M38 6 C 60 20, 60 50, 38 66 C 22 80, 36 86, 40 94"
+        d="M20 20 C 60 0, 160 10, 200 50 C 230 80, 250 90, 278 100"
         stroke="currentColor"
-        strokeWidth="6"
+        strokeWidth="5"
         strokeLinecap="round"
         strokeLinejoin="round"
+        strokeDasharray="10 9"
       />
       <path
-        d="M40 94 L 28 82 M 40 94 L 52 82"
+        d="M278 100 L 262 88 M 278 100 L 268 116"
         stroke="currentColor"
-        strokeWidth="6"
+        strokeWidth="5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
