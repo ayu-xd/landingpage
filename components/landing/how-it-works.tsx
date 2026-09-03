@@ -99,20 +99,16 @@ export function HowItWorks() {
                   )}
                 </div>
 
-                {/* Screenshot side, in a light card frame like Waalaxy's
-                    product shots. */}
-                <div
-                  className={`lp-card rounded-[24px] border border-hairline bg-surface p-3 shadow-[0_30px_70px_-40px_rgba(20,20,43,0.3)] sm:p-4 ${
-                    flip ? 'lg:order-1' : ''
-                  }`}
-                >
+                {/* Screenshot side: let the transparent image breathe naturally
+                    without a restrictive white box around it. */}
+                <div className={flip ? 'lg:order-1' : ''}>
                   <Image
                     src={img.src}
                     alt={img.alt}
                     width={img.w}
                     height={img.h}
                     priority={i === 0}
-                    className="h-auto w-full rounded-[16px]"
+                    className="h-auto w-full"
                   />
                 </div>
               </div>
