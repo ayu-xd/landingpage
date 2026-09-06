@@ -15,14 +15,14 @@ export default function PrivacyPolicyPage() {
         <div className="space-y-8">
           <div className="space-y-2">
             <h1 className="text-3xl font-bold tracking-tight">Privacy Policy</h1>
-            <p className="text-sm text-muted-foreground">Last updated: August 27, 2026</p>
+            <p className="text-sm text-muted-foreground">Last updated: September 6, 2026</p>
           </div>
 
           <div className="space-y-6 text-sm leading-relaxed text-muted-foreground">
             <section className="space-y-2">
               <h2 className="text-lg font-semibold text-foreground">1. Introduction</h2>
               <p>
-                This Privacy Policy explains how DMDroid (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) collects, uses, stores, and protects information when you use the DMDroid Chrome extension and related services. By installing or using DMDroid, you consent to the practices described in this policy.
+                This Privacy Policy explains how DMDroid (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) collects, uses, stores, and protects information when you use the DMDroid Chrome extension and the DMDroid dashboard. By installing or using DMDroid, you consent to the practices described in this policy.
               </p>
               <p>
                 DMDroid is an Instagram direct-message automation tool designed for agencies and founders. It runs as a Chrome browser extension that automates sending follow-up messages on your behalf.
@@ -42,7 +42,7 @@ export default function PrivacyPolicyPage() {
               <ul className="list-disc pl-5 space-y-1">
                 <li>Your Instagram username and user ID (detected from your active Instagram session)</li>
                 <li>Your Instagram profile picture URL</li>
-                <li>Instagram authentication credentials (session tokens) — stored locally on your device for cross-browser transfer; never stored on our servers</li>
+                <li>Instagram authentication data read from your active browser session is used only in-memory to operate the extension and is never uploaded to our servers</li>
               </ul>
 
               <h3 className="font-semibold text-foreground">2.3 Campaign and Contact Data</h3>
@@ -77,7 +77,16 @@ export default function PrivacyPolicyPage() {
                 <li>Heartbeat signals (sent periodically to confirm browser is active)</li>
               </ul>
 
-              <h3 className="font-semibold text-foreground">2.7 Local Storage Data</h3>
+              <h3 className="font-semibold text-foreground">2.7 Data Collected Automatically</h3>
+              <p>When the extension or our websites communicate with our backend, our infrastructure provider automatically receives and records standard technical information, including:</p>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>IP address (transmitted as part of every network request and recorded in server logs)</li>
+                <li>Server request logs (timestamps, request types, response status)</li>
+                <li>Device and browser information (user agent, operating system)</li>
+              </ul>
+              <p>This data is used only to operate, secure, and troubleshoot the service.</p>
+
+              <h3 className="font-semibold text-foreground">2.8 Local Storage Data</h3>
               <p>The extension stores the following locally on your device using Chrome&apos;s built-in storage API:</p>
               <ul className="list-disc pl-5 space-y-1">
                 <li>Authentication tokens (access token, refresh token)</li>
@@ -122,11 +131,11 @@ export default function PrivacyPolicyPage() {
 
               <h3 className="font-semibold text-foreground">4.4 Service Providers</h3>
               <p>
-                We use <strong>Supabase</strong> as our sole backend infrastructure provider. Supabase hosts our database and authentication services. Your data is stored on Supabase&apos;s cloud infrastructure. Supabase operates under strict data processing agreements.
+                We use <strong>Supabase</strong> as the backend infrastructure provider for the DMDroid extension and dashboard. Supabase hosts our database and authentication services, and your extension and dashboard data is stored on Supabase&apos;s cloud infrastructure. Supabase operates under strict data processing agreements.
               </p>
 
               <h3 className="font-semibold text-foreground">4.5 No Other Third Parties</h3>
-              <p>We do not integrate with analytics services, error tracking services, advertising networks, or any other third-party data processors.</p>
+              <p>The DMDroid extension does not integrate with analytics services, error tracking services, advertising networks, or any other third-party data processors. All data the extension handles goes only to our own backend (Supabase-hosted) and to Instagram as needed to perform the actions you request.</p>
             </section>
 
             <section className="space-y-2">
@@ -265,7 +274,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section className="space-y-2">
-              <h2 className="text-lg font-semibold text-foreground">15. Chrome Web Store Compliance</h2>
+              <h2 className="text-lg font-semibold text-foreground">15. Chrome Web Store Compliance and Limited Use</h2>
               <p>DMDroid complies with the Chrome Web Store Developer Program Policies:</p>
               <ul className="list-disc pl-5 space-y-1">
                 <li><strong>Single Purpose:</strong> DMDroid automates Instagram direct-message follow-up sequences.</li>
@@ -274,6 +283,15 @@ export default function PrivacyPolicyPage() {
                 <li><strong>User Disclosure:</strong> This Privacy Policy fully discloses all data collected, stored, and transmitted.</li>
                 <li><strong>Permission Justification:</strong> Each requested permission (storage, tabs, alarms) is necessary for core functionality as described in Section 5.</li>
                 <li><strong>Secure Transmission:</strong> All data is transmitted over HTTPS/TLS. No data is transmitted over insecure HTTP connections.</li>
+              </ul>
+
+              <h3 className="font-semibold text-foreground">Limited Use of User Data</h3>
+              <p>Your use of DMDroid is subject to the Chrome Web Store Limited Use Requirements, and DMDroid&apos;s use of your data complies with them as follows:</p>
+              <ul className="list-disc pl-5 space-y-1">
+                <li><strong>Allowed use only:</strong> DMDroid uses the permissions and the data it collects only to provide and support its single purpose — automating and managing your Instagram direct-message outreach. Your data is never used for unrelated purposes such as profiling or market research.</li>
+                <li><strong>Allowed transfer only:</strong> Your data is transferred only as necessary to provide the extension&apos;s features (to our backend and to Instagram), to comply with applicable laws, or to protect security and investigate abuse. We do not sell, rent, or trade your personal information, and we do not transfer it to data brokers or advertising networks.</li>
+                <li><strong>No advertising use:</strong> Your data is never used or transferred to serve personalized, re-targeted, or interest-based advertisements.</li>
+                <li><strong>No human reading of your data:</strong> We do not read your messages, contacts, or campaign content except (a) with your explicit consent when you request support, (b) as necessary for security or abuse investigation, (c) as required by law, or (d) in aggregated, anonymized form for internal operational statistics.</li>
               </ul>
             </section>
 
@@ -334,9 +352,9 @@ export default function PrivacyPolicyPage() {
                     </tr>
                     <tr>
                       <td className="py-2 pr-4">Browser metadata</td>
-                      <td className="py-2 pr-4">Platform, user agent, extension version</td>
+                      <td className="py-2 pr-4">Platform, user agent, extension version, IP address (server logs)</td>
                       <td className="py-2 pr-4">Supabase (server)</td>
-                      <td className="py-2">Compatibility, heartbeat</td>
+                      <td className="py-2">Compatibility, heartbeat, service operation</td>
                     </tr>
                     <tr>
                       <td className="py-2 pr-4">Auth tokens</td>
