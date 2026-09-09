@@ -35,6 +35,7 @@ export default function PrivacyPolicyPage() {
               <h3 className="font-semibold text-foreground">2.1 Account Information</h3>
               <ul className="list-disc pl-5 space-y-1">
                 <li>Email address (used for login authentication)</li>
+                <li>DMDroid account password (transmitted to our backend for authentication only; not stored by the extension)</li>
                 <li>DMDroid user ID (internal account identifier)</li>
               </ul>
 
@@ -241,7 +242,7 @@ export default function PrivacyPolicyPage() {
               <p>We implement the following security measures:</p>
               <ul className="list-disc pl-5 space-y-1">
                 <li><strong>Encryption in transit:</strong> All API communication uses HTTPS/TLS encryption.</li>
-                <li><strong>Token-based authentication:</strong> We use secure tokens for API authentication. Passwords are never stored by the extension.</li>
+                <li><strong>Token-based authentication:</strong> Your DMDroid password is transmitted to our backend (Supabase) for authentication only. After login, we use secure tokens for ongoing API authentication. Passwords are never stored by the extension or in any local storage.</li>
                 <li><strong>No remote code:</strong> DMDroid contains no remote code execution. All extension code is bundled locally in the Chrome extension package.</li>
                 <li><strong>Local-first data:</strong> Sensitive data (auth tokens, watermarks, logs) is stored locally on your device.</li>
               </ul>
@@ -310,9 +311,9 @@ export default function PrivacyPolicyPage() {
                   <tbody className="divide-y divide-border">
                     <tr>
                       <td className="py-2 pr-4">Account info</td>
-                      <td className="py-2 pr-4">Email, DMDroid user ID</td>
+                      <td className="py-2 pr-4">Email, password, DMDroid user ID</td>
                       <td className="py-2 pr-4">Supabase (server)</td>
-                      <td className="py-2">Authentication</td>
+                      <td className="py-2">Authentication (password transmitted for login only, not stored)</td>
                     </tr>
                     <tr>
                       <td className="py-2 pr-4">Instagram account</td>
