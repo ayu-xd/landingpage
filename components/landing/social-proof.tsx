@@ -8,7 +8,7 @@ import { HandNote, SwooshArrow } from './primitives'
 export function SocialProof() {
   return (
     <section className="relative border-y border-hairline-soft bg-surface-alt">
-      <div className="mx-auto max-w-content px-5 py-10 sm:px-6">
+      <div className="mx-auto max-w-content px-5 py-16 sm:px-6 md:py-24">
         <div className="mx-auto flex max-w-4xl flex-col items-center gap-5 text-center">
           <p className="text-pretty text-base font-semibold leading-relaxed text-ink sm:text-lg">
             {SOCIAL_PROOF.line}

@@ -11,7 +11,7 @@ import { Annotation, GradientButton } from './primitives'
  */
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden bg-white pt-32 md:pt-40">
+    <section id="top" className="relative overflow-hidden bg-white pb-16 pt-32 md:pb-24 md:pt-40">
       {/* The original page's background art, behind everything. */}
       <Image
         src="/hero-bg.avif"
