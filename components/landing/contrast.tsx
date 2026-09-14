@@ -73,13 +73,14 @@ export function Contrast() {
         </div>
       </div>
 
-      {/* CTA — annotation to the LEFT in flow, button to the RIGHT, aligned at bottom */}
+      {/* CTA — annotation absolute to the LEFT, button centered, aligned at bottom */}
       <div className="mt-16 flex flex-col items-center">
-        <div className="flex items-end gap-6">
+        {/* Button block (relative so annotation can hang off the left side) */}
+        <div className="relative">
           {/* Handwritten callout — Waalaxy style: whole group tilts +23deg CW, arrow above text */}
           <div
             aria-hidden
-            className="pointer-events-none mb-3 hidden flex-col items-start gap-1 sm:flex"
+            className="pointer-events-none absolute bottom-0 right-full mb-3 mr-6 hidden w-max flex-col items-start gap-1 sm:flex"
             style={{ transform: 'rotate(23deg)' }}
           >
             {/* Arrow on top, right-aligned, pointing ↗ toward button */}
@@ -100,14 +101,14 @@ export function Contrast() {
             </p>
           </div>
 
-          {/* Button + trial text */}
-          <div className="flex flex-col items-center gap-2">
-            <GradientButton href={AUTH_URL} size="md">
-              {CONTRAST.cta}
-            </GradientButton>
-            <p className="text-[13px] text-whisper">3-day free trial</p>
-          </div>
+          {/* Button */}
+          <GradientButton href={AUTH_URL} size="md">
+            {CONTRAST.cta}
+          </GradientButton>
         </div>
+        
+        {/* Trial text below button */}
+        <p className="mt-2 text-[13px] text-whisper">3-day free trial</p>
       </div>
     </Section>
   )

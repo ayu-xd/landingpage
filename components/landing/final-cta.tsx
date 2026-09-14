@@ -28,12 +28,12 @@ export function FinalCta() {
           </h2>
 
           <div className="relative mt-10 flex flex-col items-center gap-3">
-            {/* Row: annotation (desktop only) + CTA button side by side */}
-            <div className="flex items-end gap-6">
-              {/* Handwritten callout — Waalaxy style: whole group tilts +23deg CW, arrow above text */}
+            {/* Button block (relative so annotation can hang off the left side) */}
+            <div className="relative">
+              {/* Handwritten callout (Absolute so it doesn't push the button off-center) */}
               <div
                 aria-hidden
-                className="pointer-events-none mb-3 hidden flex-col items-start gap-1 sm:flex"
+                className="pointer-events-none absolute bottom-0 right-full mb-3 mr-6 hidden w-max flex-col items-start gap-1 sm:flex"
                 style={{ transform: 'rotate(23deg)' }}
               >
                 {/* Arrow on top, right-aligned, pointing ↗ toward button, white filter */}
@@ -54,18 +54,18 @@ export function FinalCta() {
                 </p>
               </div>
 
-              {/* Button + trial text grouped together to the right */}
-              <div className="flex flex-col items-center gap-2">
-                <a
-                  href={AUTH_URL}
-                  className="inline-flex h-14 items-center justify-center gap-2 rounded-[16px] bg-white px-8 text-lg font-bold text-brand shadow-[0_18px_40px_-12px_rgba(9,20,60,0.45)] transition-all hover:-translate-y-0.5 hover:shadow-[0_22px_48px_-12px_rgba(9,20,60,0.55)]"
-                >
-                  {FINAL_CTA.cta}
-                  <ArrowRight className="h-4 w-4" aria-hidden />
-                </a>
-                <p className="text-[13px] text-white/80">{FINAL_CTA.trial}</p>
-              </div>
+              {/* Button */}
+              <a
+                href={AUTH_URL}
+                className="inline-flex h-14 items-center justify-center gap-2 rounded-[16px] bg-white px-8 text-lg font-bold text-brand shadow-[0_18px_40px_-12px_rgba(9,20,60,0.45)] transition-all hover:-translate-y-0.5 hover:shadow-[0_22px_48px_-12px_rgba(9,20,60,0.55)]"
+              >
+                {FINAL_CTA.cta}
+                <ArrowRight className="h-4 w-4" aria-hidden />
+              </a>
             </div>
+            
+            {/* Trial text below button */}
+            <p className="text-[13px] text-white/80">{FINAL_CTA.trial}</p>
             <p className="mt-1 text-sm text-white/85">
               {FINAL_CTA.contact}{' '}
               <a
