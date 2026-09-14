@@ -2,18 +2,17 @@
 
 import { Menu, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { ANNOUNCEMENT, AUTH_URL, NAV_LINKS, TRIAL_CTA } from '@/lib/landing-data'
+import { AUTH_URL, NAV_LINKS, TRIAL_CTA } from '@/lib/landing-data'
 import { Logo } from './logo'
 import { GradientButton } from './primitives'
 
 /**
  * Waalaxy's nav: white bar, hairline border once scrolled, centered links,
- * text "Log in" + gradient trial button. Dismissible announcement above.
+ * text "Log in" + gradient trial button.
  */
 export function SiteNav() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [barOpen, setBarOpen] = useState(true)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)
@@ -24,22 +23,6 @@ export function SiteNav() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
-      {ANNOUNCEMENT && barOpen && (
-        <div className="relative bg-ink text-white">
-          <div className="mx-auto flex max-w-content items-center justify-center gap-2 px-10 py-2 sm:px-6">
-            <p className="text-center text-[13px] leading-snug">
-              {ANNOUNCEMENT}
-            </p>
-          </div>
-          <button
-            onClick={() => setBarOpen(false)}
-            aria-label="Dismiss announcement"
-            className="absolute right-1.5 top-1/2 -translate-y-1/2 rounded-md p-1.5 text-white/60 transition-colors hover:text-white"
-          >
-            <X className="h-3.5 w-3.5" />
-          </button>
-        </div>
-      )}
 
       <div
         className={`border-b transition-colors duration-300 ${

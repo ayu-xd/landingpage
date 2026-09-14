@@ -13,12 +13,6 @@ export const AUTH_URL = 'https://app.dmdroid.app/auth'
 export const CONTACT_EMAIL = 'support@dmdroid.app'
 export const TRIAL_CTA = 'Start my free trial'
 
-/**
- * Waalaxy runs a dismissible announcement above the nav. Ours points at the
- * variant testing that actually ships in the product.
- */
-export const ANNOUNCEMENT =
-  'Now with A/B variant testing: rotate up to 5 messages per step and let the best one win'
 
 export const NAV_LINKS = [
   { href: '#features', label: 'Features' },
