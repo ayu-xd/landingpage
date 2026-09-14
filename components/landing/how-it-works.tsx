@@ -33,7 +33,7 @@ export function HowItWorks() {
             <>
               How DMDroid works
               <span className="block text-[0.62em] font-semibold text-ink-soft">
-                (in 5 simple steps)
+                (in 4 simple steps)
               </span>
             </>
           }
