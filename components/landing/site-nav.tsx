@@ -48,14 +48,14 @@ export function SiteNav() {
             ))}
           </nav>
 
-          <div className="hidden items-center gap-3 md:flex">
+          <div className="hidden items-center gap-2 md:flex">
             <a
               href={AUTH_URL}
-              className="flex h-9 items-center rounded-[10px] px-3 text-[15px] font-medium text-ink-soft transition-colors hover:text-ink"
+              className="flex h-10 items-center justify-center rounded-[12px] px-4 text-[15px] font-semibold text-ink-soft transition-colors hover:bg-surface-alt hover:text-ink"
             >
               Log in
             </a>
-            <GradientButton href={AUTH_URL} className="h-11 px-5 text-[15px]">
+            <GradientButton href={AUTH_URL} size="sm">
               {TRIAL_CTA}
             </GradientButton>
           </div>

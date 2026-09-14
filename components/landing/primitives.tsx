@@ -252,17 +252,18 @@ export function GradientButton({
 }: {
   href: string
   children: React.ReactNode
-  size?: 'md' | 'lg'
+  size?: 'sm' | 'md' | 'lg'
   className?: string
 }) {
   const sizes = {
-    md: 'h-12 px-6 text-base',
-    lg: 'h-14 px-8 text-lg',
+    sm: 'h-10 px-5 text-[15px] rounded-[12px]',
+    md: 'h-12 px-6 text-base rounded-[16px]',
+    lg: 'h-14 px-8 text-lg rounded-[16px]',
   }
   return (
     <a
       href={href}
-      className={`lp-btn-primary inline-flex items-center justify-center gap-2 rounded-[16px] font-bold tracking-[-0.01em] ${sizes[size]} ${className}`}
+      className={`lp-btn-primary inline-flex items-center justify-center gap-2 font-bold tracking-[-0.01em] ${sizes[size]} ${className}`}
     >
       {children}
     </a>
