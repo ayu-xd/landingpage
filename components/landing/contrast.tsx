@@ -80,15 +80,15 @@ export function Contrast() {
             {CONTRAST.cta}
           </GradientButton>
 
-          {/* Handwritten note sits to the bottom-left of the button, arrow points up-right into it */}
+          {/* Handwritten note sits to the bottom-left of the button, arrow sweeps up-right into it */}
           <div
             aria-hidden
-            className="pointer-events-none absolute -bottom-14 -left-36 hidden rotate-[4deg] items-end gap-1 md:flex"
+            className="pointer-events-none absolute -bottom-14 -left-40 hidden rotate-[4deg] items-end gap-1 md:flex"
           >
             <HandNote rotate={false} className="text-xl leading-tight sm:text-2xl">
               Seriously, try it yourself
             </HandNote>
-            <SwooshArrow dir="down-right" className="h-14 w-14 -translate-y-2 scale-x-[-1] scale-y-[-1]" />
+            <SwooshArrow dir="up-right" className="h-16 w-16 -translate-y-1" />
           </div>
         </div>
         <p className="mt-16 text-[13px] text-whisper md:mt-3">3-day free trial</p>

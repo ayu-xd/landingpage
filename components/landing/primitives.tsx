@@ -96,6 +96,7 @@ export type SwooshDir =
   | 'down-right'
   | 'down'
   | 'up-left'
+  | 'up-right'
   | 'left-down'
 
 /**
@@ -140,6 +141,12 @@ const SWOOSH_PATHS: Record<
     box: '0 0 170 110',
     shaft: 'M158 18 C 120 6, 70 8, 44 28 C 24 44, 14 60, 14 80',
     head: 'M14 80 L 4 66 M 14 80 L 28 70',
+  },
+  // Sweeps from bottom-left curving up to top-right — the "Seriously" CTA annotation.
+  'up-right': {
+    box: '0 0 110 110',
+    shaft: 'M12 100 C 20 100, 35 90, 40 70 C 50 42, 80 38, 96 14',
+    head: 'M96 14 L 80 18 M 96 14 L 92 30',
   },
 }
 
