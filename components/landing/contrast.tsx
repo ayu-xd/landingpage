@@ -1,7 +1,6 @@
 import { Check, X } from 'lucide-react'
 import { AUTH_URL, CONTRAST } from '@/lib/landing-data'
 import {
-  Annotation,
   GradientButton,
   HandNote,
   Section,
@@ -25,40 +24,48 @@ export function Contrast() {
 
       <div className="relative mx-auto mt-14 grid max-w-5xl gap-6 md:grid-cols-2">
         {/* The Old Way */}
-        <div className="rounded-[24px] border border-hairline bg-surface p-6 sm:p-8">
-          <h3 className="text-lg font-bold text-ink-soft">{CONTRAST.oldLabel}</h3>
-          <ul className="mt-6 space-y-4">
+        <div className="rounded-[20px] bg-white p-6 shadow-[0_2px_20px_0_rgba(0,0,0,0.07)] sm:p-8">
+          <h3 className="mb-5 text-center text-base font-semibold text-ink-soft">{CONTRAST.oldLabel}</h3>
+          <ul className="space-y-2.5">
             {CONTRAST.rows.map((row) => (
               <li
                 key={row.old}
-                className="flex items-start gap-3 text-sm leading-relaxed text-whisper"
+                className="flex items-center gap-3 rounded-[10px] bg-rose-50 px-3.5 py-3 text-sm leading-snug text-ink"
               >
-                <X className="mt-0.5 h-4 w-4 shrink-0 text-whisper/70" aria-hidden />
+                {/* Red square badge with X icon — exact Waalaxy style */}
+                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-[5px] bg-red-500">
+                  <X className="h-3 w-3 text-white" strokeWidth={3} aria-hidden />
+                </span>
                 {row.old}
               </li>
             ))}
           </ul>
         </div>
 
-        {/* The DMDroid Way, the winner card, with the handwritten note
-            floating above it, its swoosh diving into the card. */}
-        <div className="relative rounded-[24px] border-2 border-brand bg-white p-6 pt-10 shadow-[0_24px_60px_-30px_rgba(49,90,231,0.35)] sm:p-8 sm:pt-12">
-          <Annotation
-            note={CONTRAST.handNote}
-            className="-top-7 left-4 z-20 hidden md:flex"
-            rotate="-rotate-[6deg]"
-            dir="down-right"
-            arrowClass="h-16 w-16"
-          />
+        {/* The DMDroid Way — winner card with handwritten annotation above */}
+        <div className="relative rounded-[20px] bg-white p-6 shadow-[0_2px_20px_0_rgba(0,0,0,0.07)] sm:p-8">
+          {/* Handwritten note floats above-right of the card, arrow angles cleanly down-left into it */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -top-14 right-4 hidden items-start gap-1 md:flex"
+          >
+            <HandNote rotate={false} className="-rotate-[4deg] text-lg sm:text-xl">
+              {CONTRAST.handNote}
+            </HandNote>
+            <SwooshArrow dir="down-left" className="h-14 w-14 translate-y-2" />
+          </div>
 
-          <h3 className="text-lg font-bold text-brand">{CONTRAST.newLabel}</h3>
-          <ul className="mt-6 space-y-4">
+          <h3 className="mb-5 text-center text-base font-semibold text-brand">{CONTRAST.newLabel}</h3>
+          <ul className="space-y-2.5">
             {CONTRAST.rows.map((row) => (
               <li
                 key={row.now}
-                className="flex items-start gap-3 text-sm font-medium leading-relaxed text-ink"
+                className="flex items-center gap-3 rounded-[10px] bg-emerald-50 px-3.5 py-3 text-sm leading-snug text-ink"
               >
-                <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden />
+                {/* Green square badge with white check — exact Waalaxy style */}
+                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-[5px] bg-emerald-500">
+                  <Check className="h-3 w-3 text-white" strokeWidth={3} aria-hidden />
+                </span>
                 {row.now}
               </li>
             ))}
@@ -66,20 +73,19 @@ export function Contrast() {
         </div>
       </div>
 
-      <div className="mt-12 flex flex-col items-center gap-4">
+      <div className="mt-12 flex flex-col items-center gap-3">
         <GradientButton href={AUTH_URL} size="lg">
           {CONTRAST.cta}
         </GradientButton>
-        {/* Handwritten "Seriously, try it yourself" + swoosh arrow —
-            sits right beside the CTA exactly like Waalaxy's does. */}
+        {/* Handwritten "Seriously, try it yourself" + swoosh arrow */}
         <div
           aria-hidden
-          className="pointer-events-none flex items-start gap-2 -rotate-[2deg]"
+          className="pointer-events-none flex items-start gap-1.5 -rotate-[2deg]"
         >
           <HandNote rotate={false} className="text-xl sm:text-2xl">
             Seriously, try it yourself
           </HandNote>
-          <SwooshArrow dir="down-left" className="h-14 w-14" />
+          <SwooshArrow dir="down-left" className="h-12 w-12 translate-y-1" />
         </div>
         <p className="text-[13px] text-whisper">3-day free trial</p>
       </div>
