@@ -73,21 +73,25 @@ export function Contrast() {
         </div>
       </div>
 
-      <div className="mt-12 flex flex-col items-center gap-3">
-        <GradientButton href={AUTH_URL} size="lg">
-          {CONTRAST.cta}
-        </GradientButton>
-        {/* Handwritten "Seriously, try it yourself" + swoosh arrow */}
-        <div
-          aria-hidden
-          className="pointer-events-none flex items-start gap-1.5 -rotate-[2deg]"
-        >
-          <HandNote rotate={false} className="text-xl sm:text-2xl">
-            Seriously, try it yourself
-          </HandNote>
-          <SwooshArrow dir="down-left" className="h-12 w-12 translate-y-1" />
+      {/* CTA: button centered, handwritten note bottom-left pointing up-right at button */}
+      <div className="mt-14 flex flex-col items-center gap-3">
+        <div className="relative">
+          <GradientButton href={AUTH_URL} size="lg">
+            {CONTRAST.cta}
+          </GradientButton>
+
+          {/* Handwritten note sits to the bottom-left of the button, arrow points up-right into it */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -bottom-14 -left-36 hidden rotate-[4deg] items-end gap-1 md:flex"
+          >
+            <HandNote rotate={false} className="text-xl leading-tight sm:text-2xl">
+              Seriously, try it yourself
+            </HandNote>
+            <SwooshArrow dir="down-right" className="h-14 w-14 -translate-y-2 scale-x-[-1] scale-y-[-1]" />
+          </div>
         </div>
-        <p className="text-[13px] text-whisper">3-day free trial</p>
+        <p className="mt-16 text-[13px] text-whisper md:mt-3">3-day free trial</p>
       </div>
     </Section>
   )
