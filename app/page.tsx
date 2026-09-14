@@ -5,7 +5,6 @@ import { FinalCta } from '@/components/landing/final-cta'
 import { Hero } from '@/components/landing/hero'
 import { HowItWorks } from '@/components/landing/how-it-works'
 import { Pricing } from '@/components/landing/pricing'
-import { ProductShowcase } from '@/components/landing/product-showcase'
 import { SiteFooter } from '@/components/landing/site-footer'
 import { SiteNav } from '@/components/landing/site-nav'
 import { SocialProof } from '@/components/landing/social-proof'
@@ -29,7 +28,6 @@ export default function Page() {
         <HowItWorks />
         <SupportStrip />
         <Contrast />
-        <ProductShowcase />
         <WhoItsFor />
         <Testimonials />
         <Pricing />
