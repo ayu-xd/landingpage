@@ -28,32 +28,8 @@ export function FinalCta() {
           </h2>
 
           <div className="relative mt-10 flex flex-col items-center gap-3">
-            {/* Button block (relative so annotation can hang off the left side) */}
+            {/* Button block */}
             <div className="relative">
-              {/* Handwritten callout (Absolute so it doesn't push the button off-center) */}
-              <div
-                aria-hidden
-                className="pointer-events-none absolute bottom-0 right-full mb-3 mr-6 hidden w-max flex-col items-start gap-1 sm:flex"
-                style={{ transform: 'rotate(23deg)' }}
-              >
-                {/* Arrow on top, right-aligned, pointing ↗ toward button, white filter */}
-                <img
-                  src="/waalaxy-arrow.png"
-                  alt=""
-                  className="h-16 w-20 self-end object-contain brightness-0 invert"
-                  style={{ transform: 'rotate(133deg)' }}
-                />
-                {/* Text below the arrow, left-aligned */}
-                <p
-                  className="lp-hand text-left text-xl leading-[1.1] text-white sm:text-2xl"
-                  style={{ whiteSpace: 'nowrap' }}
-                >
-                  Seriously, try
-                  <br />
-                  it yourself
-                </p>
-              </div>
-
               {/* Button */}
               <a
                 href={AUTH_URL}
