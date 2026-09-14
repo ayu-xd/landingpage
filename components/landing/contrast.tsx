@@ -75,32 +75,34 @@ export function Contrast() {
 
       {/* CTA — annotation to the LEFT in flow, button to the RIGHT, aligned at bottom */}
       <div className="mt-16 flex flex-col items-center">
-        <div className="flex items-end gap-4">
-          {/* Handwritten callout at the lower-left — only show on sm+ */}
+        <div className="flex items-end gap-6">
+          {/* Handwritten callout — Waalaxy style: whole group tilts +23deg CW, arrow above text */}
           <div
             aria-hidden
-            className="pointer-events-none mb-1 hidden flex-col items-end gap-1 sm:flex"
-            style={{ transform: 'rotate(-8deg)' }}
+            className="pointer-events-none mb-3 hidden flex-col items-start gap-1 sm:flex"
+            style={{ transform: 'rotate(23deg)' }}
           >
+            {/* Arrow on top, right-aligned, pointing ↗ toward button */}
+            <img
+              src="/waalaxy-arrow.png"
+              alt=""
+              className="h-12 w-14 self-end object-contain"
+              style={{ transform: 'rotate(133deg)' }}
+            />
+            {/* Text below the arrow, left-aligned */}
             <p
-              className="lp-hand text-right text-xl leading-[1.1] text-ink sm:text-2xl"
+              className="lp-hand text-left text-xl leading-[1.1] text-ink sm:text-2xl"
               style={{ whiteSpace: 'nowrap' }}
             >
               Seriously, try
               <br />
               it yourself
             </p>
-            <img
-              src="/waalaxy-arrow.png"
-              alt=""
-              className="h-12 w-12 self-end object-contain sm:h-14 sm:w-14"
-              style={{ transform: 'rotate(133deg)' }}
-            />
           </div>
 
           {/* Button + trial text */}
           <div className="flex flex-col items-center gap-2">
-            <GradientButton href={AUTH_URL} size="lg">
+            <GradientButton href={AUTH_URL} size="md">
               {CONTRAST.cta}
             </GradientButton>
             <p className="text-[13px] text-whisper">3-day free trial</p>
