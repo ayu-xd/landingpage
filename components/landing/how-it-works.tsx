@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { Heart } from 'lucide-react'
 import { HOW_WHISPERS, STEPS } from '@/lib/landing-data'
 import {
   Annotation,
@@ -70,10 +71,10 @@ export function HowItWorks() {
                   <div className="flex items-center gap-4">
                     <span
                       className={`flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-[14px] text-2xl font-bold text-white ${
-                        i % 2 === 1 ? 'bg-[#7B61FF]' : 'bg-brand'
+                        i === 4 ? 'bg-[#7B61FF]' : i % 2 === 1 ? 'bg-[#7B61FF]' : 'bg-brand'
                       }`}
                     >
-                      {i + 1}
+                      {i === 4 ? <Heart className="h-6 w-6" fill="currentColor" /> : i + 1}
                     </span>
                     <h3 className="text-2xl font-bold leading-tight tracking-[-0.02em] text-ink sm:text-[1.75rem]">
                       {step.title}
@@ -85,8 +86,8 @@ export function HowItWorks() {
                   </p>
 
                   <ul className="mt-8 space-y-2.5">
-                    {step.bullets.map((b) => (
-                      <Bullet key={b} stepIndex={i}>
+                    {step.bullets.map((b, bulletIdx) => (
+                      <Bullet key={b} stepIndex={i} bulletIndex={bulletIdx}>
                         <Tokens text={b} />
                       </Bullet>
                     ))}

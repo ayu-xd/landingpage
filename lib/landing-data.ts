@@ -89,6 +89,15 @@ export const STEPS: Step[] = [
       'Drop your booking link at the perfect moment, right from the inbox',
     ],
   },
+  {
+    title: 'Stay guided at every step',
+    body: 'From first prospect to first reply, never wonder what to do next.',
+    bullets: [
+      'Real human support, in-house. Always here to help.',
+      'Clear, step-by-step tutorials inside the product.',
+      'AI assistant trained on our playbooks to find prospects and craft messages (soon)',
+    ],
+  },
 ]
 
 export const HOW_WHISPERS = {

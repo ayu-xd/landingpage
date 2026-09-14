@@ -295,12 +295,21 @@ export function Whisper({
 export function Bullet({
   children,
   stepIndex = 0,
+  bulletIndex = 0,
 }: {
   children: React.ReactNode
   stepIndex?: number
+  bulletIndex?: number
 }) {
-  const isPurple = stepIndex % 2 === 1
-  const bgColor = isPurple ? 'bg-[#7B61FF]' : 'bg-brand'
+  let bgColor = 'bg-brand'
+  if (stepIndex === 4) {
+    if (bulletIndex === 0) bgColor = 'bg-brand'
+    else if (bulletIndex === 1) bgColor = 'bg-[#7B61FF]'
+    else bgColor = 'bg-[#38BDF8]'
+  } else {
+    const isPurple = stepIndex % 2 === 1
+    bgColor = isPurple ? 'bg-[#7B61FF]' : 'bg-brand'
+  }
 
   return (
     <li className="flex items-start gap-4 rounded-[14px] bg-[#F8F9FA] p-4 text-[15px] leading-relaxed text-ink-soft">
