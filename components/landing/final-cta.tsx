@@ -29,33 +29,43 @@ export function FinalCta() {
 
           <div className="relative mt-10 flex flex-col items-center gap-3">
             {/* Row: annotation (desktop only) + CTA button side by side */}
-            <div className="flex items-center gap-4">
-              {/* "Seriously, try it yourself" with swoosh arrow into the button */}
+            <div className="flex items-end gap-6">
+              {/* Handwritten callout — Waalaxy style: whole group tilts +23deg CW, arrow above text */}
               <div
                 aria-hidden
-                className="pointer-events-none hidden items-end gap-1.5 rotate-[16deg] md:flex"
+                className="pointer-events-none mb-3 hidden flex-col items-start gap-1 sm:flex"
+                style={{ transform: 'rotate(23deg)' }}
               >
-                <HandNote
-                  rotate={false}
-                  className="text-xl !text-white leading-tight"
+                {/* Arrow on top, right-aligned, pointing ↗ toward button, white filter */}
+                <img
+                  src="/waalaxy-arrow.png"
+                  alt=""
+                  className="h-12 w-14 self-end object-contain brightness-0 invert"
+                  style={{ transform: 'rotate(133deg)' }}
+                />
+                {/* Text below the arrow, left-aligned */}
+                <p
+                  className="lp-hand text-left text-xl leading-[1.1] text-white sm:text-2xl"
+                  style={{ whiteSpace: 'nowrap' }}
                 >
                   Seriously, try
                   <br />
                   it yourself
-                </HandNote>
-                <SwooshArrow dir="down-right" white className="h-20 w-20 -rotate-[16deg]" />
+                </p>
               </div>
 
-              <a
-                href={AUTH_URL}
-                className="inline-flex h-14 items-center justify-center gap-2 rounded-[16px] bg-white px-8 text-lg font-bold text-brand shadow-[0_18px_40px_-12px_rgba(9,20,60,0.45)] transition-all hover:-translate-y-0.5 hover:shadow-[0_22px_48px_-12px_rgba(9,20,60,0.55)]"
-              >
-                {FINAL_CTA.cta}
-                <ArrowRight className="h-4 w-4" aria-hidden />
-              </a>
+              {/* Button + trial text grouped together to the right */}
+              <div className="flex flex-col items-center gap-2">
+                <a
+                  href={AUTH_URL}
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-[16px] bg-white px-6 text-base font-bold text-brand shadow-[0_18px_40px_-12px_rgba(9,20,60,0.45)] transition-all hover:-translate-y-0.5 hover:shadow-[0_22px_48px_-12px_rgba(9,20,60,0.55)]"
+                >
+                  {FINAL_CTA.cta}
+                  <ArrowRight className="h-4 w-4" aria-hidden />
+                </a>
+                <p className="text-[13px] text-white/80">{FINAL_CTA.trial}</p>
+              </div>
             </div>
-
-            <p className="text-[13px] text-white/80">{FINAL_CTA.trial}</p>
             <p className="mt-1 text-sm text-white/85">
               {FINAL_CTA.contact}{' '}
               <a
