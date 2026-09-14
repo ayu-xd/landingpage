@@ -2,10 +2,8 @@ import { Check, X } from 'lucide-react'
 import { AUTH_URL, CONTRAST } from '@/lib/landing-data'
 import {
   GradientButton,
-  HandNote,
   Section,
   SectionHeading,
-  SwooshArrow,
 } from './primitives'
 
 /**
@@ -73,21 +71,33 @@ export function Contrast() {
         </div>
       </div>
 
-      {/* CTA: button → trial text → hand note below */}
-      <div className="mt-14 flex flex-col items-center gap-3">
-        <GradientButton href={AUTH_URL} size="lg">
-          {CONTRAST.cta}
-        </GradientButton>
-        <p className="text-[13px] text-whisper">3-day free trial</p>
-        {/* Handwritten note + arrow sits cleanly below the trial text */}
-        <div
-          aria-hidden
-          className="pointer-events-none mt-1 flex items-end gap-1 rotate-[3deg]"
-        >
-          <HandNote rotate={false} className="text-xl leading-tight sm:text-2xl">
-            Seriously, try it yourself
-          </HandNote>
-          <SwooshArrow dir="up-right" className="h-14 w-14 -translate-y-1" />
+      {/* CTA: button centered with handwritten callout at lower-left pointing to the trial */}
+      <div className="mt-14 flex justify-center">
+        <div className="relative flex flex-col items-center gap-2">
+          {/* Handwritten annotation + arrow sitting at the lower-left pointing directly to the trial */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -bottom-6 right-[calc(100%+12px)] hidden sm:flex items-center gap-2"
+          >
+            <p className="lp-hand -rotate-[10deg] text-right text-xl font-normal leading-[1.05] text-ink sm:text-2xl whitespace-nowrap">
+              Seriously, try
+              <br />
+              it yourself
+            </p>
+            <div className="relative h-14 w-14 shrink-0 sm:h-16 sm:w-16">
+              <img
+                src="/waalaxy-arrow.png"
+                alt=""
+                className="h-full w-full object-contain"
+                style={{ transform: 'rotate(90deg) rotateX(180deg)' }}
+              />
+            </div>
+          </div>
+
+          <GradientButton href={AUTH_URL} size="lg">
+            {CONTRAST.cta}
+          </GradientButton>
+          <p className="text-[13px] text-whisper">3-day free trial</p>
         </div>
       </div>
     </Section>
