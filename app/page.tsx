@@ -1,7 +1,6 @@
 import { ANNOUNCEMENT } from '@/lib/landing-data'
 import { Contrast } from '@/components/landing/contrast'
 import { Faq } from '@/components/landing/faq'
-import { Features } from '@/components/landing/features'
 import { FinalCta } from '@/components/landing/final-cta'
 import { Hero } from '@/components/landing/hero'
 import { HowItWorks } from '@/components/landing/how-it-works'
@@ -30,7 +29,6 @@ export default function Page() {
         <HowItWorks />
         <SupportStrip />
         <Contrast />
-        <Features />
         <ProductShowcase />
         <WhoItsFor />
         <Testimonials />

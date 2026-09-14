@@ -42,16 +42,13 @@ export const HERO = {
 export const SOCIAL_PROOF = {
   line: 'Trusted by SMMA owners, coaches, and agencies running Instagram outreach',
   niches: [
-    'Fitness Coaching',
     'SMMA',
-    'E-com Brands',
-    'Real Estate',
     'Info Products',
+    'Real Estate',
+    'E-com Brands',
     'SaaS',
-    'Recruiting',
-    'Local Services',
   ],
-  handNote: 'your niche is probably in here',
+  handNote: '',
 }
 
 export type Step = {

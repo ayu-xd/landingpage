@@ -25,17 +25,6 @@ export function SocialProof() {
           </ul>
         </div>
 
-        {/* Handwritten note floating right of the pill row, tilted ~13deg,
-            the pre-drawn up-left arrow reaching into the niches. */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute bottom-4 right-6 hidden items-start gap-2 md:flex lg:right-24"
-        >
-          <HandNote rotate={false} className="rotate-[-13deg]">
-            {SOCIAL_PROOF.handNote}
-          </HandNote>
-          <SwooshArrow dir="up-left" className="h-20 w-20" />
-        </div>
       </div>
     </section>
   )
