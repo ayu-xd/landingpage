@@ -24,7 +24,7 @@ export function FinalCta() {
         <div className="text-center">
           <h2 className="text-balance text-[2rem] font-bold leading-[1.12] tracking-[-0.02em] sm:text-[2.75rem]">
             {FINAL_CTA.heading}
-            <span className="block text-white/80">{FINAL_CTA.tagline}</span>
+            <span className="block mt-2 text-xl font-medium text-white/80 sm:text-2xl">{FINAL_CTA.tagline}</span>
           </h2>
 
           <div className="relative mt-10 flex flex-col items-center gap-3">
@@ -40,7 +40,7 @@ export function FinalCta() {
                 <img
                   src="/waalaxy-arrow.png"
                   alt=""
-                  className="h-12 w-14 self-end object-contain brightness-0 invert"
+                  className="h-16 w-20 self-end object-contain brightness-0 invert"
                   style={{ transform: 'rotate(133deg)' }}
                 />
                 {/* Text below the arrow, left-aligned */}
@@ -58,7 +58,7 @@ export function FinalCta() {
               <div className="flex flex-col items-center gap-2">
                 <a
                   href={AUTH_URL}
-                  className="inline-flex h-12 items-center justify-center gap-2 rounded-[16px] bg-white px-6 text-base font-bold text-brand shadow-[0_18px_40px_-12px_rgba(9,20,60,0.45)] transition-all hover:-translate-y-0.5 hover:shadow-[0_22px_48px_-12px_rgba(9,20,60,0.55)]"
+                  className="inline-flex h-14 items-center justify-center gap-2 rounded-[16px] bg-white px-8 text-lg font-bold text-brand shadow-[0_18px_40px_-12px_rgba(9,20,60,0.45)] transition-all hover:-translate-y-0.5 hover:shadow-[0_22px_48px_-12px_rgba(9,20,60,0.55)]"
                 >
                   {FINAL_CTA.cta}
                   <ArrowRight className="h-4 w-4" aria-hidden />
