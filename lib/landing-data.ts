@@ -89,12 +89,21 @@ export const STEPS: Step[] = [
       'Drop your booking link at the perfect moment',
     ],
   },
+  {
+    title: 'Stay guided at every step',
+    body: 'From first prospect to first reply, never wonder what to do next.',
+    bullets: [
+      'Real human support, in-house. Always here to help.',
+      'Clear, step-by-step tutorials inside the product.',
+    ],
+  },
 ]
 
 export const HOW_WHISPERS = {
   header: 'Follow the arrows!',
   step3: 'this is the part where you go touch grass',
   step4: 'hot leads, right here',
+  step5: 'we actually answer',
 }
 
 export const CONTRAST = {

@@ -21,6 +21,7 @@ const STEP_IMAGES = [
   { src: '/steps/step-2-launch.png', w: 1536, h: 1024, alt: 'Build a message sequence with variants' },
   { src: '/steps/step-3-replies.png', w: 1536, h: 1024, alt: 'Reply analytics per campaign and variant' },
   { src: '/steps/step-4-crm.png', w: 1536, h: 1024, alt: 'Pipeline moving leads to booked calls' },
+  null, // step 5 — rendered as a support card, no screenshot needed
 ]
 
 export function HowItWorks() {
@@ -32,7 +33,7 @@ export function HowItWorks() {
             <>
               How DMDroid works
               <span className="block text-[0.62em] font-semibold text-ink-soft">
-                (in 4 simple steps)
+                (in 5 simple steps)
               </span>
             </>
           }
@@ -97,21 +98,45 @@ export function HowItWorks() {
                       {HOW_WHISPERS.step4}
                     </Whisper>
                   )}
+                  {i === 4 && (
+                    <Whisper className="mt-5 block">
+                      {HOW_WHISPERS.step5}
+                    </Whisper>
+                  )}
                 </div>
 
-                {/* Screenshot side: let the transparent image breathe naturally
-                    without a restrictive white box around it. Takes 7/12 space to be HUGE. */}
+                {/* Screenshot side: transparent image breathes naturally. Step 5 renders a support card instead. */}
                 <div className={`lg:col-span-7 ${flip ? 'lg:order-1' : ''}`}>
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    width={img.w}
-                    height={img.h}
-                    priority={i === 0}
-                    quality={100}
-                    sizes="(max-width: 1024px) 100vw, 60vw"
-                    className="h-auto w-full scale-105 transform origin-center sm:scale-110 md:scale-125 lg:scale-[1.15]"
-                  />
+                  {img ? (
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      width={img.w}
+                      height={img.h}
+                      priority={i === 0}
+                      quality={100}
+                      sizes="(max-width: 1024px) 100vw, 60vw"
+                      className="h-auto w-full scale-105 transform origin-center sm:scale-110 md:scale-125 lg:scale-[1.15]"
+                    />
+                  ) : (
+                    /* Step 5 support card */
+                    <div className="mx-auto flex max-w-md flex-col gap-4">
+                      <div className="flex items-start gap-4 rounded-2xl border border-hairline bg-white p-6 shadow-sm">
+                        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand/10 text-2xl">💬</span>
+                        <div>
+                          <p className="font-semibold text-ink">Real human support, in-house</p>
+                          <p className="mt-1 text-sm text-ink-soft">We actually respond. No bots, no outsourced ticket queue.</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-4 rounded-2xl border border-hairline bg-white p-6 shadow-sm">
+                        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand/10 text-2xl">📖</span>
+                        <div>
+                          <p className="font-semibold text-ink">Step-by-step tutorials inside the product</p>
+                          <p className="mt-1 text-sm text-ink-soft">Every screen tells you exactly what to do next. No guesswork.</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
 
