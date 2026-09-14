@@ -73,25 +73,22 @@ export function Contrast() {
         </div>
       </div>
 
-      {/* CTA: button centered, handwritten note bottom-left pointing up-right at button */}
+      {/* CTA: button → trial text → hand note below */}
       <div className="mt-14 flex flex-col items-center gap-3">
-        <div className="relative">
-          <GradientButton href={AUTH_URL} size="lg">
-            {CONTRAST.cta}
-          </GradientButton>
-
-          {/* Handwritten note sits to the bottom-left of the button, arrow sweeps up-right into it */}
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -bottom-14 -left-40 hidden rotate-[4deg] items-end gap-1 md:flex"
-          >
-            <HandNote rotate={false} className="text-xl leading-tight sm:text-2xl">
-              Seriously, try it yourself
-            </HandNote>
-            <SwooshArrow dir="up-right" className="h-16 w-16 -translate-y-1" />
-          </div>
+        <GradientButton href={AUTH_URL} size="lg">
+          {CONTRAST.cta}
+        </GradientButton>
+        <p className="text-[13px] text-whisper">3-day free trial</p>
+        {/* Handwritten note + arrow sits cleanly below the trial text */}
+        <div
+          aria-hidden
+          className="pointer-events-none mt-1 flex items-end gap-1 rotate-[3deg]"
+        >
+          <HandNote rotate={false} className="text-xl leading-tight sm:text-2xl">
+            Seriously, try it yourself
+          </HandNote>
+          <SwooshArrow dir="up-right" className="h-14 w-14 -translate-y-1" />
         </div>
-        <p className="mt-16 text-[13px] text-whisper md:mt-3">3-day free trial</p>
       </div>
     </Section>
   )
