@@ -292,11 +292,24 @@ export function Whisper({
   )
 }
 
-export function Bullet({ children }: { children: React.ReactNode }) {
+export function Bullet({
+  children,
+  stepIndex = 0,
+}: {
+  children: React.ReactNode
+  stepIndex?: number
+}) {
+  const isPurple = stepIndex % 2 === 1
+  const bgColor = isPurple ? 'bg-[#7B61FF]' : 'bg-brand'
+
   return (
-    <li className="flex items-start gap-2.5 text-sm leading-relaxed text-ink-soft">
-      <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden />
-      <span>{children}</span>
+    <li className="flex items-start gap-4 rounded-[14px] bg-[#F8F9FA] p-4 text-[15px] leading-relaxed text-ink-soft">
+      <div
+        className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-[6px] ${bgColor} text-white`}
+      >
+        <Check className="h-3.5 w-3.5 stroke-[3px]" aria-hidden />
+      </div>
+      <span className="pt-[1px]">{children}</span>
     </li>
   )
 }

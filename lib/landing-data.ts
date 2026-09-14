@@ -54,47 +54,39 @@ export type Step = {
 /** Waalaxy's 4-step walkthrough, rebuilt on DMDroid's real capabilities. */
 export const STEPS: Step[] = [
   {
-    title: 'Import your targets',
-    body: 'Build qualified prospect lists from any source. No platform lock-in, no stale database.',
+    title: 'Find your prospects, from anywhere',
+    body: 'Build qualified Instagram prospect lists from any source no platform lock-in, no stale data.',
     bullets: [
-      'Paste a raw list of usernames or upload CSV / Excel',
-      'Custom fields auto-detected ({{FirstName}}, {{Niche}}, anything you add)',
-      'De-duplication runs automatically',
+      'Paste usernames or upload CSV/Excel — you\'re live in minutes',
+      'Custom merge fields auto-detected: {{FirstName}}, {{Niche}}, anything you add',
+      'Auto de-duplication runs on every import, keeping your list clean',
     ],
   },
   {
     title: 'Launch outreach that feels personal',
-    body: 'Send openers and follow-ups with A/B variants that spark real conversations.',
+    body: 'Send openers and follow-ups with A/B variants that spark real conversations, at scale.',
     bullets: [
-      'Up to 5 message variants per step, rotated automatically',
-      'Smart delays between steps: looks human, is not',
-      'Preview exactly what each recipient sees before you launch',
+      'Up to 10 message variants per step, rotated automatically',
+      'Smart delays between messages: looks human, is not',
+      'Preview exactly what each recipient sees before you hit send',
     ],
   },
   {
     title: 'See what gets replies, then scale it',
-    body: 'Know exactly what works so you can double down.',
+    body: 'Know exactly what works by campaign, by variant, by account — so you double down fast.',
     bullets: [
-      'Reply rate per campaign, per variant, per account',
-      'Runs 24/7 on our cloud, so close your laptop',
-      'Sending windows, weekend pauses, your timezone',
+      'Reply rates broken down per campaign, per variant, per account',
+      'Runs 24/7 on our your laptop or our cloud',
+      'Sending windows, weekend pauses, timezone-aware scheduling',
     ],
   },
   {
-    title: 'Watch replies become booked calls',
-    body: 'Every lead moves through a visual pipeline until they book.',
+    title: 'Reply to every lead from one inbox',
+    body: 'Every campaign reply lands in one place, so no hot lead gets lost across accounts.',
     bullets: [
-      'The sequence stops the instant someone replies',
-      'Visual pipeline: DM’d → Initiated → Engaged → Calendly → Booked',
-      'Drop your booking link at the perfect moment',
-    ],
-  },
-  {
-    title: 'Stay guided at every step',
-    body: 'From first prospect to first reply, never wonder what to do next.',
-    bullets: [
-      'Real human support, in-house. Always here to help.',
-      'Clear, step-by-step tutorials inside the product.',
+      'Unified inbox: every reply from every campaign, every account',
+      'Full conversation context right beside each message',
+      'Drop your booking link at the perfect moment, right from the inbox',
     ],
   },
 ]

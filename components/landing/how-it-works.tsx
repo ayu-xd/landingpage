@@ -68,7 +68,11 @@ export function HowItWorks() {
                 {/* Text side (takes up 5/12 of the space so the image can be larger) */}
                 <div className={`lg:col-span-5 ${flip ? 'lg:order-2' : ''}`}>
                   <div className="flex items-center gap-4">
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand text-xl font-bold text-white">
+                    <span
+                      className={`flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-[14px] text-2xl font-bold text-white ${
+                        i % 2 === 1 ? 'bg-[#7B61FF]' : 'bg-brand'
+                      }`}
+                    >
                       {i + 1}
                     </span>
                     <h3 className="text-2xl font-bold leading-tight tracking-[-0.02em] text-ink sm:text-[1.75rem]">
@@ -80,9 +84,9 @@ export function HowItWorks() {
                     <Tokens text={step.body} />
                   </p>
 
-                  <ul className="mt-6 space-y-3 border-t border-hairline-soft pt-6">
+                  <ul className="mt-8 space-y-2.5">
                     {step.bullets.map((b) => (
-                      <Bullet key={b}>
+                      <Bullet key={b} stepIndex={i}>
                         <Tokens text={b} />
                       </Bullet>
                     ))}
@@ -96,11 +100,6 @@ export function HowItWorks() {
                   {i === 3 && (
                     <Whisper className="mt-5 block">
                       {HOW_WHISPERS.step4}
-                    </Whisper>
-                  )}
-                  {i === 4 && (
-                    <Whisper className="mt-5 block">
-                      {HOW_WHISPERS.step5}
                     </Whisper>
                   )}
                 </div>
