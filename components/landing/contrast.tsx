@@ -2,8 +2,10 @@ import { Check, X } from 'lucide-react'
 import { AUTH_URL, CONTRAST } from '@/lib/landing-data'
 import {
   GradientButton,
+  HandNote,
   Section,
   SectionHeading,
+  SwooshArrow,
 } from './primitives'
 
 /**
@@ -71,33 +73,38 @@ export function Contrast() {
         </div>
       </div>
 
-      {/* CTA: button centered with handwritten callout at lower-left pointing to the trial */}
-      <div className="mt-14 flex justify-center">
-        <div className="relative flex flex-col items-center gap-2">
-          {/* Handwritten annotation + arrow sitting at the lower-left pointing directly to the trial */}
+      {/* CTA — annotation to the LEFT in flow, button to the RIGHT, aligned at bottom */}
+      <div className="mt-16 flex flex-col items-center">
+        <div className="flex items-end gap-4">
+          {/* Handwritten callout at the lower-left — only show on sm+ */}
           <div
             aria-hidden
-            className="pointer-events-none absolute -bottom-6 right-[calc(100%+12px)] hidden sm:flex items-center gap-2"
+            className="pointer-events-none mb-1 hidden flex-col items-end gap-1 sm:flex"
+            style={{ transform: 'rotate(-8deg)' }}
           >
-            <p className="lp-hand -rotate-[10deg] text-right text-xl font-normal leading-[1.05] text-ink sm:text-2xl whitespace-nowrap">
+            <p
+              className="lp-hand text-right text-xl leading-[1.1] text-ink sm:text-2xl"
+              style={{ whiteSpace: 'nowrap' }}
+            >
               Seriously, try
               <br />
               it yourself
             </p>
-            <div className="relative h-14 w-14 shrink-0 sm:h-16 sm:w-16">
-              <img
-                src="/waalaxy-arrow.png"
-                alt=""
-                className="h-full w-full object-contain"
-                style={{ transform: 'rotate(90deg) rotateX(180deg)' }}
-              />
-            </div>
+            <img
+              src="/waalaxy-arrow.png"
+              alt=""
+              className="h-12 w-12 self-end object-contain sm:h-14 sm:w-14"
+              style={{ transform: 'rotate(133deg)' }}
+            />
           </div>
 
-          <GradientButton href={AUTH_URL} size="lg">
-            {CONTRAST.cta}
-          </GradientButton>
-          <p className="text-[13px] text-whisper">3-day free trial</p>
+          {/* Button + trial text */}
+          <div className="flex flex-col items-center gap-2">
+            <GradientButton href={AUTH_URL} size="lg">
+              {CONTRAST.cta}
+            </GradientButton>
+            <p className="text-[13px] text-whisper">3-day free trial</p>
+          </div>
         </div>
       </div>
     </Section>
