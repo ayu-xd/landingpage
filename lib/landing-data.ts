@@ -57,7 +57,7 @@ export const STEPS: Step[] = [
     title: 'Find your prospects, from anywhere',
     body: 'Build qualified Instagram prospect lists from any source no platform lock-in, no stale data.',
     bullets: [
-      'Paste usernames or upload CSV/Excel — you\'re live in minutes',
+      'Paste usernames or upload CSV/Excel, you\'re live in minutes',
       'Custom merge fields auto-detected: {{FirstName}}, {{Niche}}, anything you add',
       'Auto de-duplication runs on every import, keeping your list clean',
     ],
@@ -73,7 +73,7 @@ export const STEPS: Step[] = [
   },
   {
     title: 'See what gets replies, then scale it',
-    body: 'Know exactly what works by campaign, by variant, by account — so you double down fast.',
+    body: 'Know exactly what works by campaign, by variant, by account, so you double down fast.',
     bullets: [
       'Reply rates broken down per campaign, per variant, per account',
       'Runs 24/7 on our your laptop or our cloud',
