@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { Heart } from 'lucide-react'
 import { HOW_WHISPERS, STEPS } from '@/lib/landing-data'
+import { Mockup1Import, Mockup2Sequence, Mockup3Analytics, Mockup4Inbox } from './step-mockups'
 import {
   Annotation,
   Bullet,
@@ -17,13 +18,7 @@ import {
  * + bullets on one side, a big product screenshot on the other, with
  * hand-drawn flow arrows guiding you from step to step.
  */
-const STEP_IMAGES = [
-  { src: '/steps/step-1-import.png', w: 1672, h: 941, alt: 'Import leads into DMDroid' },
-  { src: '/steps/step-2-launch.png', w: 1536, h: 1024, alt: 'Build a message sequence with variants' },
-  { src: '/steps/step-3-replies.png', w: 1536, h: 1024, alt: 'Reply analytics per campaign and variant' },
-  { src: '/steps/step-4-crm.png', w: 1536, h: 1024, alt: 'Pipeline moving leads to booked calls' },
-  null, // step 5 — rendered as a support card, no screenshot needed
-]
+
 
 export function HowItWorks() {
   return (
@@ -61,7 +56,6 @@ export function HowItWorks() {
           breathes like Waalaxy's walkthrough. */}
       <ol className="mx-auto mt-20 flex max-w-6xl flex-col gap-32 lg:gap-[16rem]">
         {STEPS.map((step, i) => {
-          const img = STEP_IMAGES[i]
           const flip = i % 2 === 1
           return (
             <li key={step.title} className="relative">
@@ -105,38 +99,32 @@ export function HowItWorks() {
                   )}
                 </div>
 
-                {/* Screenshot side: transparent image breathes naturally. Step 5 renders a support card instead. */}
-                <div className={`lg:col-span-7 ${flip ? 'lg:order-1' : ''}`}>
-                  {img ? (
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      width={img.w}
-                      height={img.h}
-                      priority={i === 0}
-                      quality={100}
-                      sizes="(max-width: 1024px) 100vw, 60vw"
-                      className="h-auto w-full scale-105 transform origin-center sm:scale-110 md:scale-125 lg:scale-[1.15]"
-                    />
-                  ) : (
-                    /* Step 5 support card */
-                    <div className="mx-auto flex max-w-md flex-col gap-4">
-                      <div className="flex items-start gap-4 rounded-2xl border border-hairline bg-white p-6 shadow-sm">
-                        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand/10 text-2xl">💬</span>
-                        <div>
-                          <p className="font-semibold text-ink">Real human support, in-house</p>
-                          <p className="mt-1 text-sm text-ink-soft">We actually respond. No bots, no outsourced ticket queue.</p>
+                {/* Mockups / Support Card */}
+                <div className={`lg:col-span-7 flex items-center justify-center ${flip ? 'lg:order-1' : ''}`}>
+                  <div className="w-full max-w-full scale-100 transform origin-center sm:scale-[1.02] md:scale-105 lg:scale-[1.10]">
+                    {i === 0 && <Mockup1Import />}
+                    {i === 1 && <Mockup2Sequence />}
+                    {i === 2 && <Mockup3Analytics />}
+                    {i === 3 && <Mockup4Inbox />}
+                    {i === 4 && (
+                      <div className="mx-auto flex max-w-md flex-col gap-4">
+                        <div className="flex items-start gap-4 rounded-2xl border border-hairline bg-white p-6 shadow-sm">
+                          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand/10 text-2xl">💬</span>
+                          <div>
+                            <p className="font-semibold text-ink">Real human support, in-house</p>
+                            <p className="mt-1 text-sm text-ink-soft">We actually respond. No bots, no outsourced ticket queue.</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-4 rounded-2xl border border-hairline bg-white p-6 shadow-sm">
+                          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand/10 text-2xl">📖</span>
+                          <div>
+                            <p className="font-semibold text-ink">Step-by-step tutorials inside the product</p>
+                            <p className="mt-1 text-sm text-ink-soft">Every screen tells you exactly what to do next. No guesswork.</p>
+                          </div>
                         </div>
                       </div>
-                      <div className="flex items-start gap-4 rounded-2xl border border-hairline bg-white p-6 shadow-sm">
-                        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand/10 text-2xl">📖</span>
-                        <div>
-                          <p className="font-semibold text-ink">Step-by-step tutorials inside the product</p>
-                          <p className="mt-1 text-sm text-ink-soft">Every screen tells you exactly what to do next. No guesswork.</p>
-                        </div>
-                      </div>
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </div>
               </div>
 
