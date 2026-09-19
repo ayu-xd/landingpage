@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     template: '%s | DMDroid',
   },
   description:
-    'DMDroid is the cold DM outreach tool for Instagram that books calls on autopilot. 500+ DMs a day across your accounts. Start your 3-day free trial.',
+    'DMDroid automates cold DM outreach on Instagram and books calls on autopilot. 500+ DMs a day across your accounts. Start your 3-day free trial.',
   generator: 'DMDroid',
   metadataBase: new URL('https://dmdroid.app'),
   alternates: {
@@ -126,7 +126,7 @@ const jsonLd = {
       applicationCategory: 'BusinessApplication',
       operatingSystem: 'Web',
       description:
-        'DMDroid is the cold DM outreach tool for Instagram that books calls on autopilot. 500+ DMs a day across your accounts. Start your 3-day free trial.',
+        'DMDroid automates cold DM outreach on Instagram and books calls on autopilot. 500+ DMs a day across your accounts. Start your 3-day free trial.',
       offers: [
         {
           '@type': 'Offer',

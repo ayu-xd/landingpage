@@ -22,10 +22,9 @@ export const NAV_LINKS = [
 
 export const HERO = {
   badge: 'Runs on your PC or VPS — you just reply',
-  headline:
-    'The cold DM outreach tool for Instagram that books calls on autopilot',
+  headline: 'Cold DM outreach for Instagram',
   subhead:
-    'DMDroid is a cold DM outreach tool for Instagram that reaches 500+ people a day, spread across your connected accounts. Auto-follows up until they reply, with rate caps and isolated sessions per account. No VA needed. No manual sending.',
+    'DMDroid automates cold DM outreach on Instagram — 500+ people a day across your accounts, followed up until they reply. No VA. No manual sending.',
   cta: TRIAL_CTA,
   ctaSecondary: 'See how it works',
   trial: '3-day free trial',
@@ -375,8 +374,20 @@ export const FAQS = [
     a: 'Two ways. Manual: DM 20–30 targeted prospects a day and follow up 3–5 times — most people quit after one message, which is where most replies come from. Automated: DMDroid does the same thing at scale. Import your list, build your sequence with up to 5 variants per step, and the droid sends and follows up until they reply. Most users reach 500+ people a day, spread across 10+ connected accounts.',
   },
   {
+    q: 'How do you DM someone on Instagram for business?',
+    a: 'Find a real reason — their content, their offer, a mutual niche. Open with one specific line, never “hey, I help businesses grow.” Then follow up 3–5 times: most replies come after message 2 or 3, and almost nobody sends them. DMDroid handles the sending and follow-up from your account; you only show up when someone replies.',
+  },
+  {
     q: 'Are automated DMs safe for my account?',
     a: 'They are when they’re sent like a human. Every DMDroid account runs in its own isolated browser session with daily rate caps, sending windows, and heartbeat monitoring that flags anomalies early. No shared fingerprints, no blasting. That’s what keeps accounts standing while volume goes up.',
+  },
+  {
+    q: 'Does DMDroid auto-reply to incoming DMs?',
+    a: 'No — and that’s deliberate. Autoresponders answer people who already messaged you. DMDroid does the harder job: outbound outreach and follow-up sequences that create those conversations in the first place. When someone replies, their sequence stops automatically and they land in your pipeline for a human conversation.',
+  },
+  {
+    q: 'How many DMs can I send per day without getting flagged?',
+    a: 'There’s no official number, which is exactly why people get burned guessing. DMDroid enforces daily rate caps, sending windows, and minimum spacing between messages per account — and spreads volume across your connected accounts instead of hammering from one. You set the campaign; the droid stays under the radar for you.',
   },
   {
     q: 'What is cold DM outreach?',
