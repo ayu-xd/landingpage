@@ -36,9 +36,6 @@ export const metadata: Metadata = {
     'DMDroid automates cold DM outreach on Instagram and books calls on autopilot. 500+ DMs a day across your accounts. Start your 3-day free trial.',
   generator: 'DMDroid',
   metadataBase: new URL('https://dmdroid.app'),
-  alternates: {
-    canonical: 'https://dmdroid.app',
-  },
   robots: {
     index: true,
     follow: true,

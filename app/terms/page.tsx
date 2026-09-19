@@ -5,6 +5,9 @@ import { SiteFooter } from '@/components/landing/site-footer'
 export const metadata = {
   title: 'Terms of Service',
   description: 'DMDroid Terms of Service - Read the terms governing your use of our platform.',
+  alternates: {
+    canonical: 'https://dmdroid.app/terms',
+  },
 }
 
 export default function TermsPage() {

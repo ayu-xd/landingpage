@@ -5,6 +5,9 @@ import { SiteFooter } from '@/components/landing/site-footer'
 export const metadata = {
   title: 'Privacy Policy',
   description: 'DMDroid Privacy Policy - Learn how we collect, use, and protect your data.',
+  alternates: {
+    canonical: 'https://dmdroid.app/privacy-policy',
+  },
 }
 
 export default function PrivacyPolicyPage() {

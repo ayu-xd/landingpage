@@ -5,6 +5,9 @@ import { SiteFooter } from '@/components/landing/site-footer'
 export const metadata = {
   title: 'Support',
   description: 'Get help with DMDroid - Contact our support team or browse FAQs.',
+  alternates: {
+    canonical: 'https://dmdroid.app/support',
+  },
 }
 
 const faqs = [

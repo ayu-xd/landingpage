@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { Contrast } from '@/components/landing/contrast'
 import { Faq } from '@/components/landing/faq'
 import { FinalCta } from '@/components/landing/final-cta'
@@ -16,6 +17,11 @@ import { WhoItsFor } from '@/components/landing/who-its-for'
  * features → product panels → who it's for → testimonials → pricing →
  * FAQ → final CTA → footer.
  */
+export const metadata: Metadata = {
+  alternates: {
+    canonical: 'https://dmdroid.app',
+  },
+}
 export default function Page() {
   return (
     <div className="lp-root min-h-screen bg-white text-ink-body antialiased">
