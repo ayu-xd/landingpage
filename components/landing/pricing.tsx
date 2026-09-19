@@ -68,7 +68,7 @@ export function Pricing() {
               ) : (
                 <GradientButton
                   href={AUTH_URL}
-                  className={`mt-8 w-full ${p.featured ? '' : 'border !bg-none text-brand shadow-none hover:!bg-brand/5'}`}
+                  className={`mt-8 w-full ${p.featured ? '' : 'border !bg-none !text-brand !shadow-none hover:!bg-brand/5'}`}
                 >
                   {p.cta}
                 </GradientButton>
