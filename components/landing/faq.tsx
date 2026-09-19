@@ -1,16 +1,16 @@
-'use client'
-
 import { ArrowDown } from 'lucide-react'
-import { useState } from 'react'
 import { CONTACT_EMAIL, FAQS } from '@/lib/landing-data'
 import { HandNote, Section, SwooshArrow } from './primitives'
 
 /**
  * Waalaxy's FAQ — LEFT-aligned heading, 2-column accordion grid,
  * "With real humans :)" annotation on the top-right with a DOWN arrow.
+ *
+ * Server-rendered: every answer ships in the initial HTML via native
+ * <details>/<summary> so crawlers and AI fetchers see all Q+As
+ * (matches the FAQPage JSON-LD in app/layout.tsx).
  */
 export function Faq() {
-  const [open, setOpen] = useState<number | null>(0)
 
   return (
     <Section id="faq" tone="alt">
@@ -44,42 +44,32 @@ export function Faq() {
         </div>
       </div>
 
-      {/* 2-column accordion grid */}
+      {/* 2-column accordion grid — native <details> keeps all answers in the HTML */}
       <div className="mx-auto mt-10 grid max-w-5xl gap-3 sm:grid-cols-2">
-        {FAQS.map((item, i) => {
-          const isOpen = open === i
-          return (
-            <div
-              key={item.q}
-              className={`overflow-hidden rounded-[16px] border transition-colors ${
-                isOpen
-                  ? 'border-brand/40 bg-white'
-                  : 'border-hairline bg-surface'
-              }`}
-            >
-              <button
-                onClick={() => setOpen(isOpen ? null : i)}
-                className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left sm:px-6"
-                aria-expanded={isOpen}
-              >
-                <span className="text-[15px] font-semibold text-ink sm:text-base">
-                  {item.q}
-                </span>
-                <ArrowDown
-                  className={`h-4 w-4 shrink-0 text-brand transition-transform duration-200 ${
-                    isOpen ? 'rotate-180' : ''
-                  }`}
-                  aria-hidden
-                />
-              </button>
-              {isOpen && (
-                <p className="px-5 pb-5 text-sm leading-relaxed text-ink-soft sm:px-6">
-                  {item.a}
-                </p>
-              )}
-            </div>
-          )
-        })}
+        {FAQS.map((item, i) => (
+          <details
+            key={item.q}
+            id={`faq-${item.q
+              .toLowerCase()
+              .replace(/[^a-z0-9]+/g, '-')
+              .replace(/(^-|-$)/g, '')}`}
+            open={i === 0}
+            className="group overflow-hidden rounded-[16px] border border-hairline bg-surface transition-colors open:border-brand/40 open:bg-white"
+          >
+            <summary className="flex w-full cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-left sm:px-6 [&::-webkit-details-marker]:hidden">
+              <span className="text-[15px] font-semibold text-ink sm:text-base">
+                {item.q}
+              </span>
+              <ArrowDown
+                className="h-4 w-4 shrink-0 text-brand transition-transform duration-200 group-open:rotate-180"
+                aria-hidden
+              />
+            </summary>
+            <p className="px-5 pb-5 text-sm leading-relaxed text-ink-soft sm:px-6">
+              {item.a}
+            </p>
+          </details>
+        ))}
       </div>
     </Section>
   )

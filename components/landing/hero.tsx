@@ -37,7 +37,7 @@ export function Hero() {
               {HERO.cta}
             </GradientButton>
             <a
-              href="#how"
+              href="/#how"
               className="mt-1 inline-flex items-center gap-1.5 text-[15px] font-semibold text-brand transition-colors hover:text-ink"
             >
               {HERO.ctaSecondary}

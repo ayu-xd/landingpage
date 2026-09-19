@@ -3,7 +3,7 @@ import { SiteNav } from '@/components/landing/site-nav'
 import { SiteFooter } from '@/components/landing/site-footer'
 
 export const metadata = {
-  title: 'Privacy Policy | DMDroid',
+  title: 'Privacy Policy',
   description: 'DMDroid Privacy Policy - Learn how we collect, use, and protect your data.',
 }
 
@@ -209,7 +209,7 @@ export default function PrivacyPolicyPage() {
                 <li><strong>Right to Object:</strong> Object to our processing of your personal data for specific purposes.</li>
                 <li><strong>Right to Data Portability:</strong> Request your data in a structured, machine-readable format.</li>
               </ul>
-              <p>To exercise these rights, contact us at <strong>hello@dmdroid.app</strong>. We will respond within 30 days.</p>
+              <p>To exercise these rights, contact us at <strong>support@dmdroid.app</strong>. We will respond within 30 days.</p>
             </section>
 
             <section className="space-y-2">
@@ -220,7 +220,7 @@ export default function PrivacyPolicyPage() {
                 <li><strong>Right to Delete:</strong> Request deletion of personal data we have collected about you.</li>
                 <li><strong>Right to Opt-Out of Sale:</strong> We do not sell your personal data. You have the right to opt out of any future sale, which we will honor.</li>
               </ul>
-              <p>To exercise these rights, contact us at <strong>hello@dmdroid.app</strong>. We will respond within 45 days.</p>
+              <p>To exercise these rights, contact us at <strong>support@dmdroid.app</strong>. We will respond within 45 days.</p>
             </section>
 
             <section className="space-y-2">
@@ -252,7 +252,7 @@ export default function PrivacyPolicyPage() {
             <section className="space-y-2">
               <h2 className="text-lg font-semibold text-foreground">12. Children&apos;s Privacy</h2>
               <p>
-                DMDroid is not directed to individuals under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that we have collected data from a child under 13, we will delete it promptly. If you are a parent or guardian and believe your child has provided us with personal information, please contact us at <strong>hello@dmdroid.app</strong>.
+                DMDroid is not directed to individuals under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that we have collected data from a child under 13, we will delete it promptly. If you are a parent or guardian and believe your child has provided us with personal information, please contact us at <strong>support@dmdroid.app</strong>.
               </p>
             </section>
 
@@ -269,8 +269,8 @@ export default function PrivacyPolicyPage() {
                 If you have any questions about this Privacy Policy or our data practices, please contact us:
               </p>
               <ul className="list-disc pl-5 space-y-1">
-                <li><strong>Email:</strong> <a href="mailto:hello@dmdroid.app" className="text-primary hover:underline">hello@dmdroid.app</a></li>
-                <li><strong>Website:</strong> <a href="https://www.dmdroid.app" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">https://www.dmdroid.app</a></li>
+                <li><strong>Email:</strong> <a href="mailto:support@dmdroid.app" className="text-primary hover:underline">support@dmdroid.app</a></li>
+                <li><strong>Website:</strong> <a href="https://dmdroid.app" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">https://dmdroid.app</a></li>
               </ul>
             </section>
 

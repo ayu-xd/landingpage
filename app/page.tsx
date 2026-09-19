@@ -1,4 +1,3 @@
-import { ANNOUNCEMENT } from '@/lib/landing-data'
 import { Contrast } from '@/components/landing/contrast'
 import { Faq } from '@/components/landing/faq'
 import { FinalCta } from '@/components/landing/final-cta'

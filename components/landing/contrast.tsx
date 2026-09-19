@@ -73,6 +73,25 @@ export function Contrast() {
         </div>
       </div>
 
+      {/* Machine-readable comparison table (visually hidden) for crawlers + AI citations */}
+      <table className="sr-only">
+        <caption>Old Way vs DMDroid Way comparison</caption>
+        <thead>
+          <tr>
+            <th scope="col">The Old Way</th>
+            <th scope="col">The DMDroid Way</th>
+          </tr>
+        </thead>
+        <tbody>
+          {CONTRAST.rows.map((row) => (
+            <tr key={row.old}>
+              <td>{row.old}</td>
+              <td>{row.now}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
       {/* CTA — annotation absolute to the LEFT, button centered, aligned at bottom */}
       <div className="mt-16 flex flex-col items-center">
         {/* Button block (relative so annotation can hang off the left side) */}

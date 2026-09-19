@@ -3,7 +3,7 @@ import { SiteNav } from '@/components/landing/site-nav'
 import { SiteFooter } from '@/components/landing/site-footer'
 
 export const metadata = {
-  title: 'Terms of Service | DMDroid',
+  title: 'Terms of Service',
   description: 'DMDroid Terms of Service - Read the terms governing your use of our platform.',
 }
 
@@ -130,8 +130,8 @@ export default function TermsPage() {
               <h2 className="text-lg font-semibold text-foreground">14. Contact Us</h2>
               <p>
                 For questions regarding these Terms of Service, please contact our support team at{' '}
-                <a href="mailto:hello@dmdroid.app" className="text-primary hover:underline">
-                  hello@dmdroid.app
+                <a href="mailto:support@dmdroid.app" className="text-primary hover:underline">
+                  support@dmdroid.app
                 </a>.
               </p>
             </section>

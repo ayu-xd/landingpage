@@ -3,7 +3,7 @@ import { SiteNav } from '@/components/landing/site-nav'
 import { SiteFooter } from '@/components/landing/site-footer'
 
 export const metadata = {
-  title: 'Support | DMDroid',
+  title: 'Support',
   description: 'Get help with DMDroid - Contact our support team or browse FAQs.',
 }
 
@@ -49,7 +49,7 @@ export default function SupportPage() {
             <h2 className="text-lg font-semibold text-foreground">Contact Us</h2>
             <div className="grid gap-4 sm:grid-cols-2">
               <a
-                href="mailto:hello@dmdroid.app"
+                href="mailto:support@dmdroid.app"
                 className="flex items-center gap-3 p-4 rounded-xl border border-border hover:border-primary/50 transition-colors"
               >
                 <div className="p-2 bg-primary/15 rounded-lg text-primary">
@@ -59,7 +59,7 @@ export default function SupportPage() {
                 </div>
                 <div>
                   <p className="font-medium text-foreground">Email</p>
-                  <p className="text-sm text-muted-foreground">hello@dmdroid.app</p>
+                  <p className="text-sm text-muted-foreground">support@dmdroid.app</p>
                 </div>
               </a>
               <a
@@ -96,8 +96,8 @@ export default function SupportPage() {
           <section className="p-4 rounded-xl bg-primary/5 border border-primary/20">
             <p className="text-sm text-muted-foreground">
               <strong className="text-foreground">Response Time:</strong> We aim to respond to all support inquiries within 24 hours. For urgent matters, please email us directly at{' '}
-              <a href="mailto:hello@dmdroid.app" className="text-primary hover:underline">
-                hello@dmdroid.app
+              <a href="mailto:support@dmdroid.app" className="text-primary hover:underline">
+                support@dmdroid.app
               </a>.
             </p>
           </section>

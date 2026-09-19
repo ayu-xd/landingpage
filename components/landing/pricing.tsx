@@ -78,6 +78,32 @@ export function Pricing() {
         })}
       </div>
 
+      {/* Machine-readable pricing table (visually hidden) for crawlers + AI citations */}
+      <table className="sr-only">
+        <caption>DMDroid pricing plans comparison</caption>
+        <thead>
+          <tr>
+            <th scope="col">Plan</th>
+            <th scope="col">Price</th>
+            <th scope="col">Description</th>
+            <th scope="col">Features</th>
+          </tr>
+        </thead>
+        <tbody>
+          {PLANS.map((p) => (
+            <tr key={p.name}>
+              <td>{p.name}</td>
+              <td>
+                {p.price}
+                {p.period}
+              </td>
+              <td>{p.desc}</td>
+              <td>{p.features.join('; ')}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
       <div className="mx-auto mt-14 flex max-w-xl flex-col items-center gap-4 text-center">
         {/* Annotation: natural flow, ABOVE guarantee text, no absolute overlap */}
         <div
