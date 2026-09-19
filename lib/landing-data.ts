@@ -21,15 +21,15 @@ export const NAV_LINKS = [
 ]
 
 export const HERO = {
-  badge: 'Runs on your PC or VPS — you just reply',
-  headline: 'Cold DM outreach for Instagram',
+  badge: 'Runs on your PC or VPS. You just reply',
+  headline: 'Cold DM outreach, automated',
   subhead:
-    'DMDroid automates cold DM outreach on Instagram — 500+ people a day across your accounts, followed up until they reply. No VA. No manual sending.',
+    'DMDroid automates cold DM outreach on Instagram. 500+ people a day across your accounts, followed up until they reply. No VA. No manual sending.',
   cta: TRIAL_CTA,
   ctaSecondary: 'See how it works',
   trial: '3-day free trial',
   handNote: "The magic's happening here",
-  whisper: 'runs on your machine — keep it on, or use a VPS',
+  whisper: 'runs on your machine. Keep it on, or use a VPS',
 }
 
 export const SOCIAL_PROOF = {
@@ -63,9 +63,9 @@ export const STEPS: Step[] = [
   },
   {
     title: 'Launch outreach that feels personal',
-    body: 'Send openers and follow-ups with A/B variants that spark real conversations, at scale.',
+    body: 'Send openers and follow-ups with A/B testing that spark real conversations, at scale.',
     bullets: [
-      'Up to 10 message variants per step, rotated automatically',
+      'Minimum 5 variants per step, rotated so no two DMs look alike',
       'Smart delays between messages: looks human, is not',
       'Preview exactly what each recipient sees before you hit send',
     ],
@@ -75,7 +75,7 @@ export const STEPS: Step[] = [
     body: 'Know exactly what works by campaign, by variant, by account, so you double down fast.',
     bullets: [
       'Reply rates broken down per campaign, per variant, per account',
-      'Runs while your PC is on — or 24/7 on a VPS',
+      'Runs while your PC is on, or 24/7 on a VPS',
       'Sending windows, weekend pauses, timezone-aware scheduling',
     ],
   },
@@ -210,8 +210,8 @@ export const FEATURES: {
   },
   {
     icon: MessageSquare,
-    title: 'A/B variant testing',
-    body: 'Up to 5 message variants per step, rotated automatically. Reply rate tracked per variant so the winner emerges.',
+    title: 'A/B testing',
+    body: 'Minimum 5 variants per step, rotated automatically: sending the same DM twice gets you flagged. Reply rate tracked per variant so the winner emerges.',
   },
   {
     icon: Monitor,
@@ -253,9 +253,9 @@ export const SHOWCASE = [
   },
   {
     title: 'Test every message, keep the winner',
-    body: 'Write up to five variants for each step so your messages stay fresh and human. DMDroid rotates them across sends, tracks which lines earn the most replies, and shows you the numbers.',
+    body: 'Write at least five variants for each step so no account ever sends the same DM twice. DMDroid rotates them across sends, tracks which lines earn the most replies, and shows you the numbers.',
     bullets: [
-      'Up to 5 variants per step, rotated automatically',
+      'Minimum 5 variants per step, rotated automatically',
       'Personalize with {{FirstName}} and more',
       'Reply rate tracked per variant',
     ],
@@ -304,7 +304,7 @@ export const PLANS = [
       '1 Instagram account, fully isolated',
       'Unlimited personalized DMs',
       'Full sequence builder (up to 10 steps)',
-      'A/B variant testing',
+      'A/B testing',
       'Visual pipeline + analytics',
       'Email support',
     ],
@@ -355,15 +355,15 @@ export const PRICING = {
 export const FAQS = [
   {
     q: 'What is an Instagram DM?',
-    a: 'A DM (direct message) is a private conversation on Instagram — and it’s where deals actually start. Most outreach dies in the DMs because nobody follows up. DMDroid automates exactly that: it sends your opener and follow-ups from your own account and stops the moment someone replies, so every conversation stays human.',
+    a: 'A DM (direct message) is a private conversation on Instagram. It’s where deals actually start. Most outreach dies in the DMs because nobody follows up. DMDroid automates exactly that: it sends your opener and follow-ups from your own account and stops the moment someone replies, so every conversation stays human.',
   },
   {
     q: 'What is DMDroid?',
-    a: 'DMDroid is an Instagram DM outreach tool. You import target lists, build multi-step message sequences with A/B variants, and the droid sends personalized DMs from your connected Instagram accounts automatically. It runs in your own browser session on your machine — keep your PC on while campaigns run, use a VPS for 24/7, or hand it all to Done-For-You. Rate caps and health monitoring built in.',
+    a: 'DMDroid is an Instagram DM outreach tool. You import target lists, build multi-step message sequences with A/B testing, and the droid sends personalized DMs from your connected Instagram accounts automatically. It runs in your own browser session on your machine. Keep your PC on while campaigns run, use a VPS for 24/7, or hand it all to Done-For-You. Rate caps and health monitoring built in.',
   },
   {
     q: 'How does DMDroid work?',
-    a: 'Import your targets (paste a list, CSV, or Excel), build your opener and follow-ups with up to 5 variants per step, then hit launch. The droid handles sending windows, delays, and rate caps. When someone replies, their sequence stops and they land in your visual pipeline: DM’d → Initiated → Engaged → Calendly → Booked.',
+    a: 'Import your targets (paste a list, CSV, or Excel), build your opener and follow-ups with at least 5 variants per step, then hit launch. The droid handles sending windows, delays, and rate caps. When someone replies, their sequence stops and they land in your visual pipeline: DM’d → Initiated → Engaged → Calendly → Booked.',
   },
   {
     q: 'Will my Instagram account get banned?',
@@ -371,11 +371,11 @@ export const FAQS = [
   },
   {
     q: 'How do I get more Instagram DMs?',
-    a: 'Two ways. Manual: DM 20–30 targeted prospects a day and follow up 3–5 times — most people quit after one message, which is where most replies come from. Automated: DMDroid does the same thing at scale. Import your list, build your sequence with up to 5 variants per step, and the droid sends and follows up until they reply. Most users reach 500+ people a day, spread across 10+ connected accounts.',
+    a: 'Two ways. Manual: DM 20–30 targeted prospects a day and follow up 3–5 times. Most people quit after one message, which is where most replies come from. Automated: DMDroid does the same thing at scale. Import your list, build your sequence with at least 5 variants per step, and the droid sends and follows up until they reply. Most users reach 500+ people a day, spread across 10+ connected accounts.',
   },
   {
     q: 'How do you DM someone on Instagram for business?',
-    a: 'Find a real reason — their content, their offer, a mutual niche. Open with one specific line, never “hey, I help businesses grow.” Then follow up 3–5 times: most replies come after message 2 or 3, and almost nobody sends them. DMDroid handles the sending and follow-up from your account; you only show up when someone replies.',
+    a: 'Find a real reason: their content, their offer, a mutual niche. Open with one specific line, never “hey, I help businesses grow.” Then follow up 3–5 times: most replies come after message 2 or 3, and almost nobody sends them. DMDroid handles the sending and follow-up from your account; you only show up when someone replies.',
   },
   {
     q: 'Are automated DMs safe for my account?',
@@ -383,19 +383,19 @@ export const FAQS = [
   },
   {
     q: 'Does DMDroid auto-reply to incoming DMs?',
-    a: 'No — and that’s deliberate. Autoresponders answer people who already messaged you. DMDroid does the harder job: outbound outreach and follow-up sequences that create those conversations in the first place. When someone replies, their sequence stops automatically and they land in your pipeline for a human conversation.',
+    a: 'No. And that’s deliberate. Autoresponders answer people who already messaged you. DMDroid does the harder job: outbound outreach and follow-up sequences that create those conversations in the first place. When someone replies, their sequence stops automatically and they land in your pipeline for a human conversation.',
   },
   {
     q: 'How many DMs can I send per day without getting flagged?',
-    a: 'There’s no official number, which is exactly why people get burned guessing. DMDroid enforces daily rate caps, sending windows, and minimum spacing between messages per account — and spreads volume across your connected accounts instead of hammering from one. You set the campaign; the droid stays under the radar for you.',
+    a: 'There’s no official number, which is exactly why people get burned guessing. DMDroid enforces daily rate caps, sending windows, and minimum spacing between messages per account, and spreads volume across your connected accounts instead of hammering from one. You set the campaign; the droid stays under the radar for you.',
   },
   {
     q: 'What is cold DM outreach?',
-    a: 'Reaching out to people who haven’t heard of you yet — by DM. Instead of copy-pasting openers by hand, you build the sequence once (opener + follow-ups with A/B variants) and DMDroid personalizes and sends each message, handles timing and rate limits, and routes replies into your pipeline: DM’d → Initiated → Engaged → Calendly → Booked.',
+    a: 'Reaching out to people who haven’t heard of you yet, by DM. Instead of copy-pasting openers by hand, you build the sequence once (opener + follow-ups with A/B testing) and DMDroid personalizes and sends each message, handles timing and rate limits, and routes replies into your pipeline: DM’d → Initiated → Engaged → Calendly → Booked.',
   },
   {
     q: 'Do I need to keep my computer on?',
-    a: 'Yes — DMDroid runs on your machine, so your PC needs to stay on while campaigns are sending. Two alternatives: run it on a VPS for true 24/7, or use Done-For-You, where we host and run everything and you just reply when prospects respond.',
+    a: 'Yes. DMDroid runs on your machine, so your PC needs to stay on while campaigns are sending. Two alternatives: run it on a VPS for true 24/7, or use Done-For-You, where we host and run everything and you just reply when prospects respond.',
   },
   {
     q: 'Do I need my own Instagram accounts?',
@@ -411,7 +411,7 @@ export const FAQS = [
   },
   {
     q: 'How much does DMDroid cost?',
-    a: 'Solo Operator is $69/mo for one account. Agency starts at $106/mo for 2–30 accounts with volume discounts. Done-For-You is custom: we host and run everything — RDP, proxies, campaign setup and management — you just reply when prospects respond.',
+    a: 'Solo Operator is $69/mo for one account. Agency starts at $106/mo for 2–30 accounts with volume discounts. Done-For-You is custom: we host and run everything (RDP, proxies, campaign setup and management). You just reply when prospects respond.',
   },
 ]
 

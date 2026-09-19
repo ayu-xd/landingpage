@@ -99,7 +99,7 @@ export function Contrast() {
           {/* Handwritten callout — Waalaxy style: whole group tilts +23deg CW, arrow above text */}
           <div
             aria-hidden
-            className="pointer-events-none absolute bottom-0 right-full mb-3 mr-6 hidden w-max flex-col items-start gap-1 sm:flex"
+            className="pointer-events-none absolute bottom-0 right-full mb-3 mr-6 hidden w-max flex-col items-start gap-1 lg:flex"
             style={{ transform: 'rotate(23deg)' }}
           >
             {/* Arrow on top, right-aligned, pointing ↗ toward button */}

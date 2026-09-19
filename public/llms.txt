@@ -1,7 +1,7 @@
 # DMDroid
 
 DMDroid is cold DM outreach automation for SMMA owners, coaches, and agencies.
-You import target lists, build multi-step message sequences with A/B variants, and
+You import target lists, build multi-step message sequences with A/B testing, and
 DMDroid sends personalized DMs from your connected Instagram accounts automatically.
 It runs in your own browser session on your machine (keep your PC on while campaigns
 run), on your own VPS for 24/7, or fully hosted with Done-For-You. Rate caps,
@@ -11,11 +11,11 @@ avoid being charged). Contact: support@dmdroid.app
 
 ## Plans
 
-- Solo Operator: $69/mo — 1 Instagram account, unlimited personalized DMs, full
-  sequence builder, A/B variant testing, visual pipeline + analytics, email support.
-- Agency: from $106/mo — 2-30 connected accounts, volume discount per account,
+- Solo Operator: $69/mo: 1 Instagram account, unlimited personalized DMs, full
+  sequence builder, A/B testing, visual pipeline + analytics, email support.
+- Agency: from $106/mo: 2-30 connected accounts, volume discount per account,
   everything in Solo Operator, per-account health monitoring, priority support.
-- Done-For-You: custom — managed RDP + proxy infrastructure, full campaign setup
+- Done-For-You: custom: managed RDP + proxy infrastructure, full campaign setup
   and management, dedicated success manager, white-glove onboarding.
 
 Start: https://app.dmdroid.app/auth
@@ -23,11 +23,11 @@ Start: https://app.dmdroid.app/auth
 ## FAQ
 
 - What is DMDroid? An Instagram DM outreach tool: import target lists, build
-  multi-step sequences with A/B variants, the droid sends personalized DMs
+  multi-step sequences with A/B testing, the droid sends personalized DMs
   automatically from your connected accounts. Runs on your machine, your VPS,
   or fully hosted with Done-For-You.
 - How does it work? Import targets (list, CSV, Excel), build opener + follow-ups
-  with up to 5 variants per step, hit launch. Replies stop the sequence and land
+  with at least 5 variants per step, hit launch. Replies stop the sequence and land
   in your pipeline: DM'd > Initiated > Engaged > Calendly > Booked.
 - Will my account get banned? Every account runs in its own isolated browser
   session with daily rate caps and heartbeat monitoring for anomalies.

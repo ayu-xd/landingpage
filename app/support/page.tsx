@@ -10,7 +10,7 @@ export const metadata = {
 const faqs = [
   {
     q: 'What is DMDroid?',
-    a: 'DMDroid is a follow-up assistant for Instagram DMs. It helps you organize and schedule first touches and follow-up messages, track replies, and stay on top of your conversations — all from your own logged-in Instagram account.',
+    a: 'DMDroid is a follow-up assistant for Instagram DMs. It helps you organize and schedule first touches and follow-up messages, track replies, and stay on top of your conversations, all from your own logged-in Instagram account.',
   },
   {
     q: 'How does DMDroid protect my account?',
@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     q: 'Is there a free trial?',
-    a: 'Yes — every plan starts with a 3-day free trial. A credit card is required to start, but you can cancel anytime before day 3 and you won\'t be charged.',
+    a: 'Yes. Every plan starts with a 3-day free trial. A credit card is required to start, but you can cancel anytime before day 3 and you won\'t be charged.',
   },
   {
     q: 'How do I cancel my subscription?',

@@ -96,7 +96,7 @@ export default function PrivacyPolicyPage() {
                 <li>Tab management IDs</li>
                 <li>Engine state flags (paused, disconnected)</li>
                 <li>Diagnostic logs and events</li>
-                <li>Conversation watermark timestamps (per thread, per browser instance — used to avoid re-syncing messages you have already sent)</li>
+                <li>Conversation watermark timestamps (per thread, per browser instance, used to avoid re-syncing messages you have already sent)</li>
               </ul>
             </section>
 
@@ -143,9 +143,9 @@ export default function PrivacyPolicyPage() {
               <h2 className="text-lg font-semibold text-foreground">5. Browser Extension Permissions</h2>
               <p>DMDroid requests the following Chrome permissions:</p>
               <ul className="list-disc pl-5 space-y-1">
-                <li><strong>storage</strong> — Stores your authentication tokens, browser identity, task statistics, and engine configuration locally on your device.</li>
-                <li><strong>tabs</strong> — Opens and manages Instagram browser tabs for campaign execution. Reads tab URLs to verify you are on Instagram.</li>
-                <li><strong>alarms</strong> — Schedules recurring tasks: heartbeat signals, task polling, token refresh, message collection, and conversation sync.</li>
+                <li><strong>storage</strong>: Stores your authentication tokens, browser identity, task statistics, and engine configuration locally on your device.</li>
+                <li><strong>tabs</strong>: Opens and manages Instagram browser tabs for campaign execution. Reads tab URLs to verify you are on Instagram.</li>
+                <li><strong>alarms</strong>: Schedules recurring tasks: heartbeat signals, task polling, token refresh, message collection, and conversation sync.</li>
               </ul>
 
               <h3 className="font-semibold text-foreground">Host Permission: Instagram</h3>
@@ -233,7 +233,7 @@ export default function PrivacyPolicyPage() {
                 <li><strong>Reading read receipts:</strong> Checking whether your contacts have seen your messages.</li>
                 <li><strong>Accessing followers/following:</strong> Reading your follower and following lists to build target lists for campaigns.</li>
               </ul>
-              <p>This data access occurs entirely within your browser. The extension does not use Instagram&apos;s official API — it interacts directly with Instagram&apos;s web interface.</p>
+              <p>This data access occurs entirely within your browser. The extension does not use Instagram&apos;s official API. It interacts directly with Instagram&apos;s web interface.</p>
               <p><strong>Important:</strong> By using DMDroid, you authorize the extension to access and act on your Instagram account. You are responsible for ensuring your use complies with Instagram&apos;s Terms of Service.</p>
             </section>
 
@@ -289,7 +289,7 @@ export default function PrivacyPolicyPage() {
               <h3 className="font-semibold text-foreground">Limited Use of User Data</h3>
               <p>Your use of DMDroid is subject to the Chrome Web Store Limited Use Requirements, and DMDroid&apos;s use of your data complies with them as follows:</p>
               <ul className="list-disc pl-5 space-y-1">
-                <li><strong>Allowed use only:</strong> DMDroid uses the permissions and the data it collects only to provide and support its single purpose — automating and managing your Instagram direct-message outreach. Your data is never used for unrelated purposes such as profiling or market research.</li>
+                <li><strong>Allowed use only:</strong> DMDroid uses the permissions and the data it collects only to provide and support its single purpose: automating and managing your Instagram direct-message outreach. Your data is never used for unrelated purposes such as profiling or market research.</li>
                 <li><strong>Allowed transfer only:</strong> Your data is transferred only as necessary to provide the extension&apos;s features (to our backend and to Instagram), to comply with applicable laws, or to protect security and investigate abuse. We do not sell, rent, or trade your personal information, and we do not transfer it to data brokers or advertising networks.</li>
                 <li><strong>No advertising use:</strong> Your data is never used or transferred to serve personalized, re-targeted, or interest-based advertisements.</li>
                 <li><strong>No human reading of your data:</strong> We do not read your messages, contacts, or campaign content except (a) with your explicit consent when you request support, (b) as necessary for security or abuse investigation, (c) as required by law, or (d) in aggregated, anonymized form for internal operational statistics.</li>
