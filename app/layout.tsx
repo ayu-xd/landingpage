@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     template: '%s | DMDroid',
   },
   description:
-    'DMDroid automates cold DM outreach on Instagram and books calls on autopilot. 500+ DMs a day across your accounts. Start your 3-day free trial.',
+    'DMDroid automates cold DM outreach on Instagram and books calls on autopilot. 500+ DMs a day across 10+ accounts. Start your 3-day free trial.',
   generator: 'DMDroid',
   metadataBase: new URL('https://dmdroid.app'),
   robots: {
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'DMDroid – Cold DM Outreach Tool for Instagram',
     description:
-      'Reach 500+ people a day across your accounts. DMDroid sends your openers, follows up until they reply, and routes booked calls straight to your pipeline.',
+      'Reach 500+ people a day across 10+ accounts. DMDroid sends your openers, follows up until they reply, and routes booked calls straight to your pipeline.',
     url: 'https://dmdroid.app',
     siteName: 'DMDroid',
     images: [
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'DMDroid – Cold DM Outreach Tool for Instagram',
     description:
-      'Reach 500+ people a day across your accounts. DMDroid sends, follows up, and fills your pipeline. 3-day free trial.',
+      'Reach 500+ people a day across 10+ accounts. DMDroid sends, follows up, and fills your pipeline. 3-day free trial.',
     images: [
       {
         url: '/og.jpg',
@@ -123,7 +123,7 @@ const jsonLd = {
       applicationCategory: 'BusinessApplication',
       operatingSystem: 'Web',
       description:
-        'DMDroid automates cold DM outreach on Instagram and books calls on autopilot. 500+ DMs a day across your accounts. Start your 3-day free trial.',
+        'DMDroid automates cold DM outreach on Instagram and books calls on autopilot. 500+ DMs a day across 10+ accounts. Start your 3-day free trial.',
       offers: [
         {
           '@type': 'Offer',

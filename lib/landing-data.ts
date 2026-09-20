@@ -24,7 +24,7 @@ export const HERO = {
   badge: 'Runs on your PC or VPS. You just reply',
   headline: 'Cold DM outreach, automated',
   subhead:
-    'DMDroid automates cold DM outreach on Instagram. 500+ people a day across your accounts, followed up until they reply. No VA. No manual sending.',
+    'DMDroid automates cold DM outreach on Instagram. 500+ people a day across 10+ accounts, followed up until they reply. No VA. No manual sending.',
   cta: TRIAL_CTA,
   ctaSecondary: 'See how it works',
   trial: '3-day free trial',
@@ -114,7 +114,7 @@ export const CONTRAST = {
   rows: [
     {
       old: 'Manually DMing 20–30 people a day until your thumbs give out',
-      now: '500+ people a day, spread across your accounts',
+      now: '500+ people a day, spread across 10+ accounts',
     },
     {
       old: 'Forgetting to follow up, losing warm leads forever',

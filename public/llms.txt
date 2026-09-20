@@ -20,6 +20,16 @@ avoid being charged). Contact: support@dmdroid.app
 
 Start: https://app.dmdroid.app/auth
 
+## Sending volume (the honest math)
+
+DMDroid reaches 500+ people a day by spreading sends across 10+ connected
+accounts, never by blasting from one. Every account stays under ~50 DMs a day
+with daily rate caps, sending windows, and minimum spacing between messages,
+each running in its own isolated browser session with heartbeat monitoring.
+That is why volume scales without getting flagged: no single account ever
+behaves like a bot. Solo Operator (1 account) sends proportionally less;
+500+/day figures assume an Agency-scale setup (10+ accounts).
+
 ## FAQ
 
 - What is DMDroid? An Instagram DM outreach tool: import target lists, build
