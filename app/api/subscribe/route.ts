@@ -26,16 +26,39 @@ export async function POST(request: Request) {
     return Response.json({ error: 'Signup is not configured yet.' }, { status: 503 })
   }
 
+  const headers = {
+    'Content-Type': 'application/json',
+    'X-Kit-Api-Key': apiKey,
+  }
+
+  // Step 1: create the subscriber (no-op if they already exist).
+  // Kit's form endpoint only accepts pre-existing subscribers.
+  try {
+    await fetch('https://api.kit.com/v4/subscribers', {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({ email_address: email }),
+    })
+  } catch {
+    return Response.json(
+      { error: 'Something went wrong. Try again.' },
+      { status: 502 }
+    )
+  }
+
+  // Step 2: attach them to the form (triggers the confirmation email).
   const res = await fetch(
-    `https://api.kit.com/v4/forms/${encodeURIComponent(formId)}/subscribe`,
+    `https://api.kit.com/v4/forms/${encodeURIComponent(formId)}/subscribers`,
     {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Kit-Api-Key': apiKey,
-      },
+      headers,
       body: JSON.stringify({ email_address: email }),
     }
+  ).catch(() =>
+    Response.json(
+      { error: 'Something went wrong. Try again.' },
+      { status: 502 }
+    )
   )
 
   if (!res.ok) {
