@@ -21,6 +21,40 @@ export function SiteFooter() {
             >
               {CONTACT_EMAIL}
             </a>
+            <div className="mt-3 flex items-center gap-4 text-sm font-medium text-ink-soft">
+              <a
+                href="https://x.com/dmdroid_app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-brand"
+              >
+                X
+              </a>
+              <a
+                href="https://www.instagram.com/dmdroid.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-brand"
+              >
+                Instagram
+              </a>
+              <a
+                href="https://www.youtube.com/@dmdroid_app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-brand"
+              >
+                YouTube
+              </a>
+              <a
+                href="https://www.g2.com/products/dmdroid/reviews"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-brand"
+              >
+                G2
+              </a>
+            </div>
           </div>
 
           {FOOTER.columns.map((col) => (

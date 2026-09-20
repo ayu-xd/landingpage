@@ -107,6 +107,12 @@ const jsonLd = {
         email: 'support@dmdroid.app',
         contactType: 'customer support',
       },
+      sameAs: [
+        'https://x.com/dmdroid_app',
+        'https://www.instagram.com/dmdroid.app/',
+        'https://www.youtube.com/@dmdroid_app',
+        'https://www.g2.com/products/dmdroid/reviews',
+      ],
     },
     {
       '@type': 'WebSite',
