@@ -78,10 +78,43 @@ body {
   --font-hand: var(--font-gochi-hand), 'Bradley Hand', cursive; /* annotations */
 }
 
-/* 🌑 Moonlight theme — kept for app-styled routes (support etc.) */
-:root,
-.dark,
-:root:not(.light) {
+/* Light tokens — the whole marketing site is light-only. These feed the
+   shadcn-style classes (bg-background, text-foreground, text-muted-...,
+   border-border, text-primary) used by blog/support/legal pages. Values
+   mirror the Waalaxy palette above so subpages match the landing page. */
+:root {
+  color-scheme: light;
+  --background: #ffffff;
+  --foreground: #14142b;
+  --card: #ffffff;
+  --card-foreground: #14142b;
+  --popover: #ffffff;
+  --popover-foreground: #14142b;
+  --primary: #315ae7;
+  --primary-foreground: #ffffff;
+  --secondary: #f7f9fc;
+  --secondary-foreground: #14142b;
+  --muted: #f7f9fc;
+  --muted-foreground: #4e4b66;
+  --accent: #f7f9fc;
+  --accent-foreground: #14142b;
+  --destructive: hsl(0 72% 51%);
+  --border: #d6d8e7;
+  --input: #d6d8e7;
+  --ring: #315ae7;
+  --radius: 0.75rem;
+  --sidebar: #f7f9fc;
+  --sidebar-foreground: #14142b;
+  --sidebar-primary: #315ae7;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f7f9fc;
+  --sidebar-accent-foreground: #14142b;
+  --sidebar-border: #d6d8e7;
+  --sidebar-ring: #315ae7;
+}
+
+/* 🌑 Moonlight theme — opt-in only via .dark (nothing enables it today). */
+.dark {
   color-scheme: dark;
   --background: hsl(220 18% 5%);
   --foreground: hsl(210 17% 97%);
