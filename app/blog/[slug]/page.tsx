@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { SiteFooter } from '@/components/landing/site-footer'
 import { SiteNav } from '@/components/landing/site-nav'
+import { NewsletterForm } from '@/components/landing/newsletter-form'
 import { getPost, getPosts } from '@/lib/blog'
 import { useMDXComponents } from '@/mdx-components'
 
@@ -75,19 +76,22 @@ export default async function BlogPostPage({
         <article className="mt-6">
           <MDXRemote source={post.content} components={useMDXComponents({})} />
         </article>
-        <div className="mt-10 p-4 rounded-xl bg-primary/5 border border-primary/20">
-          <p className="text-sm text-muted-foreground">
-            <strong className="text-foreground">
-              Try DMDroid free for 3 days.
-            </strong>{' '}
-            <Link
-              href="https://app.dmdroid.app/auth"
-              className="text-primary hover:underline"
-            >
-              Start your free trial
-            </Link>{' '}
-            and put this guide on autopilot.
-          </p>
+        <div className="mt-10 space-y-4">
+          <NewsletterForm />
+          <div className="p-4 rounded-xl bg-primary/5 border border-primary/20">
+            <p className="text-sm text-muted-foreground">
+              <strong className="text-foreground">
+                Try DMDroid free for 3 days.
+              </strong>{' '}
+              <Link
+                href="https://app.dmdroid.app/auth"
+                className="text-primary hover:underline"
+              >
+                Start your free trial
+              </Link>{' '}
+              and put this guide on autopilot.
+            </p>
+          </div>
         </div>
         <div className="pt-6 flex gap-4">
           <Link href="/blog" className="text-sm text-primary hover:underline">
