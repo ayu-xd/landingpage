@@ -33,7 +33,31 @@ const faqs = [
   },
   {
     q: 'How do I get started?',
-    a: 'Check out our How It Works section on the homepage, or reach out to our support team — we\'re happy to help you get set up.',
+    a: 'Check out our How It Works section on the homepage, or reach out to our support team. We are happy to help you get set up.',
+  },
+  {
+    q: 'How do I connect my Instagram account?',
+    a: 'Install the DMDroid extension, log in to Instagram in your browser, then connect from your dashboard. Each account runs in its own isolated browser session, so your login stays separate from everything else on your machine.',
+  },
+  {
+    q: 'Can I run DMDroid on my laptop, or do I need a VPS?',
+    a: 'Both work. DMDroid runs on your own machine, so your PC needs to stay on while campaigns are sending. If you want true 24/7 operation, run it on a VPS instead. Prefer zero setup? Our Done-For-You plan hosts and runs everything, and you just reply when prospects respond.',
+  },
+  {
+    q: 'How many Instagram accounts can I connect?',
+    a: 'Solo Operator supports one account. Agency supports 2 to 30 accounts on one dashboard, each fully isolated with its own session, rate caps, and health monitoring. Most users reaching 500+ people a day run 10 or more accounts.',
+  },
+  {
+    q: 'What happens when a prospect replies?',
+    a: 'Their sequence stops immediately so you never double-message anyone. The reply lands in your unified inbox with full conversation context, and the contact moves into your visual pipeline: DM’d, Initiated, Engaged, Calendly, Booked. You take it from there like a human.',
+  },
+  {
+    q: 'What sending limits should I use to stay safe?',
+    a: 'Keep every account under roughly 50 sends a day, use sending windows inside normal waking hours, and leave spacing between messages. DMDroid enforces daily rate caps and minimum delays per account automatically, and heartbeat monitoring flags anomalies early.',
+  },
+  {
+    q: 'Who do I contact for billing versus technical issues?',
+    a: 'One address for everything: support@dmdroid.app. Include your account email and, for technical issues, which plan you are on and what you were doing when the problem appeared. We aim to respond within 24 hours.',
   },
 ]
 

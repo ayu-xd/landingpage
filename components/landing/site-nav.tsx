@@ -33,6 +33,7 @@ export function SiteNav() {
       >
         <div className="mx-auto flex h-16 max-w-content items-center justify-between px-5 sm:px-6">
           <a href="/" aria-label="DMDroid home">
+            <span className="sr-only">DMDroid home</span>
             <Logo />
           </a>
 
