@@ -1,0 +1,39 @@
+{
+  "product": {
+    "name": "DMDroid",
+    "website": "https://dmdroid.app",
+    "tagline": {
+      "39": "Cold DM outreach, automated",
+      "50": "Cold DM outreach automation for Instagram",
+      "66": "Automate cold Instagram DMs. 500+ people a day, safely.",
+      "111": "Cold DM outreach software for Instagram: sequences, follow-ups and a pipeline that books calls."
+    },
+    "description": {
+      "145": "DMDroid is cold DM outreach software for Instagram. Multi-step sequences, A/B testing and auto follow-ups that book calls on autopilot.",
+      "150": "Cold DM outreach automation for Instagram: import lists, launch sequences with A/B testing, auto-follow up until prospects reply.",
+      "505": "DMDroid is cold DM outreach automation for Instagram, built for SMMA owners, agencies and coaches. Import target lists, build multi-step sequences with minimum 5 variants per step, and let auto follow-ups run until prospects reply across 10+ connected accounts (500+ people a day). Every account stays under ~50 sends a day in isolated sessions with rate caps. Runs on your PC or VPS, or fully hosted with Done-For-You. Solo $69/mo, Agency from $106/mo, 3-day free trial.",
+      "1341": "DMDroid is cold DM outreach automation for Instagram, built for SMMA owners, agencies and coaches who acquire clients through Instagram.\n\nImport target lists from any source, build multi-step message sequences with minimum 5 variants per step and A/B testing, and let auto follow-ups run until prospects reply. Volume spreads across 10+ connected accounts (500+ people a day) with every account under ~50 sends a day in its own isolated browser session, protected by rate caps, sending windows and heartbeat monitoring.\n\nEvery reply lands in a unified visual pipeline (DM'd, Initiated, Engaged, Calendly, Booked) with per-account analytics, so no warm lead slips. DMDroid runs on your machine, on your VPS for 24/7 operation, or fully hosted with Done-For-You where we run everything and you just reply.\n\nSolo Operator ($69/mo, 1 account) for operators; Agency (from $106/mo, 2-30 accounts) for teams and client work. Every plan starts with a 3-day free trial.",
+      "2192": "DMDroid is cold DM outreach automation for Instagram, built for SMMA owners, agencies and coaches who acquire clients through Instagram outreach.\n\nThe core idea: manual DM outreach dies on follow-up. DMDroid imports your target lists, builds multi-step sequences with minimum 5 message variants per step (rotated so no account ever sends the same DM twice), and follows up automatically until prospects reply. Volume spreads across 10+ connected accounts for 500+ people a day, with every account under ~50 sends a day in isolated browser sessions guarded by rate caps, sending windows and heartbeat monitoring.\n\nWhat it is for:\n- Agencies running client acquisition on Instagram at scale\n- SMMA owners selling lead generation as a repeatable service\n- Coaches and operators replacing VA sending and manual follow-up\n- Teams that need a visual reply pipeline instead of inbox chaos\n\nWhat it deliberately is not: an inbound comment-to-DM bot, a multi-channel giant, or a cloud black box. DMDroid runs on your machine or VPS (or fully hosted Done-For-You), sends from your own accounts, and stops every sequence the moment someone replies.\n\nSolo Operator is $69/mo for one account. Agency starts at $106/mo for 2-30 accounts with volume discounts. Done-For-You is custom: hosting, setup and management included. Every plan starts with a 3-day free trial."
+    },
+    "categories": ["Marketing", "Sales", "Lead Generation", "Social Media", "CRM"],
+    "tags": ["cold dm", "instagram automation", "dm automation", "cold outreach tool", "cold outreach automation", "lead generation", "instagram crm", "smma tools", "outreach automation", "saas"],
+    "team_size": "1-10",
+    "pricing_model": "Freemium",
+    "contact_email_consumer": "support@dmdroid.app",
+    "contact_email_business": "support@dmdroid.app"
+  },
+  "assets": {
+    "logo_512": "./assets/logo-512.png",
+    "screenshots": [
+      "./assets/screenshot-1-homepage.png",
+      "./assets/screenshot-2-dashboard.png",
+      "./assets/screenshot-3-pipeline.png"
+    ],
+    "notes": "Export logo-512.png from public/android-chrome-512x512.png. Capture 3 screenshots before running submit. OMITTED (unknown, add when known): founded_year, hq, founder_name, founder_linkedin, phone. The agent blocks sites requiring missing fields instead of inventing data."
+  },
+  "elevator_answers": {
+    "problem": "Agencies hand-type Instagram DMs or pay VAs $15/hr, follow up with nobody, and pipelines dry up every few weeks.",
+    "audience": "SMMA owners, agency owners and coaches who acquire clients through Instagram outreach and need replies without living in their inbox.",
+    "differentiator": "Outbound cold-DM sequences with enforced safety (min 5 variants, ~50 sends/account/day, isolated sessions) plus a visual reply pipeline, and a Done-For-You tier where we run everything."
+  }
+}

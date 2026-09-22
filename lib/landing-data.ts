@@ -359,7 +359,7 @@ export const FAQS = [
   },
   {
     q: 'What is DMDroid?',
-    a: 'DMDroid is an Instagram DM outreach tool. You import target lists, build multi-step message sequences with A/B testing, and the droid sends personalized DMs from your connected Instagram accounts automatically. It runs in your own browser session on your machine. Keep your PC on while campaigns run, use a VPS for 24/7, or hand it all to Done-For-You. Rate caps and health monitoring built in.',
+    a: 'DMDroid is Instagram DM outreach software. You import target lists, build multi-step message sequences with A/B testing, and the droid sends personalized DMs from your connected Instagram accounts automatically. It runs in your own browser session on your machine. Keep your PC on while campaigns run, use a VPS for 24/7, or hand it all to Done-For-You. Rate caps and health monitoring built in.',
   },
   {
     q: 'How does DMDroid work?',
@@ -371,7 +371,7 @@ export const FAQS = [
   },
   {
     q: 'How do I get more Instagram DMs?',
-    a: 'Two ways. Manual: DM 20–30 targeted prospects a day and follow up 3–5 times. Most people quit after one message, which is where most replies come from. Automated: DMDroid does the same thing at scale. Import your list, build your sequence with at least 5 variants per step, and the droid sends and follows up until they reply. Most users reach 500+ people a day, spread across 10+ connected accounts.',
+    a: 'Two ways. Manual: DM 20–30 targeted prospects a day and follow up 3–5 times. Most people quit after one message, which is where most replies come from. Automated: DMDroid does the same thing at scale. Think of it like cold email, except prospects actually read their Instagram inbox. Import your list, build your sequence with at least 5 variants per step, and the droid sends and follows up until they reply. Most users reach 500+ people a day, spread across 10+ connected accounts.',
   },
   {
     q: 'How do you DM someone on Instagram for business?',
@@ -383,7 +383,7 @@ export const FAQS = [
   },
   {
     q: 'Does DMDroid auto-reply to incoming DMs?',
-    a: 'No. And that’s deliberate. Autoresponders answer people who already messaged you. DMDroid does the harder job: outbound outreach and follow-up sequences that create those conversations in the first place. When someone replies, their sequence stops automatically and they land in your pipeline for a human conversation.',
+    a: 'No. And that’s deliberate. Autoresponders answer people who already messaged you. DMDroid does the harder job: outbound outreach and follow-up sequences that create those conversations in the first place. Same goes for comment-to-DM tools: they wait for comments, DMDroid starts conversations. When someone replies, their sequence stops automatically and they land in your pipeline for a human conversation.',
   },
   {
     q: 'How many DMs can I send per day without getting flagged?',
@@ -391,7 +391,11 @@ export const FAQS = [
   },
   {
     q: 'What is cold DM outreach?',
-    a: 'Reaching out to people who haven’t heard of you yet, by DM. Instead of copy-pasting openers by hand, you build the sequence once (opener + follow-ups with A/B testing) and DMDroid personalizes and sends each message, handles timing and rate limits, and routes replies into your pipeline: DM’d → Initiated → Engaged → Calendly → Booked.',
+    a: 'Reaching out to people who haven’t heard of you yet, by DM. Instead of copy-pasting openers by hand, you build the sequence once (opener + follow-ups with A/B testing) and DMDroid personalizes and sends each message, handles timing and rate limits, and routes replies into your pipeline: DM’d → Initiated → Engaged → Calendly → Booked. Most agencies run it as one pillar of a wider outreach strategy alongside content and referrals.',
+  },
+  {
+    q: 'Is DMDroid good for agencies and SMMA owners?',
+    a: 'Yes, that is who it is built for. As SMMA outreach software, DMDroid is Instagram automation for agencies that run client acquisition on Instagram. Connect up to 30 client accounts, run every client’s sequences from one dashboard, and sell lead generation as a repeatable service. Most agency owners start with one account, prove replies, then scale.',
   },
   {
     q: 'Do I need to keep my computer on?',
