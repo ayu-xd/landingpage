@@ -29,7 +29,7 @@ const gochiHand = Gochi_Hand({
 
 export const metadata: Metadata = {
   title: {
-    default: 'DMDroid – Cold DM Outreach Tool for Instagram',
+    default: 'DMDroid – Instagram Automation Tool for Agencies',
     template: '%s | DMDroid',
   },
   description:
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: 'DMDroid – Cold DM Outreach Tool for Instagram',
+    title: 'DMDroid – Instagram Automation Tool for Agencies',
     description:
       'Reach 500+ people a day across 10+ accounts. DMDroid sends your openers, follows up until they reply, and routes booked calls straight to your pipeline.',
     url: 'https://dmdroid.app',
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DMDroid – Cold DM Outreach Tool for Instagram',
+    title: 'DMDroid – Instagram Automation Tool for Agencies',
     description:
       'Reach 500+ people a day across 10+ accounts. DMDroid sends, follows up, and fills your pipeline. 3-day free trial.',
     images: [

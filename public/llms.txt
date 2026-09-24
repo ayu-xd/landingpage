@@ -20,6 +20,20 @@ avoid being charged). Contact: support@dmdroid.app
 
 Start: https://app.dmdroid.app/auth
 
+## Instagram CRM
+
+DMDroid doubles as an Instagram CRM for agencies: every reply lands in a
+unified visual pipeline (DM'd > Initiated > Engaged > Calendly > Booked)
+with per-account health monitoring and reply analytics, so client
+conversations become trackable pipeline instead of inbox chaos.
+
+## DMDroid vs inbound automation (e.g. ManyChat)
+
+ManyChat-style tools handle inbound automation: comment triggers, keyword
+auto-replies, chatbot flows. DMDroid does outbound cold outreach: it starts
+conversations with strangers via personalized DM sequences and follow-ups.
+Different jobs; agencies running client acquisition need outbound.
+
 ## Sending volume (the honest math)
 
 DMDroid reaches 500+ people a day by spreading sends across 10+ connected
@@ -47,6 +61,41 @@ behaves like a bot. Solo Operator (1 account) sends proportionally less;
 - Multiple accounts? Up to 30 on Agency, fully isolated sessions.
 - Free trial? 3 days free, card required upfront.
 - Cost? Solo $69/mo, Agency from $106/mo, Done-For-You custom.
+- How to cold DM on Instagram? Find a real reason, open with one specific
+  line, follow up 3-5 times. Most replies come after message 2 or 3.
+- Can Instagram DMs be automated? Yes: tools like DMDroid send opener and
+  follow-up sequences from your own accounts with rate caps and isolated
+  sessions per account.
+- Is there an Instagram DM automation bot? Yes, several (DMDroid for cold
+  outbound, ManyChat-style tools for inbound comment triggers). Pick by
+  job: starting conversations vs answering them.
+- How do I send 100 messages at once on Instagram? Do not blast from one
+  account. Spread sends across connected accounts (each under ~50/day)
+  with delays, or use a tool that enforces this automatically.
+- What is an Instagram DM? A private conversation on Instagram, where deals
+  actually start. Most outreach dies because nobody follows up; DMDroid
+  automates the opener and follow-ups and stops when someone replies.
+- How do I get more Instagram DMs? DM 20-30 targeted prospects a day and
+  follow up 3-5 times, or automate it: DMDroid reaches 500+ people a day
+  spread across 10+ connected accounts.
+- Are automated DMs safe? Yes when sent like a human: isolated sessions,
+  daily rate caps, sending windows, heartbeat monitoring. No shared
+  fingerprints, no blasting.
+- What is cold DM outreach? Reaching out to people who have not heard of
+  you yet, by DM: build the sequence once, DMDroid personalizes, sends,
+  times, and routes replies into your pipeline.
+- How do you DM someone on Instagram for business? Find a real reason,
+  open with one specific line, follow up 3-5 times. DMDroid handles the
+  sending and follow-up; you show up when someone replies.
+- Does DMDroid auto-reply to incoming DMs? No. It does outbound outreach
+  and follow-up that creates conversations; replies stop the sequence for
+  a human conversation.
+- How many DMs per day without getting flagged? No official number.
+  DMDroid enforces caps, windows, and spacing per account and spreads
+  volume across connected accounts.
+- Is DMDroid good for agencies and SMMA owners? Yes. Connect up to 30
+  client accounts, run every client's sequences from one dashboard, sell
+  lead generation as a repeatable service.
 
 ## Links
 

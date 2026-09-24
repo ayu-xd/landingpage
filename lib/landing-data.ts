@@ -22,7 +22,7 @@ export const NAV_LINKS = [
 
 export const HERO = {
   badge: 'Runs on your PC or VPS. You just reply',
-  headline: 'Cold DM outreach, automated',
+  headline: 'Instagram automation for cold DMs',
   subhead:
     'DMDroid automates cold DM outreach on Instagram. 500+ people a day across 10+ accounts, followed up until they reply. No VA. No manual sending.',
   cta: TRIAL_CTA,
