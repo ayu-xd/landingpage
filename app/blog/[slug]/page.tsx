@@ -49,7 +49,7 @@ export default async function BlogPostPage({
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.description,
-    datePublished: post.date || undefined,
+    datePublished: post.dateISO || undefined,
     author: {
       '@type': 'Organization',
       name: 'DMDroid',

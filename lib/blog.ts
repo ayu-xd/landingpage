@@ -7,6 +7,7 @@ export type PostMeta = {
   title: string
   description: string
   date: string
+  dateISO: string
 }
 
 export type Post = PostMeta & {
@@ -14,6 +15,31 @@ export type Post = PostMeta & {
 }
 
 const BLOG_DIR = path.join(process.cwd(), 'content', 'blog')
+
+const MONTHS = [
+  'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+  'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+]
+
+/** ISO date (YYYY-MM-DD) for sitemap + schema. Empty when unparseable. */
+function formatISO(value: unknown): string {
+  if (value instanceof Date && !isNaN(value.getTime())) {
+    return value.toISOString().slice(0, 10)
+  }
+  if (typeof value === 'string' && /^\d{4}-\d{2}-\d{2}/.test(value)) {
+    return value.slice(0, 10)
+  }
+  return ''
+}
+function formatDate(value: unknown): string {
+  if (value instanceof Date && !isNaN(value.getTime())) {
+    const y = value.getUTCFullYear()
+    const m = MONTHS[value.getUTCMonth()]
+    const d = value.getUTCDate()
+    return `${m} ${d}, ${y}`
+  }
+  return String(value ?? '')
+}
 
 function readSlugs(): string[] {
   if (!fs.existsSync(BLOG_DIR)) return []
@@ -33,10 +59,11 @@ export function getPosts(): PostMeta[] {
         slug,
         title: String(data.title ?? slug),
         description: String(data.description ?? ''),
-        date: String(data.date ?? ''),
+        date: formatDate(data.date),
+        dateISO: formatISO(data.date),
       }
     })
-    .sort((a, b) => (a.date < b.date ? 1 : -1))
+    .sort((a, b) => (a.dateISO < b.dateISO ? 1 : -1))
 }
 
 /** Single post with raw MDX body (frontmatter stripped). */
@@ -49,7 +76,8 @@ export function getPost(slug: string): Post | null {
     slug,
     title: String(data.title ?? slug),
     description: String(data.description ?? ''),
-    date: String(data.date ?? ''),
+    date: formatDate(data.date),
+    dateISO: formatISO(data.date),
     content,
   }
 }
