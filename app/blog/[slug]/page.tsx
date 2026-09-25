@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { MDXRemote } from 'next-mdx-remote/rsc'
+import remarkGfm from 'remark-gfm'
 import { SiteFooter } from '@/components/landing/site-footer'
 import { SiteNav } from '@/components/landing/site-nav'
 import { NewsletterForm } from '@/components/landing/newsletter-form'
@@ -74,7 +75,11 @@ export default async function BlogPostPage({
         <p className="text-xs text-muted-foreground">{post.date}</p>
         <h1 className="mt-2 text-3xl font-bold tracking-tight">{post.title}</h1>
         <article className="mt-6">
-          <MDXRemote source={post.content} components={useMDXComponents({})} />
+          <MDXRemote
+            source={post.content}
+            components={useMDXComponents({})}
+            options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+          />
         </article>
         <div className="mt-10 space-y-4">
           <NewsletterForm />
