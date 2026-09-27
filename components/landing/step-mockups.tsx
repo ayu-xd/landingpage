@@ -14,7 +14,7 @@ export function Mockup1Import() {
   return (
     <div className="relative mx-auto flex h-[350px] w-full max-w-lg items-center justify-center sm:h-[400px]">
       {/* Background abstract window */}
-      <div className="absolute right-0 top-10 h-64 w-72 rounded-2xl border border-slate-200 bg-slate-50/50 opacity-50 shadow-sm sm:h-72 sm:w-80">
+      <div className="absolute right-0 top-10 h-64 w-64 rounded-2xl border border-slate-200 bg-slate-50/50 opacity-50 shadow-sm sm:h-72 sm:w-80">
         <div className="flex h-8 w-full items-center gap-1.5 border-b border-slate-200 bg-slate-100 px-3">
           <div className="h-2.5 w-2.5 rounded-full bg-slate-300" />
           <div className="h-2.5 w-2.5 rounded-full bg-slate-300" />
@@ -28,7 +28,7 @@ export function Mockup1Import() {
       </div>
 
       {/* Foreground Widget */}
-      <div className="relative z-10 -ml-12 flex w-72 flex-col gap-4 rounded-3xl border border-slate-100 bg-white p-5 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] sm:-ml-20 sm:w-80 sm:p-6">
+      <div className="relative z-10 -ml-12 flex w-64 flex-col gap-4 rounded-3xl border border-slate-100 bg-white p-5 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] sm:-ml-20 sm:w-80 sm:p-6">
         <div>
           <h3 className="text-lg font-bold text-slate-900 sm:text-xl">Import leads</h3>
           <p className="mt-0.5 text-xs text-slate-500">From any source in seconds</p>
@@ -69,13 +69,13 @@ export function Mockup1Import() {
 
 export function Mockup2Sequence() {
   return (
-    <div className="relative mx-auto flex h-[400px] w-full max-w-lg items-center justify-center gap-4 sm:h-[450px] sm:gap-8">
+    <div className="relative mx-auto flex h-[400px] w-full max-w-lg items-center justify-center gap-3 sm:h-[450px] sm:gap-8">
       
       {/* Left: Sequence Timeline */}
       <div className="relative flex flex-col items-center gap-6">
         <div className="absolute bottom-0 top-0 w-0.5 bg-slate-100" />
         
-        <div className="relative z-10 flex w-32 items-center gap-3 rounded-xl border border-blue-200 bg-white p-2.5 shadow-sm sm:w-40 sm:p-3">
+        <div className="relative z-10 flex w-28 items-center gap-3 rounded-xl border border-blue-200 bg-white p-2.5 shadow-sm sm:w-40 sm:p-3">
           <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-blue-600 text-white sm:h-8 sm:w-8">
             <Send className="h-3.5 w-3.5" />
           </div>
@@ -84,7 +84,7 @@ export function Mockup2Sequence() {
           </div>
         </div>
 
-        <div className="relative z-10 flex w-32 items-center gap-3 rounded-xl border border-slate-100 bg-white p-2.5 opacity-80 shadow-sm sm:w-40 sm:p-3">
+        <div className="relative z-10 flex w-28 items-center gap-3 rounded-xl border border-slate-100 bg-white p-2.5 opacity-80 shadow-sm sm:w-40 sm:p-3">
           <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-slate-500 sm:h-8 sm:w-8">
             <Clock className="h-3.5 w-3.5" />
           </div>
@@ -94,7 +94,7 @@ export function Mockup2Sequence() {
           </div>
         </div>
 
-        <div className="relative z-10 flex w-32 items-center gap-3 rounded-xl border border-slate-100 bg-white p-2.5 shadow-sm sm:w-40 sm:p-3">
+        <div className="relative z-10 flex w-28 items-center gap-3 rounded-xl border border-slate-100 bg-white p-2.5 shadow-sm sm:w-40 sm:p-3">
           <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-blue-600 text-white sm:h-8 sm:w-8">
             <Send className="h-3.5 w-3.5" />
           </div>
@@ -105,7 +105,7 @@ export function Mockup2Sequence() {
       </div>
 
       {/* Right: Message Preview Bubble */}
-      <div className="relative z-20 w-48 rounded-2xl border border-slate-100 bg-white p-4 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] sm:w-60 sm:p-5">
+      <div className="relative z-20 w-44 rounded-2xl border border-slate-100 bg-white p-4 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] sm:w-60 sm:p-5">
         <div className="mb-3 flex items-center gap-2 sm:mb-4">
           <div className="h-6 w-6 rounded-full bg-emerald-100 flex items-center justify-center text-[10px] font-bold text-emerald-700">SM</div>
           <p className="text-xs font-bold text-slate-900 sm:text-sm">Sarah Miller</p>
@@ -128,7 +128,7 @@ export function Mockup3Analytics() {
     <div className="relative mx-auto flex h-[350px] w-full max-w-lg items-center justify-center sm:h-[400px]">
       
       {/* Background Card */}
-      <div className="absolute right-4 top-12 w-56 rounded-2xl border border-slate-200 bg-slate-50 p-4 opacity-70 shadow-sm sm:right-10 sm:w-64 sm:p-5">
+      <div className="absolute right-2 top-12 w-48 rounded-2xl border border-slate-200 bg-slate-50 p-4 opacity-70 shadow-sm sm:right-10 sm:w-64 sm:p-5">
         <div className="flex items-center gap-2">
           <div className="flex h-8 w-8 items-center justify-center rounded-full bg-indigo-100 font-bold text-indigo-700 text-xs">S</div>
           <h3 className="font-bold text-slate-900 text-sm">SaaS Founders</h3>
@@ -146,7 +146,7 @@ export function Mockup3Analytics() {
       </div>
 
       {/* Foreground Card */}
-      <div className="absolute left-4 top-24 w-60 rounded-3xl border border-slate-100 bg-white p-5 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.12)] sm:left-10 sm:w-72 sm:p-6">
+      <div className="absolute left-2 top-24 w-56 rounded-3xl border border-slate-100 bg-white p-5 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.12)] sm:left-10 sm:w-72 sm:p-6">
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-2.5">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 font-bold text-emerald-700 text-sm">A</div>
@@ -196,7 +196,7 @@ export function Mockup4Inbox() {
       <div className="flex h-[340px] w-full max-w-[560px] overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-[0_20px_50px_-12px_rgba(0,0,0,0.12)] sm:h-[400px]">
         
         {/* Left: Inbox List */}
-        <div className="flex w-[160px] shrink-0 flex-col border-r border-slate-100 bg-[#F8FAFC] sm:w-[220px]">
+        <div className="flex w-[132px] shrink-0 flex-col border-r border-slate-100 bg-[#F8FAFC] sm:w-[220px]">
           <div className="border-b border-slate-100 p-2.5 sm:p-3">
             <div className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-2 py-1.5 shadow-sm sm:px-2.5 sm:py-2">
               <Search className="h-3 w-3 text-slate-400 sm:h-3.5 sm:w-3.5" />
