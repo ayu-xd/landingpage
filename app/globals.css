@@ -6,9 +6,11 @@
 
 /* Kill page-level horizontal scroll from absolutely-positioned
    handwritten annotations on smaller viewports. `clip` (not `hidden`)
-   preserves `position: sticky` behavior. */
+   preserves `position: sticky` behavior; the plain `hidden` line is a
+   fallback for browsers without `clip` support. */
 html,
 body {
+  overflow-x: hidden;
   overflow-x: clip;
 }
 

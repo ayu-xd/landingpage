@@ -12,10 +12,11 @@ import { Testimonials } from '@/components/landing/testimonials'
 import { WhoItsFor } from '@/components/landing/who-its-for'
 
 /**
- * Waalaxy's exact section order, 1:1:
- * hero → social proof → how it works (+ support strip) → contrast →
- * features → product panels → who it's for → testimonials → pricing →
- * FAQ → final CTA → footer.
+ * Section order:
+ * hero → social proof → how it works → contrast →
+ * who it's for → pricing → FAQ → final CTA → footer.
+ * (Testimonials render only when real quotes exist. Features and
+ * product-showcase components were removed; do not re-add without wiring.)
  */
 export const metadata: Metadata = {
   alternates: {
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
 }
 export default function Page() {
   return (
-    <div className="lp-root min-h-screen bg-white text-ink-body antialiased">
+    <div className="lp-root min-h-screen overflow-x-clip bg-white text-ink-body antialiased">
       <SiteNav />
       <main>
         <Hero />

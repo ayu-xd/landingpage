@@ -21,6 +21,16 @@ export function SiteNav() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // Lock background scroll while the mobile menu is open.
+  useEffect(() => {
+    if (!menuOpen) return
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = prev
+    }
+  }, [menuOpen])
+
   return (
     <header className="fixed inset-x-0 top-0 z-50">
 
@@ -73,22 +83,25 @@ export function SiteNav() {
       </div>
 
       {menuOpen && (
-        <div className="border-b border-hairline-soft bg-white px-5 py-4 sm:px-6 md:hidden">
-          <div className="flex flex-col gap-1">
+        <div className="fixed inset-x-0 bottom-0 top-16 z-40 overflow-y-auto border-t border-hairline-soft bg-white px-5 py-6 sm:px-6 md:hidden">
+          <nav
+            aria-label="Mobile"
+            className="mx-auto flex max-w-content flex-col gap-1"
+          >
             {NAV_LINKS.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setMenuOpen(false)}
-                className="rounded-[10px] px-3 py-2.5 text-[15px] font-medium text-ink-soft hover:bg-surface-alt hover:text-ink"
+                className="flex min-h-[52px] items-center rounded-[10px] px-3 text-lg font-medium text-ink-soft hover:bg-surface-alt hover:text-ink"
               >
                 {l.label}
               </a>
             ))}
-            <div className="mt-2 flex flex-col gap-2">
+            <div className="mt-4 flex flex-col gap-2">
               <a
                 href={AUTH_URL}
-                className="flex h-11 items-center justify-center rounded-[12px] border border-hairline text-[15px] font-semibold text-ink"
+                className="flex h-12 items-center justify-center rounded-[12px] border border-hairline text-base font-semibold text-ink"
               >
                 Log in
               </a>
@@ -96,7 +109,7 @@ export function SiteNav() {
                 {TRIAL_CTA}
               </GradientButton>
             </div>
-          </div>
+          </nav>
         </div>
       )}
     </header>
