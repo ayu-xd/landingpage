@@ -104,5 +104,7 @@ behaves like a bot. Solo Operator (1 account) sends proportionally less;
 - Pricing: https://dmdroid.app/#pricing
 - FAQ: https://dmdroid.app/#faq
 - Support: https://dmdroid.app/support
+- Blog: https://dmdroid.app/blog
+- Latest post: https://dmdroid.app/blog/instagram-crm-for-agencies
 - Privacy: https://dmdroid.app/privacy-policy
 - Terms: https://dmdroid.app/terms

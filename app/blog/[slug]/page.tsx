@@ -50,7 +50,9 @@ export default async function BlogPostPage({
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.description,
+    image: ['https://dmdroid.app/og.jpg'],
     datePublished: post.dateISO || undefined,
+    dateModified: post.dateISO || undefined,
     author: {
       '@type': 'Organization',
       name: 'DMDroid',
@@ -60,8 +62,17 @@ export default async function BlogPostPage({
       '@type': 'Organization',
       name: 'DMDroid',
       url: 'https://dmdroid.app/',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://dmdroid.app/dmdroid-logo.webp',
+        width: 512,
+        height: 512,
+      },
     },
-    mainEntityOfPage: `https://dmdroid.app/blog/${post.slug}`,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://dmdroid.app/blog/${post.slug}`,
+    },
   }
 
   return (

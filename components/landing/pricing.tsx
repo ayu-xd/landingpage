@@ -104,6 +104,12 @@ export function Pricing() {
         </tbody>
       </table>
 
+      {/* Per-account math for agency buyers */}
+      <p className="mx-auto mt-10 max-w-xl text-center text-sm text-ink-soft">
+        Agency math: 2 accounts from $106/mo, and the per-account price
+        drops as you add up to 30. Solo stays flat at $69 for one.
+      </p>
+
       <div className="mx-auto mt-14 flex max-w-xl flex-col items-center gap-4 text-center">
         {/* Annotation: natural flow, ABOVE guarantee text, no absolute overlap */}
         <div

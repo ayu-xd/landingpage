@@ -54,9 +54,13 @@ export function WhoItsFor() {
                   {a.body}
                 </p>
               </div>
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] border border-hairline bg-white text-ink-soft">
+              <a
+                href="/#pricing"
+                aria-label={`See plans for ${a.title}`}
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] border border-hairline bg-white text-ink-soft transition-colors hover:border-brand/40 hover:text-brand"
+              >
                 <ArrowRight className="h-4 w-4" aria-hidden />
-              </span>
+              </a>
             </div>
           ))}
         </div>

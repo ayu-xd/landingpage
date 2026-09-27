@@ -11,29 +11,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
+  const lastModified = new Date('2026-09-27')
+
   return [
     {
       url: `${base}/`,
+      lastModified,
       changeFrequency: 'weekly',
       priority: 1,
     },
     {
       url: `${base}/blog`,
+      lastModified,
       changeFrequency: 'weekly',
       priority: 0.7,
     },
     {
       url: `${base}/support`,
+      lastModified,
       changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
       url: `${base}/privacy-policy`,
+      lastModified,
       changeFrequency: 'yearly',
       priority: 0.1,
     },
     {
       url: `${base}/terms`,
+      lastModified,
       changeFrequency: 'yearly',
       priority: 0.1,
     },

@@ -18,6 +18,7 @@ export const NAV_LINKS = [
   { href: '/#how', label: 'How it works' },
   { href: '/#pricing', label: 'Pricing' },
   { href: '/#faq', label: 'FAQ' },
+  { href: '/blog', label: 'Blog' },
 ]
 
 export const HERO = {
@@ -263,29 +264,11 @@ export const SHOWCASE = [
 ]
 
 /**
- * PLACEHOLDER TESTIMONIALS. NOT REAL CUSTOMERS.
- *
- * Publishing invented endorsements is an FTC problem, so before this page
- * goes live: replace entries with real, attributable quotes, or empty the
- * array (the section hides itself when it's empty).
- *
- * Star ratings and review badges are deliberately absent. Never fabricate
- * them, and there's nothing verified to show yet.
+ * Testimonials are hidden until real, attributable customer quotes exist.
+ * The section self-hides on an empty array. Do not invent endorsements
+ * (FTC risk) and do not fabricate star ratings.
  */
-export const TESTIMONIALS: { quote: string; name: string; role: string }[] = [
-  {
-    quote:
-      'I was manually DMing 30 people a day and burning out. Set DMDroid up on a Sunday, had 4 replies by Tuesday.',
-    name: 'Marcus',
-    role: 'Fitness SMMA Owner',
-  },
-  {
-    quote:
-      'My first campaign had a 23% reply rate. I’ve been doing cold outreach for 2 years and never hit that manually.',
-    name: 'Sarah',
-    role: 'Business Coach',
-  },
-]
+export const TESTIMONIALS: { quote: string; name: string; role: string }[] = []
 
 export const TESTIMONIALS_META = {
   heading: 'This is why users love us',
@@ -411,7 +394,7 @@ export const FAQS = [
   },
   {
     q: 'Is there really a free trial? Do I need a card?',
-    a: 'Yes, 3 days free. Yes, a card is required, but it won’t be charged if you cancel before day 3. We ask for it upfront to keep trial abuse low and support quality high. Fair trade.',
+    a: 'Yes, 3-day free trial. Yes, a card is required, but it won’t be charged if you cancel before day 3. We ask for it upfront to keep trial abuse low and support quality high. Fair trade.',
   },
   {
     q: 'How much does DMDroid cost?',
@@ -423,7 +406,7 @@ export const FINAL_CTA = {
   heading: 'Start booking calls today',
   tagline: 'And get your first replies tomorrow.',
   cta: TRIAL_CTA,
-  trial: '3 days free trial',
+  trial: '3-day free trial',
   handNote: 'Seriously, try it yourself',
   contact: 'Have questions?',
 }
@@ -440,6 +423,7 @@ export const FOOTER = {
         { label: 'How it works', href: '/#how' },
         { label: 'Pricing', href: '/#pricing' },
         { label: 'FAQ', href: '/#faq' },
+        { label: 'Blog', href: '/blog' },
       ],
     },
     {

@@ -9,7 +9,7 @@ import Image from 'next/image'
  *
  * TO SHIP THE REAL POSES:
  *   1. Generate each render below at 1:1, transparent background, same 3D
- *      style as /public/dmdroid-logo.png (blue chat-bubble body, round black
+  *      style as /public/dmdroid-logo.webp (blue chat-bubble body, round black
  *      glasses, red headband tied to the side).
  *   2. Save them to /public/avatar/ under the exact filenames listed.
  *   3. Flip USE_GENERATED_POSES to true. Every slot switches over at once.
@@ -19,7 +19,7 @@ import Image from 'next/image'
  */
 const USE_GENERATED_POSES = false
 
-const FALLBACK = '/dmdroid-logo.png'
+const FALLBACK = '/dmdroid-logo.webp'
 
 export const AVATAR_POSES = {
   /** Nav + footer lockup. Neutral, facing forward. */

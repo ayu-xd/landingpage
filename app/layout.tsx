@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Figtree, Gochi_Hand, Inter, JetBrains_Mono } from 'next/font/google'
+import { Figtree, Gochi_Hand } from 'next/font/google'
 import { FAQS } from '@/lib/landing-data'
 import './globals.css'
 
@@ -8,16 +8,8 @@ const figtree = Figtree({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800', '900'],
   variable: '--font-figtree',
-})
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-geist-sans',
-})
-
-const geistMono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-geist-mono',
+  display: 'swap',
+  preload: true,
 })
 
 /** Powers the handwritten annotations — Waalaxy uses Gochi Hand. */
@@ -25,6 +17,8 @@ const gochiHand = Gochi_Hand({
   subsets: ['latin'],
   weight: '400',
   variable: '--font-gochi-hand',
+  display: 'swap',
+  preload: false,
 })
 
 export const metadata: Metadata = {
@@ -100,12 +94,14 @@ const jsonLd = {
       url: 'https://dmdroid.app/',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://dmdroid.app/icon-dark-32x32.png',
+        url: 'https://dmdroid.app/dmdroid-logo.webp',
+        width: 512,
+        height: 512,
       },
       contactPoint: {
         '@type': 'ContactPoint',
         email: 'support@dmdroid.app',
-        contactType: 'customer support',
+        contactType: 'customer service',
       },
       sameAs: [
         'https://x.com/dmdroid_app',
@@ -128,13 +124,14 @@ const jsonLd = {
       url: 'https://dmdroid.app/',
       applicationCategory: 'BusinessApplication',
       operatingSystem: 'Web',
+      brand: { '@id': 'https://dmdroid.app/#organization' },
       description:
         'DMDroid automates cold DM outreach on Instagram and books calls on autopilot. 500+ DMs a day across 10+ accounts. Start your 3-day free trial.',
       offers: [
         {
           '@type': 'Offer',
           name: 'Solo Operator',
-          price: '69',
+          price: 69,
           priceCurrency: 'USD',
           url: 'https://app.dmdroid.app/auth',
           availability: 'https://schema.org/InStock',
@@ -142,8 +139,10 @@ const jsonLd = {
         {
           '@type': 'Offer',
           name: 'Agency',
-          price: '106',
+          price: 106,
           priceCurrency: 'USD',
+          description:
+            'Starting price for 2 accounts; per-account price drops as you add up to 30 accounts.',
           url: 'https://app.dmdroid.app/auth',
           availability: 'https://schema.org/InStock',
         },
@@ -169,7 +168,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${figtree.variable} ${inter.variable} ${geistMono.variable} ${gochiHand.variable}`}
+      className={`${figtree.variable} ${gochiHand.variable}`}
     >
       <head>
         <script
