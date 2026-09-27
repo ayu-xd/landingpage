@@ -8,6 +8,7 @@ import {
   FlowArrow,
   Section,
   SectionHeading,
+  SwooshArrow,
   Tokens,
   Whisper,
 } from './primitives'
@@ -54,7 +55,7 @@ export function HowItWorks() {
 
       {/* Four open rows. Text and image alternate sides so the page
           breathes like Waalaxy's walkthrough. */}
-      <ol className="mx-auto mt-20 flex max-w-6xl flex-col gap-32 lg:gap-[16rem]">
+      <ol className="mx-auto mt-20 flex max-w-6xl flex-col gap-16 lg:gap-[16rem]">
         {STEPS.map((step, i) => {
           const flip = i % 2 === 1
           return (
@@ -101,7 +102,7 @@ export function HowItWorks() {
 
                 {/* Mockups / Support Card */}
                 <div className={`lg:col-span-7 flex items-center justify-center ${flip ? 'lg:order-1' : ''}`}>
-                  <div className="w-full max-w-full scale-100 transform origin-center sm:scale-[1.02] md:scale-105 lg:scale-[1.10]">
+                  <div className="w-full">
                     {i === 0 && <Mockup1Import />}
                     {i === 1 && <Mockup2Sequence />}
                     {i === 2 && <Mockup3Analytics />}
@@ -132,14 +133,22 @@ export function HowItWorks() {
                   Spans the entire width (w-full) so the 25% -> 75% path connects the text blocks.
                   Flips horizontally on alternating rows. */}
               {i < STEPS.length - 1 && (
-                <span
-                  aria-hidden
-                  className={`pointer-events-none absolute left-0 top-[calc(100%+1rem)] hidden w-full lg:block ${
-                    flip ? 'scale-x-[-1]' : ''
-                  }`}
-                >
-                  <FlowArrow className="h-auto w-full text-ink" />
-                </span>
+                <>
+                  <span
+                    aria-hidden
+                    className="pointer-events-none mx-auto my-10 flex justify-center lg:hidden"
+                  >
+                    <SwooshArrow dir="down" className="h-20 w-10" />
+                  </span>
+                  <span
+                    aria-hidden
+                    className={`pointer-events-none absolute left-0 top-[calc(100%+1rem)] hidden w-full lg:block ${
+                      flip ? 'scale-x-[-1]' : ''
+                    }`}
+                  >
+                    <FlowArrow className="h-auto w-full text-ink" />
+                  </span>
+                </>
               )}
             </li>
           )

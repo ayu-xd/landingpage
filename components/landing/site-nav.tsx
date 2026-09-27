@@ -42,7 +42,7 @@ export function SiteNav() {
         }`}
       >
         <div className="mx-auto flex h-16 max-w-content items-center justify-between px-5 sm:px-6">
-          <a href="/" aria-label="DMDroid home">
+          <a href="/" aria-label="DMDroid home" className="mr-auto">
             <span className="sr-only">DMDroid home</span>
             <Logo />
           </a>
@@ -73,7 +73,7 @@ export function SiteNav() {
 
           <button
             onClick={() => setMenuOpen((v) => !v)}
-            className="rounded-md p-2 text-ink-soft hover:text-ink md:hidden"
+            className="ml-auto rounded-[10px] border border-hairline bg-white p-2.5 text-ink md:hidden"
             aria-label="Toggle menu"
             aria-expanded={menuOpen}
           >
