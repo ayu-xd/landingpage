@@ -73,8 +73,12 @@ export function Contrast() {
         </div>
       </div>
 
-      {/* Machine-readable comparison table (visually hidden) for crawlers + AI citations */}
-      <table className="sr-only">
+      {/* Machine-readable comparison table (visually hidden) for crawlers + AI citations.
+          NOTE: sr-only must sit on a div wrapper, never on the <table> itself:
+          tables ignore the 1px width and their nowrap content blows out page
+          width on mobile, causing horizontal scroll. */}
+      <div className="sr-only">
+      <table>
         <caption>Old Way vs DMDroid Way comparison</caption>
         <thead>
           <tr>
@@ -91,6 +95,7 @@ export function Contrast() {
           ))}
         </tbody>
       </table>
+      </div>
 
       {/* CTA — annotation absolute to the LEFT, button centered, aligned at bottom */}
       <div className="mt-16 flex flex-col items-center">

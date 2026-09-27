@@ -78,8 +78,11 @@ export function Pricing() {
         })}
       </div>
 
-      {/* Machine-readable pricing table (visually hidden) for crawlers + AI citations */}
-      <table className="sr-only">
+      {/* Machine-readable pricing table (visually hidden) for crawlers + AI citations.
+          NOTE: sr-only must sit on a div wrapper, never on the <table> itself
+          (see contrast.tsx). */}
+      <div className="sr-only">
+      <table>
         <caption>DMDroid pricing plans comparison</caption>
         <thead>
           <tr>
@@ -103,6 +106,7 @@ export function Pricing() {
           ))}
         </tbody>
       </table>
+      </div>
 
       {/* Per-account math for agency buyers */}
       <p className="mx-auto mt-10 max-w-xl text-center text-sm text-ink-soft">
