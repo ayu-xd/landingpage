@@ -149,6 +149,20 @@ const jsonLd = {
       ],
     },
     {
+      '@type': 'VideoObject',
+      '@id': 'https://dmdroid.app/#video',
+      name: 'How We Automate 500+ Cold Instagram DMs a Day Without Getting Banned With DMDroid',
+      description:
+        'Watch DMDroid automate cold outreach on Instagram across 10+ accounts with smart anti-ban pacing, automated follow-ups, and pipeline CRM sync.',
+      thumbnailUrl: [
+        'https://dmdroid.app/thumbnail-demo.jpg',
+      ],
+      uploadDate: '2026-10-04T00:00:00Z',
+      embedUrl: 'https://www.youtube-nocookie.com/embed/skH46WFx-ic',
+      contentUrl: 'https://youtu.be/skH46WFx-ic',
+      publisher: { '@id': 'https://dmdroid.app/#organization' },
+    },
+    {
       '@type': 'FAQPage',
       '@id': 'https://dmdroid.app/#faq',
       mainEntity: FAQS.map((f) => ({
